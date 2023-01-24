@@ -1,0 +1,47 @@
+.header{
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1f1f1f;
+  display: flex;
+  padding: 4rem;
+  height: 10rem;
+  justify-content: center
+}
+
+.header__logo{
+  font-size: 4rem;
+  font-weight: 600;
+  background: linear-gradient(-45deg, #cfbc85, #ffeeba, #cfbc85);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: none;
+}
+.header__nav{
+  display: flex;
+  gap: 2rem;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.header__opcion{
+  color: white;
+}
+
+.header__opcion--activo{
+  color: #ffedb5;
+}
+
+@media (min-width: 720px) {
+  .header{
+    justify-content: space-between;
+  }
+  .header__logo{
+    display: initial;
+  }
+  .header__nav{
+    gap: 2rem;
+  }
+}
