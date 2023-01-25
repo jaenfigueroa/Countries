@@ -21,6 +21,10 @@
   font-size: 1.6rem;
   font-family: 'Poppins', sans-serif;
 }
+/* *::selection{
+  background-color: #191919;
+  color: white;
+} */
 html {
   font-size: 62.5%;
 }
@@ -83,5 +87,12 @@ main:after{
   z-index: -1;
 }
 
+input[type=text]{
+  /* background-color: green; */
+  padding: 1rem;
+}
+button{
+  padding: 1rem 2rem;
+}
 /* ////////////////////////////// */
 

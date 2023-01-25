@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import {HashRouter, Routes, Route, Navigate} from 'react-router-dom'
 import { Header } from '../components/Header/Header'
 import { Footer } from '../components/Footer/Footer'
 import { Pagina404 } from '../components/Pagina404/Pagina404'
@@ -7,30 +7,28 @@ import { Home } from '../components/Home/Home'
 import { Search } from '../components/Search/Search'
 import { Random } from '../components/Random/Random'
 import { Compare } from '../components/Compare/Compare'
+import { traerPais } from '../helpers/traerPais'
+
+
+const traerObjetoPaises = async()=>{
+
+  const datos = await traerPais('chile')
+
+  console.log(datos);
+  return 'vaca'
+}
+
 
 /////////////////////////////////////////////////////////////////////
+
 export const MisRutas = () => {
 
-  useEffect(() => {
-    const traerdatos = async () => {
-      try {
-  
-        const peticion = await fetch('https://restcountries.com/v3.1/name/peru')
-        const data = await peticion.json()
+  const [lista, setLista] = useState(traerObjetoPaises)
 
-        console.log(data[0])
-        
-      } catch (error) {
-        console.log(error)
-      }
-    }
-  
-    traerdatos()
-  }, []);
-  
+
   /////////////////////////////////////////////////////////////////////
   return (
-    <BrowserRouter>
+    <HashRouter>
 
       {/* HEADER Y NAVEGACION */}
       <Header/>
@@ -53,6 +51,7 @@ export const MisRutas = () => {
       {/* FOOTER */}
       <Footer/>
 
-    </BrowserRouter>
+
+    </HashRouter>
   )
 }

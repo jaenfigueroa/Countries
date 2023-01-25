@@ -1,0 +1,33 @@
+.seccion-search{
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: calc(100vh - 10rem);
+  background: rgb(142, 59, 142);
+}
+
+/* FILTRADO */
+.search__filtrado{
+  background-color: blue;
+}
+
+/* CUERPO- CONTENEDOR-TARJETAS */
+.search__main{
+  background-color: red;
+  padding: 1rem;
+}
+
+.search__tarjetas-header{
+  background-color: green;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+
+}
+.search__tarjetas-header h4{
+  background: yellow;
+}
+.search__tarjetas-header div{
+  background: aqua;
+}
