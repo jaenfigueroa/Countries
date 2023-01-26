@@ -21,10 +21,6 @@
   font-size: 1.6rem;
   font-family: 'Poppins', sans-serif;
 }
-/* *::selection{
-  background-color: #191919;
-  color: white;
-} */
 html {
   font-size: 62.5%;
 }
@@ -39,22 +35,15 @@ a {
 }
 /*/////////////////////////*/
 
-
-
 .App{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100vh;
-}
-main{
-  height: 100%;
-  flex-grow: 1;
+  /* min-height: 100vh; */
 }
 
 body{
-  background: yellow;
-  overflow-x: hidden ;
+  /* overflow-x: hidden ; */
 }
 body::-webkit-scrollbar {
   background: #181818;
@@ -66,33 +55,19 @@ body::-webkit-scrollbar-thumb {
 
 /*/////////////////////////*/
 main{
+  /* height: 100%; */
+  /* flex-grow: 1; */
+}
+main{
   width: 100%;
-  min-height: calc(100vh - 10rem);
-  /* background: linear-gradient(90deg, transparent 15%, #16161ae0 40%); */
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
   background: var(--black);
 }
-main:after{
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* background-image: url(./assets/img3.jpg); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1;
-}
 
-input[type=text]{
-  /* background-color: green; */
-  padding: 1rem;
-}
-button{
-  padding: 1rem 2rem;
+strong{
+  font-weight: 600;
 }
 /* ////////////////////////////// */
 

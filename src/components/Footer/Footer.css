@@ -50,16 +50,4 @@
     padding: 6rem 5rem;
     position: relative;
   }
-
-  .imagen-footer{
-    display: initial;
-    position: absolute;
-    top: 0;
-    left: 3rem;
-    height: 17rem;
-    top: calc(50% - 8rem);
-    filter: grayscale(100%) contrast(400%);
-    opacity: .15;
-    padding-bottom: 10rem !important;
-  }
 }

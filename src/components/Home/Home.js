@@ -13,7 +13,6 @@ export const Home = () => {
         </div>
         <div className='contenedor-botones'>
             <NavLink to='/search' className='boton-primario'>Search</NavLink>
-            <NavLink to='/random' className='boton-primario'>Random</NavLink>
             <NavLink to='/compare' className='boton-primario'>Compare</NavLink>
           </div>
       </section>
