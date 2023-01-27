@@ -12,7 +12,7 @@ export const Footer = () => {
         <a href='https://twitter.com/JaenFigueroa_' target='_blank' rel="noreferrer"><i className="fa-brands fa-twitter"></i></a>
         <a href='https://www.linkedin.com/in/jaenfigueroa/' target='_blank' rel="noreferrer"><i className="fa-brands fa-linkedin"></i></a>
         <a href='https://api.whatsapp.com/send?phone=51916995780' target='_blank' rel="noreferrer"><i className="fa-brands fa-whatsapp"></i></a>
-        <a href='mailto:contact@jaenfigueroa.com' target='_blank' rel="noreferrer"><i class="fa-regular fa-envelope"></i></a>
+        <a href='mailto:contact@jaenfigueroa.com' target='_blank' rel="noreferrer"><i className="fa-regular fa-envelope"></i></a>
       </div>
     </footer>
   )

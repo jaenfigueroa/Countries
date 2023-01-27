@@ -1,12 +1,3 @@
-@font-face {
-  font-family: 'Replica';
-  src: url('./fonts/replica.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Replica2';
-  src: url('./fonts/replica2.ttf') format('truetype');
-}
-
 :root{
   --black: #1f1f1f;
   --white: #f7f7f7;
@@ -14,12 +5,14 @@
   --gray2: #dad8d6
 }
 
+/* REINICIAR CSS ////////////////////////////////////////////////*/
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-size: 1.6rem;
   font-family: 'Poppins', sans-serif;
+  user-select: none;
 }
 html {
   font-size: 62.5%;
@@ -30,21 +23,10 @@ ol {
 }
 a {
   text-decoration: none;
-  color: black;
   cursor: pointer;
 }
-/*/////////////////////////*/
 
-.App{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* min-height: 100vh; */
-}
-
-body{
-  /* overflow-x: hidden ; */
-}
+/* PERSONALIZAR SCROLL /////////////////////////////////////////*/
 body::-webkit-scrollbar {
   background: #181818;
   width: 1.2rem;
@@ -53,21 +35,13 @@ body::-webkit-scrollbar-thumb {
   background: linear-gradient(0deg, #80775b , #b3a57a, #80775b );
 }
 
-/*/////////////////////////*/
-main{
-  /* height: 100%; */
-  /* flex-grow: 1; */
-}
+
+/*OTROS////////////////////////////////////////////////////////*/
 main{
   width: 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
   position: relative;
   background: var(--black);
 }
-
 strong{
   font-weight: 600;
 }
-/* ////////////////////////////// */
-

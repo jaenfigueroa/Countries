@@ -1,0 +1,17 @@
+.seccion-compare{
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.seccion-compare .titulo{
+  font-size: 5rem;
+}
+.seccion-compare div{
+  display: flex;
+  gap: 4rem;
+}
+.subtitulo{
+  font-size: 2.5rem;
+}

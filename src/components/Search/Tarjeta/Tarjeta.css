@@ -1,0 +1,77 @@
+/* TARJETA */
+.search__tarjeta{
+  max-width: 300px;
+  height: 300px;
+  background: linear-gradient(-45deg, #a79663, #efdeaa, #80775b);
+  background: linear-gradient(-45deg, #beac75, #efdeaa, #80775b);
+  background: linear-gradient(-45deg, #d1be84, #ffefbd, #978c6d);
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+  gap: 1.5rem;
+  color: var(--black);
+  transition: 300ms;
+}
+.search__tarjeta:hover{
+  transform: scale(1.05);
+}
+
+.tarjeta__nombre{
+  font-size: 3.5rem;
+  font-size: 3.2rem;
+  font-size: 3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--black);
+  text-shadow: 0px 0px 10px #e4d3a4;
+}
+.tarjeta__bandera{
+  border: 2px solid #b3a377;
+  max-height: 115px;
+  max-height: 100px;
+}
+.tarjeta__capital{
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.contenedor-informacion{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+
+
+
+/* CONTENEDOR DE CLAVOS BORDES */
+.contenedor-clavos{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: .7rem;
+}
+.contenedor-clavos div{
+  display: flex;
+  justify-content: space-between;
+}
+.contenedor-clavos div div{
+  width: 12px;
+  height: 12px;
+  left: -260px;
+  top: 5px;
+  border-radius: 50%;
+  background: var(--black);
+}

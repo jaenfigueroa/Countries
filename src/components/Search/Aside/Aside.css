@@ -1,0 +1,18 @@
+.search-aside{
+  width: 250px;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  background-color: rgba(0, 0, 255, 0.751);
+  background: #302f2f;
+  overflow: hidden;
+}
+
+@media (min-width: 920px) {
+  .search-aside{
+    position: initial;
+    min-width: 250px;
+    border-radius: 1rem;
+  }
+}
