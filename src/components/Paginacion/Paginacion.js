@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useAnchoPantalla } from '../../hooks/useAnchoPantalla'
 
-export const Paginacion = ({numero=38, ultimo=42}) => {
+export const Paginacion = ({numero=5, ultimo=42}) => {
 
-  const [palabras, setpalabras] = useState(false)
-
+  /* Mi Hook: devuelve el ancho el ancho de pantalla */
   const {ancho} = useAnchoPantalla()
 
   /* CONTROLA LAS PALABRAS DE ANTERIOR O SIGUIENTE */
+  const [palabras, setpalabras] = useState(false)
 
   useEffect(()=>{
     if (ancho > 480) setpalabras(true)
@@ -16,12 +16,15 @@ export const Paginacion = ({numero=38, ultimo=42}) => {
   }, [ancho])
 
 
-
   ////////////////////////////////////////////
   return (
     <nav className='nav-paginas'>
 
-      <a className='boton-mover'><i className="fa-solid fa-chevron-left"></i>&nbsp;&nbsp;{palabras&&'Anterior'}</a>
+      {
+        numero > 4 && (
+          <a className='boton-mover'><i className="fa-solid fa-chevron-left"></i>&nbsp;&nbsp;{palabras&&'Anterior'}</a>
+        )
+      }
 
       {
         numero >= 4 && (
@@ -48,7 +51,11 @@ export const Paginacion = ({numero=38, ultimo=42}) => {
 
       <button className='botones'>{ultimo}</button>
 
-      <a className='boton-mover'>{palabras&&'Siguiente'}&nbsp;&nbsp;<i class="fa-solid fa-chevron-right"></i></a>
+      {
+        numero <= ultimo - 4 && (
+          <a className='boton-mover'>{palabras&&'Siguiente'}&nbsp;&nbsp;<i class="fa-solid fa-chevron-right"></i></a>
+        )
+      }
       
     </nav>
   )
