@@ -1,5 +1,13 @@
 .aside{
+  background: hotpink;
+  // background: #1a1919;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: 2rem;
+  padding-top: 4.5rem;
 
+  /* BOTON CERRAR */
   .boton-cerrar{
     position: absolute;
     right: 0rem;
@@ -10,7 +18,6 @@
 
     i{
       font-size: 2rem;
-      color: gray;
       color: #333;
       transition: 300ms;
     }
@@ -22,6 +29,10 @@
 
 @media (min-width: 1024px) {
   .aside{
+
+    padding-top: 2rem;
+
+    /* BOTON CERRAR */
     .boton-cerrar{
       display: none;
     }

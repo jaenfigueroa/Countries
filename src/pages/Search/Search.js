@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Aside } from '../../components/Aside/Aside'
+import { Paginacion } from '../../components/Paginacion/Paginacion'
 import { Tarjeta } from '../../components/Tarjeta/Tarjeta'
 import { useAnchoPantalla } from '../../hooks/useAnchoPantalla'
 
@@ -98,7 +99,12 @@ export const Search = () => {
           <Tarjeta pais={miPais}/>
         </div>
 
+        {/* NAVEGACION DE PAGINAS */}
+
+        <Paginacion/>
+
       </main>
+
 
     </section>
   )

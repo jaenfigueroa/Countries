@@ -6,62 +6,56 @@ export const Selector = () => {
 
   const [opciones, setOpciones] = useState([
     {
-      titulo: 'español',
+      titulo: 'Español',
+      activo: false,
+    },
+    {
+      titulo: 'Ingles',
       activo: false
     },
     {
-      titulo: 'ingles',
+      titulo: 'Frances',
       activo: false
     },
     {
-      titulo: 'portugues',
-      activo: false
-    },    {
-      titulo: 'portugues',
+      titulo: 'Arabe',
       activo: false
     },
-    {
-      titulo: 'portugues',
-      activo: false
-    },
-    {
-      titulo: 'portugues',
-      activo: false
-    },    {
-      titulo: 'portugues',
-      activo: false
-    }
-    ,    {
-      titulo: 'portugues',
-      activo: false
-    }
+
   ])
 
+  const abrirCaja = ()=> setBotonActivo(!botonActivo)
+
   return (
-    <div className='categoria'>
-      <button className='titulo' onClick={()=>setBotonActivo(!botonActivo)}>
-        Lenguage
-        <i className={`fa-solid fa-chevron-down ${botonActivo&&'titulo--abierto'}`}/>
+    <div className='selector'>
+      
+      {/* BOTON PARA ABRIR */}
+      <button className='boton' onClick={abrirCaja}>
+        Lenguage <i className={`fa-solid fa-chevron-down ${botonActivo&&'boton--abierto'}`}/>
       </button>
 
+      {/* CONTENIDO */}
       {botonActivo && (
-        <ul className='caja'>
+        <article className='caja'>
 
-          {/* INPUT SEARCH */}
-          <input type="text" name="" id="" placeholder='Buscar' className='buscador'/>
+          {/* INPUT PARA FILTRAR */}
+          <input
+            className='input'
+            type="text"
+            placeholder='Buscar' />
 
-          {/* LISTA DE OPCIONES */}
+          {/* CONTENEDOR DE OPCIONES */}
           <div className='contenedor-opciones'>
             {
-              opciones.map((x, index)=>(
+              opciones.map((opcion)=>(
                 <label>
-                  <input type="checkbox" name="example" value="option1"/>{x.titulo}
+                  <input type="checkbox" value="opcion1"/>{opcion.titulo}
                 </label>
               ))
             }
           </div>
-        </ul>
-        )}
+        </article>
+      )}
 
     </div>
   )

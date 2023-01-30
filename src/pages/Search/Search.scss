@@ -10,11 +10,10 @@
 
   /* ASIDE /////////////////////////////////////////////// */
   .aside{
-    background-color: rgba(255, 192, 203, 0.827);
-    background: hotpink;
+    // background: hotpink;
     position: absolute;
     min-width: 280px;
-    padding: 2rem;
+    // padding: 2rem;
     min-height: calc(100vh);
     top: 0px;
     z-index: 3;
@@ -25,13 +24,16 @@
   .main{
     width: 100%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 
     /* HEADER VERSION MOBILE */
     &__header-mobile{
       background-color: blue;
       width: 100%;
       position: sticky;
-      top: 0;
+      top: -1px;
       z-index: 2;
 
       /* contador de resultados */
@@ -116,7 +118,7 @@
       }
 
       &__contenedor-tarjetas{
-        padding: 2rem 0 0;
+        padding: 0 0 0;
       }
     }
   }
