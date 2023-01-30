@@ -28,7 +28,7 @@ export const Paginacion = ({numero=38, ultimo=42}) => {
           <>
             <button className='botones'>1</button>
             {
-              numero !== 4 && <i class="fa-solid fa-ellipsis"></i>
+              numero !== 4 && <i class="fa-solid fa-ellipsis icono-3puntos"></i>
             }
           </>
         )
@@ -43,7 +43,7 @@ export const Paginacion = ({numero=38, ultimo=42}) => {
       </div>
 
       {
-        numero <= ultimo - 4 && <i class="fa-solid fa-ellipsis"></i>
+        numero <= ultimo - 4 && <i class="fa-solid fa-ellipsis icono-3puntos"></i>
       }
 
       <button className='botones'>{ultimo}</button>
