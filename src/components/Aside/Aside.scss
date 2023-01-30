@@ -1,0 +1,29 @@
+.aside{
+
+  .boton-cerrar{
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+    padding: 1rem;
+    border: none;
+    background: transparent;
+
+    i{
+      font-size: 2rem;
+      color: gray;
+      color: #333;
+      transition: 300ms;
+    }
+  }
+  .boton-cerrar:hover i{
+    color: black;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aside{
+    .boton-cerrar{
+      display: none;
+    }
+  }
+}

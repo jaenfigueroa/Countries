@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './Selector.css'
 
 export const Selector = () => {
 

@@ -1,0 +1,46 @@
+/* RESET - VARIABLES - MIXINGS */
+@import './styles/reset.scss';
+@import './styles/variables.scss';
+// @import './styles/mixins.scss';
+
+/* COMPONENTES */
+@import './components/Header/Header.scss';
+@import './components/Footer/Footer.scss';
+@import './components/Tarjeta/Tarjeta.scss';
+@import './components/Aside/Aside.scss';
+
+@import './pages/Inicio/Inicio.scss';
+@import './pages/Search/Search.scss';
+
+
+/* PERSONALIZAR SCROLL ///////////////////////*/
+body::-webkit-scrollbar {
+  background: #181818;
+  width: 1.2rem;
+}
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(0deg, #80775b , #b3a57a, #80775b );
+}
+
+/*NEGRITA PERSONALIADO /////////////////////////*/
+strong{
+  font-weight: 600;
+}
+
+/* CUERPO DE LA APLICACION //////////////////// */
+#root{
+  background-color: red;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: radial-gradient(#222222, #1f1f1f);
+
+  .main{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // background: blue;
+  }
+}

@@ -2,12 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #1f1f1f;
+  // background: #1f1f1f;
   display: flex;
   justify-content: center;
   /* background: red; */
   padding: 0 2rem;
-  height: 7rem;
+  min-height: 7rem;
 }
 
 .header__logo{
@@ -37,7 +37,8 @@
 @media (min-width: 720px) {
   .header{
     justify-content: space-between;
-    height: 10rem;
+    min-height: 10rem;
+    padding: 0 5rem;
   }
   .header__logo{
     display: initial;

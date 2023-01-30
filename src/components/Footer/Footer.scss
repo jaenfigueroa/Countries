@@ -1,18 +1,15 @@
 .footer{
-  padding: 6rem .5rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column-reverse;
-  gap: 3rem;
-  z-index: 100;
-  color: var(--white);
-
-  display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--black);
+
+  gap: 3rem;
   padding: 5rem;
+
+  color: var(--white);
+  background: red;
+  background: radial-gradient(#222222, #1f1f1f);
 }
 .footer a {
   color: var(--white);
@@ -27,7 +24,6 @@
 }
 
 .footer__redes-contenedor i{
-  font-size: 3rem;
   font-size: 2.5rem;
   cursor: pointer;
 }
@@ -48,6 +44,5 @@
     flex-direction: column-reverse;
     align-items: flex-end;
     padding: 6rem 5rem;
-    position: relative;
   }
 }

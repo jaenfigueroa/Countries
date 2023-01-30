@@ -1,0 +1,123 @@
+.search-layout{
+  // background-color: rgb(54, 91, 160);
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  gap: 2rem;
+
+  position: relative;
+
+  /* ASIDE /////////////////////////////////////////////// */
+  .aside{
+    background-color: rgba(255, 192, 203, 0.827);
+    background: hotpink;
+    position: absolute;
+    min-width: 280px;
+    padding: 2rem;
+    min-height: calc(100vh);
+    top: 0px;
+    z-index: 3;
+    position: fixed;
+  }
+
+  /* MAIN //////////////////////////////////////////////// */
+  .main{
+    width: 100%;
+    position: relative;
+
+    /* HEADER VERSION MOBILE */
+    &__header-mobile{
+      background-color: blue;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+
+      /* contador de resultados */
+      .contador-resultados{
+        background-color: gray;
+        padding: .5rem 1rem;
+        text-align: end;
+      }
+      
+      /* contador de resultados */
+      .contenedor-botones{
+        background-color: green;
+        display: flex;
+  
+        .boton{
+          width: 50%;
+          padding: .5rem 1rem;
+        }
+      }
+    }
+    
+    /* HEADER VERSION DESKTOP */
+    &__header-desktop{
+      // background-color: blue;
+      display: flex;
+      justify-content: space-between;
+      padding: 2rem;
+
+      width: 100%;
+      // margin-left: 4rem;
+      border-radius: .5rem;
+      right: 0;
+
+      .selector-orden{
+        display: flex;
+        gap: 1rem;
+      }
+    }
+  
+    /* CONTENEDOR DE TARJETAS */
+    &__contenedor-tarjetas{
+      // background: rgb(179, 130, 238);
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 20px;
+
+      padding: 2rem;
+    }
+
+    @media (min-width: 560px) {
+      &__contenedor-tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 900px) {
+      &__contenedor-tarjetas {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .search-layout{
+    // background: lightseagreen;
+    padding: 0 2rem;
+    
+    .aside{
+      position: initial;
+      border-radius: .5rem;
+      // height: auto;
+      min-height: calc(100vh - 7rem);
+    }
+    
+    .main{
+      &__header-desktop{
+        background-color: rgb(244, 244, 116);
+      }
+
+      &__contenedor-tarjetas{
+        padding: 2rem 0 0;
+      }
+    }
+  }
+}

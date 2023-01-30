@@ -1,55 +1,38 @@
 import React from 'react'
-import {HashRouter, Routes, Route, Navigate} from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import { Header } from '../components/Header/Header'
 import { Footer } from '../components/Footer/Footer'
-import { Pagina404 } from '../components/Pagina404/Pagina404'
-import { Home } from '../components/Home/Home'
-import { Search } from '../components/Search/Search'
-import { Compare } from '../components/Compare/Compare'
-// import { traerPais } from '../helpers/traerPais'
+import { Search } from '../pages/Search/Search'
+import { Inicio } from '../pages/Inicio/Inicio'
 
-
-// const traerObjetoPaises = async()=>{
-
-//   const datos = await traerPais('chile')
-
-//   console.log(datos);
-//   return 'vaca'
-// }
-
-
-/////////////////////////////////////////////////////////////////////
-
+////////////////////////////////////////////
 export const MisRutas = () => {
 
-  // const [lista, setLista] = useState(traerObjetoPaises)
 
-
-  /////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////
   return (
-    <HashRouter>
+    <BrowserRouter>
 
       {/* HEADER Y NAVEGACION */}
       <Header/>
 
       {/* CUERPO */}
-      <main>
+      <main className='main'>
         <Routes>
 
-          <Route path='/' element={<Navigate to='/home'/>}/>
-          <Route path='/home' element={<Home/>}/>
+          <Route path='/' element={<Navigate to='/inicio'/>}/>
+          <Route path='/inicio' element={<Inicio/>}/>
           <Route path='/search' element={<Search/>}/>
-          <Route path='/compare' element={<Compare/>}/>
-          <Route path='*' element={<Pagina404/>}/>
+
+          <Route path='*' element={<p>No existe la pagina</p>}/>
 
         </Routes>
-
       </main>
 
       {/* FOOTER */}
       <Footer/>
 
 
-    </HashRouter>
+    </BrowserRouter>
   )
 }
