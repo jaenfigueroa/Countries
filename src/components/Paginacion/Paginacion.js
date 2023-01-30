@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useAnchoPantalla } from '../../hooks/useAnchoPantalla'
+import { Boton } from './components/Boton'
 
-export const Paginacion = ({numero=5, ultimo=42}) => {
+export const Paginacion = ({numero=20, ultimo=42}) => {
 
   /* Mi Hook: devuelve el ancho el ancho de pantalla */
   const {ancho} = useAnchoPantalla()
@@ -14,6 +15,21 @@ export const Paginacion = ({numero=5, ultimo=42}) => {
     else setpalabras(false)
 
   }, [ancho])
+
+  /* manejar el primer numero de la paginacion */
+  const [primerNumero, setPrimerNumero] = useState(0)
+
+  useEffect(()=>{
+
+    //controlar los botones del principio
+    if (numero <= 3) setPrimerNumero(1)
+    //controlar los botones del final
+    else if (numero >= ultimo - 5) setPrimerNumero(ultimo - 5)
+    //defecto
+    else setPrimerNumero(numero - 2)
+
+  }, [numero])
+
 
 
   ////////////////////////////////////////////
@@ -29,30 +45,30 @@ export const Paginacion = ({numero=5, ultimo=42}) => {
       {
         numero >= 4 && (
           <>
-            <button className='botones'>1</button>
+            <Boton numero={1} numeroActual={numero}/>
             {
-              numero !== 4 && <i class="fa-solid fa-ellipsis icono-3puntos"></i>
+              numero !== 4 && <i class="fa-solid fa-ellipsis icono-3puntos"></i> /* icono de 3 puntos */
             }
           </>
         )
       }
 
       <div className='contenedor-botones-juntos'>
-        <button className='botones'>{numero - 2}</button>
-        <button className='botones'>{numero - 1}</button>
-        <button className='botones'>{numero}</button>
-        <button className='botones'>{numero + 1}</button>
-        <button className='botones'>{numero + 2}</button>
+        <Boton numero={primerNumero + 0} numeroActual={numero}/>
+        <Boton numero={primerNumero + 1} numeroActual={numero}/>
+        <Boton numero={primerNumero + 2} numeroActual={numero}/>
+        <Boton numero={primerNumero + 3} numeroActual={numero}/>
+        <Boton numero={primerNumero + 4} numeroActual={numero}/>
       </div>
 
       {
-        numero <= ultimo - 4 && <i class="fa-solid fa-ellipsis icono-3puntos"></i>
+        primerNumero <= ultimo - 6 && <i class="fa-solid fa-ellipsis icono-3puntos"></i> /* icono de 3 puntos */
       }
 
-      <button className='botones'>{ultimo}</button>
+      <Boton numero={ultimo} numeroActual={numero}/>
 
       {
-        numero <= ultimo - 4 && (
+        numero <= ultimo - 6 && (
           <a className='boton-mover'>{palabras&&'Siguiente'}&nbsp;&nbsp;<i class="fa-solid fa-chevron-right"></i></a>
         )
       }

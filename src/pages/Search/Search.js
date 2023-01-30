@@ -32,11 +32,11 @@ export const Search = () => {
 
   //INFORMACION PROV DE UN PAIS //////////////////////////////
   const miPais = {
-    nombre: 'Peru',
-    capital: 'Lima',
+    nombre: 'Argentina',
+    capital: 'Buenos Aires',
     area: 1544,
     continente: 'America',
-    img: 'https://flagcdn.com/pe.svg'
+    img: 'https://flagcdn.com/ar.svg'
   }
   
 
@@ -86,6 +86,13 @@ export const Search = () => {
 
         {/* CONTENEDOR DE TARJETAS */}
         <div className='main__contenedor-tarjetas'>
+          <Tarjeta pais={miPais}/>
+          <Tarjeta pais={miPais}/>
+          <Tarjeta pais={miPais}/>
+          <Tarjeta pais={miPais}/>
+          <Tarjeta pais={miPais}/>
+          <Tarjeta pais={miPais}/>
+          <Tarjeta pais={miPais}/>
           <Tarjeta pais={miPais}/>
           <Tarjeta pais={miPais}/>
           <Tarjeta pais={miPais}/>

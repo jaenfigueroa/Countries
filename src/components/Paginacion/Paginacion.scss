@@ -20,8 +20,13 @@
     gap: .3rem;
   }
   
-  .botones{
+  .boton{
+    border-radius: .5rem;
     padding: .5rem .5rem;
+  }
+
+  .boton--activo{
+    background:#f8e8b5;
   }
 
 
@@ -36,7 +41,7 @@
       gap: 1rem;
     }
 
-    .botones{
+    .boton{
       padding: 1rem 1rem;
     }
   }
@@ -51,7 +56,7 @@
       gap: 1rem;
     }
 
-    .botones{
+    .boton{
       padding: 1rem 2rem;
     }
 
