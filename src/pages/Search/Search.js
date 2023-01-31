@@ -47,9 +47,6 @@ export const Search = () => {
 
 
 
-
-
-
   ///////////////////////////////////////////////
   return (
     <section className='search-layout'>
@@ -63,7 +60,9 @@ export const Search = () => {
         {
           !versionDesktop ? (
             <header className='main__header-mobile'>
-              <p className='contador-resultados'>457 Resultados</p>
+              <p className='contador-resultados'>
+                457 Resultados
+              </p>
 
               <div className='contenedor-botones'>
                 <button
@@ -76,7 +75,8 @@ export const Search = () => {
           (
             <header className='main__header-desktop'>
               {/* numero de resultados */}
-              <p>457 Resultados</p>
+              <p className='contador-resultados'>585 Resultados</p>
+              
 
               {/* selector de como ordenar las tarjetas A-Z o Z-A */}
               <div className='selector-orden'>
@@ -91,31 +91,34 @@ export const Search = () => {
         }
 
 
-        {/* CONTENEDOR DE TARJETAS */}
-        <div className='main__contenedor-tarjetas'>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
-          <Tarjeta pais={miPais}/>
+        <div className='cuerpo'>
+          {/* CONTENEDOR DE TARJETAS */}
+          <div className='main__contenedor-tarjetas'>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+          </div>
+
+          {/* NAVEGACION DE PAGINAS */}
+
+          <Paginacion/>
+
         </div>
-
-        {/* NAVEGACION DE PAGINAS */}
-
-        <Paginacion/>
 
       </main>
 
