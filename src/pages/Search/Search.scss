@@ -182,7 +182,9 @@
     
     .main{
       &__header-desktop{
-        background-color: rgb(244, 244, 116);
+        background: #e7d493;
+        background: #c1b48d;
+        background: linear-gradient(-45deg, #c1b48d, #e7d493 );
       }
 
       &__contenedor-tarjetas{

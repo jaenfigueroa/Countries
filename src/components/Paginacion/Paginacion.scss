@@ -1,7 +1,12 @@
 .nav-paginas{
   // background-color: red;
   width: 100%;
-  padding: 6rem 2rem 0 2rem;
+
+  /* mobile */
+  padding: 2rem 2rem 4rem 2rem;
+
+  /* desktop */
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,6 +41,7 @@
   .nav-paginas{
     // background-color: green;
     gap: 2rem;
+    padding: 4rem 1rem 4rem 1rem;
 
     .contenedor-botones-juntos{
       gap: 1rem;
@@ -49,8 +55,8 @@
 
 @media (min-width: 1132px) {
   .nav-paginas{
-    gap: 2rem;
     gap: 1rem;
+    padding: 8rem 1rem 4rem 1rem;
 
     .contenedor-botones-juntos{
       gap: 1rem;

@@ -42,15 +42,26 @@
     border: none;
     color: black;
     border-radius: .5rem;
-    background: rgb(146, 146, 146);
-    background: rgb(215, 215, 215);
+    // background: rgb(146, 146, 146);
+    // background: rgb(215, 215, 215);
     color: white;
     margin: -1rem 1.7rem 1.5rem;
 
     // border: 1px solid gray;
     // background: white;
     // color: black;
+
+    background: #fff5d8;
+    background: #fffaea;
+    border: 1px solid gray;
+    color: black;
+
+
+    &:focus{
+      outline: 1px solid gray;
+    }
   }
+
   input::placeholder{
     color: white;
 
