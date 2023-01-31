@@ -45,8 +45,12 @@ export const Search = () => {
 
   // const [listaPaises, setListaPaises] = useState(traerListaPaises)
 
+  //ALTEERNAR OPCIONES EN MOBILE
+  const [opcionesVisibles, setOpcionesVisibles] = useState(false)
 
-
+  const mostrarOpcionesMobile = () => {
+    setOpcionesVisibles(!opcionesVisibles)
+  }
   ///////////////////////////////////////////////
   return (
     <section className='search-layout'>
@@ -56,19 +60,42 @@ export const Search = () => {
       {/* MAIN */}
       <main className='main'>
 
-        {/* HEADER */}
+        {/* HEADERS */}
         {
           !versionDesktop ? (
+            /* HEADER EN MOBILE */
             <header className='main__header-mobile'>
+
+              {/* NUMERO DE RESUTADOS */}
               <p className='contador-resultados'>
                 457 Resultados
               </p>
 
+              {/* CONTENEDOR DE BOTONES */}
               <div className='contenedor-botones'>
                 <button
                   className='boton'
-                  onClick={()=>mostrarAside(true)}>Filtrar</button>
-                <button className='boton'>Ordenar por</button>
+                  onClick={()=>mostrarAside(true)}>
+                  <i className="fa-solid fa-sliders"></i>
+                  Filtrar
+                </button>
+
+                <button className='boton' onClick={mostrarOpcionesMobile}>
+                  <i class="fa-solid fa-arrow-right-arrow-left flechas"></i>
+                  Ordenar por
+                </button>
+
+                {/* OPCIONES EN MOBILE */}
+                {
+                  opcionesVisibles && (
+                  <div className='contenedor-opciones'>
+                    <li>Nombre A-Z</li>
+                    <li>Nombre Z-A</li>
+                    <li>Area Ascendente</li>
+                    <li>Area Decendente</li>
+                  </div>
+                  )
+                }
               </div>
             </header>
           ) :
@@ -82,8 +109,10 @@ export const Search = () => {
               <div className='selector-orden'>
                 Ordenar por:
                 <select>
-                  <option>A-Z</option>
-                  <option>Z-A</option>
+                  <option>Nombre A-Z</option>
+                  <option>Nombre Z-A</option>
+                  <option>Area Ascendente</option>
+                  <option>Area Decendente</option>
                 </select>
               </div>
             </header>

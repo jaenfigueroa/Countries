@@ -13,11 +13,14 @@
     // background: hotpink;
     position: absolute;
     min-width: 280px;
-    // padding: 2rem;
+
     min-height: calc(100vh);
     top: 0px;
     z-index: 3;
     position: fixed;
+
+    overflow: scroll;
+    height: 100vh;
   }
 
   /* MAIN //////////////////////////////////////////////// */
@@ -51,6 +54,43 @@
         .boton{
           width: 50%;
           padding: .5rem 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          // font-size: 2rem;
+          font-size: 1.8rem;
+
+          i{
+            font-size: 2.4rem;
+            color: #333;
+
+            &.flechas{
+              // background-color: red;
+              transform: rotateZ(90deg);
+              font-size: 2rem;
+            }
+          }
+
+
+        }
+      }
+
+      /* CONTENEDOR DE OPCIONES */
+      .contenedor-opciones{
+        background-color: red;
+        position: absolute;
+        right: 5px;
+        top: 8rem;
+        border: 1px solid black;
+
+        li{
+          background: white;
+          padding: .5rem 1rem;
+
+          &:hover{
+            background-color: green;
+          }
         }
       }
     }
@@ -84,6 +124,8 @@
           padding: .45rem .5rem;
           border-radius: .5rem;
           outline: none;
+
+          position: relative;
         }
       }
     }
@@ -134,7 +176,8 @@
     .aside{
       position: initial;
       border-radius: .5rem;
-      min-height: calc(100vh - 7rem);
+      overflow: hidden;
+      height: 100%;
     }
     
     .main{
