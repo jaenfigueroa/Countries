@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Aside } from '../../components/Aside/Aside'
 import { Paginacion } from '../../components/Paginacion/Paginacion'
 import { Tarjeta } from '../../components/Tarjeta/Tarjeta'
+// import { traerListaPaises } from '../../helpers/traerListaPaises'
+// import { traerPaisbasico } from '../../helpers/traerPaisBasico'
 import { useAnchoPantalla } from '../../hooks/useAnchoPantalla'
 
 export const Search = () => {
@@ -39,15 +41,20 @@ export const Search = () => {
     img: 'https://flagcdn.com/ar.svg'
   }
   
+  //TRAER LISTA DE PAISES ////////////////////////////////////
+
+  // const [listaPaises, setListaPaises] = useState(traerListaPaises)
+
+
+
+
+
 
   ///////////////////////////////////////////////
-  
   return (
     <section className='search-layout'>
       {/* ASIDE */}
-      {
-        asideActivo && <Aside mostrarAside={mostrarAside}/>
-      }
+      { asideActivo && <Aside mostrarAside={mostrarAside}/> }
       
       {/* MAIN */}
       <main className='main'>

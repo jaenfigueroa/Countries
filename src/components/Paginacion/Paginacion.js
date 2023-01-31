@@ -47,7 +47,7 @@ export const Paginacion = ({numero=20, ultimo=42}) => {
           <>
             <Boton numero={1} numeroActual={numero}/>
             {
-              numero !== 4 && <i class="fa-solid fa-ellipsis icono-3puntos"></i> /* icono de 3 puntos */
+              numero !== 4 && <i className="fa-solid fa-ellipsis icono-3puntos"></i> /* icono de 3 puntos */
             }
           </>
         )
@@ -62,14 +62,14 @@ export const Paginacion = ({numero=20, ultimo=42}) => {
       </div>
 
       {
-        primerNumero <= ultimo - 6 && <i class="fa-solid fa-ellipsis icono-3puntos"></i> /* icono de 3 puntos */
+        primerNumero <= ultimo - 6 && <i className="fa-solid fa-ellipsis icono-3puntos"></i> /* icono de 3 puntos */
       }
 
       <Boton numero={ultimo} numeroActual={numero}/>
 
       {
         numero <= ultimo - 6 && (
-          <a className='boton-mover'>{palabras&&'Siguiente'}&nbsp;&nbsp;<i class="fa-solid fa-chevron-right"></i></a>
+          <a className='boton-mover'>{palabras&&'Siguiente'}&nbsp;&nbsp;<i className="fa-solid fa-chevron-right"></i></a>
         )
       }
       

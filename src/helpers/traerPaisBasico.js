@@ -1,13 +1,4 @@
-// export const traerPaisbasico = (nombre) => {
-//   console.log('nombre que llega:', nombre)
-  
-//   return fetch(`https://restcountries.com/v3.1/name/${nombre}`)
-//   .then((peticion) => peticion.json())
-//   .then((data) => armarPais(data[0]))
-//   .catch((error) => console.log(error))
-// }
-
-export const traerPaisbasico = async (nombre) => {
+export const traerPaisbasico = async (nombre='peru') => {
   console.log('nombre que llega:', nombre)
 
   try {
@@ -20,7 +11,6 @@ export const traerPaisbasico = async (nombre) => {
     console.log(error)
   }
 }
-
 
 ////////////////////////////////////////////////
 const armarPais = (data)=>{
@@ -35,8 +25,8 @@ const armarPais = (data)=>{
     area: data.area,
   }
 
-  // console.log('resultado:', paisFormado);
-
+  console.log(paisFormado)
+  
   return paisFormado
 }
 

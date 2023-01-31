@@ -1,11 +1,13 @@
 .aside{
   background: hotpink;
-  // background: #1a1919;
   display: flex;
   flex-direction: column;
   gap: .5rem;
   padding: 2rem;
   padding-top: 4.5rem;
+
+  max-width: 300px;
+  max-width: 320px;
 
   /* BOTON CERRAR */
   .boton-cerrar{
@@ -25,6 +27,62 @@
   .boton-cerrar:hover i{
     color: black;
   }
+
+  /* SEPARADOR HR */
+  hr{
+    margin:  .8rem 0 1.5rem;
+  }
+
+  /* TITULO */
+  .caja-titulo{
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+    margin-top: -5px;
+
+
+    & p:first-child{
+      // background-color: blue;
+    }
+
+    & p:last-child{
+      // background-color: green;
+      font-size: 2.5rem;
+      font-weight: 500;
+    }
+  }
+
+  .caja-de-filtros-aplicados{
+    // background: blue;
+
+    ul{
+      // background-color: greenyellow;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      li{
+        background: yellow;
+        padding: .3rem 1rem;
+        border: 1px solid black;
+        border-radius: .5rem;
+        display: flex;
+        gap: 1rem;
+
+        button{
+          padding: 0 .5rem;
+        }
+      }
+    }
+
+    .boton-clean{
+      background: none;
+      border: none;
+      padding: 1.5rem 0 0;
+    }
+  }
+
+
 }
 
 @media (min-width: 1024px) {
