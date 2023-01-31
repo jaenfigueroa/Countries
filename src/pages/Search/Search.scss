@@ -64,6 +64,7 @@
           border: none;
           border-left: 1px solid gray;
           border-top: 1px solid gray;
+          border-bottom: 1px solid gray;
 
           i{
             font-size: 2.4rem;
@@ -84,8 +85,9 @@
       .contenedor-opciones{
         background-color: red;
         position: absolute;
-        right: 5px;
+        right: 0px;
         top: 8rem;
+        top: 7.2rem;
         border: 1px solid black;
 
         li{
