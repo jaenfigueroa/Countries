@@ -35,10 +35,12 @@ export const Search = () => {
   //INFORMACION PROV DE UN PAIS //////////////////////////////
   const miPais = {
     nombre: 'Argentina',
-    capital: 'Buenos Aires',
-    area: 1544,
+    img: 'https://flagcdn.com/ar.svg',
     continente: 'America',
-    img: 'https://flagcdn.com/ar.svg'
+    capital: 'Buenos Aires',
+    area: 2.78,
+    idioma: 'Español',
+    moneda: 'Pesos argentinos'
   }
   
   //TRAER LISTA DE PAISES ////////////////////////////////////
