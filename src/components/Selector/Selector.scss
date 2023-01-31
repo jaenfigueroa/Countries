@@ -43,11 +43,18 @@
     color: black;
     border-radius: .5rem;
     background: rgb(146, 146, 146);
+    background: rgb(215, 215, 215);
     color: white;
     margin: -1rem 1.7rem 1.5rem;
+
+    // border: 1px solid gray;
+    // background: white;
+    // color: black;
   }
   input::placeholder{
     color: white;
+
+    color: black;
   }
   .buscador::placeholder{
     color: black;
