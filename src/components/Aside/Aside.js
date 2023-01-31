@@ -8,7 +8,7 @@ export const Aside = ({mostrarAside}) => {
     /* SELECTORES POR SELECCION */
     {
       titulo: 'Nombre',
-      opciones: ['peru', 'chile', 'argentina'],
+      opciones: ['peru', 'chile', 'argentina','peru', 'chile', 'argentina','peru', 'chile', 'argentina'],
     },
     {
       titulo: 'Nombre Completo',
