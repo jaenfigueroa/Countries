@@ -28,7 +28,7 @@ export const Paginacion = ({numero=20, ultimo=42}) => {
     //defecto
     else setPrimerNumero(numero - 2)
 
-  }, [numero])
+  }, [numero, ultimo])
 
 
 
@@ -38,7 +38,7 @@ export const Paginacion = ({numero=20, ultimo=42}) => {
 
       {
         numero > 4 && (
-          <a className='boton-mover'><i className="fa-solid fa-chevron-left"></i>&nbsp;&nbsp;{palabras&&'Anterior'}</a>
+          <p className='boton-mover'><i className="fa-solid fa-chevron-left"></i>&nbsp;&nbsp;{palabras&&'Anterior'}</p>
         )
       }
 
@@ -69,7 +69,7 @@ export const Paginacion = ({numero=20, ultimo=42}) => {
 
       {
         numero <= ultimo - 6 && (
-          <a className='boton-mover'>{palabras&&'Siguiente'}&nbsp;&nbsp;<i className="fa-solid fa-chevron-right"></i></a>
+          <p className='boton-mover'>{palabras&&'Siguiente'}&nbsp;&nbsp;<i className="fa-solid fa-chevron-right"></i></p>
         )
       }
       
