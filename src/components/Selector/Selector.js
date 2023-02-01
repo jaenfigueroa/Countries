@@ -9,7 +9,7 @@ export const Selector = ({elemento, agregarEtiqueta, quitarEtiqueta}) => {
   const abrirCaja = ()=> setBotonActivo(!botonActivo)
 
   //MANEJAR LOS ELEMENTOS A MOSTRAR - FILTRADO /////////////////
-  const [lista, setLista] = useState(elemento.opciones)
+  const [lista] = useState(elemento.opciones)
 
   // const filtrarOpciones = (evento)=>{
 
