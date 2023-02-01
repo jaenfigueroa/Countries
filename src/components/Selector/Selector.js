@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const Selector = ({elemento}) => {
+export const Selector = ({elemento, agregarEtiqueta, quitarEtiqueta}) => {
 
   // console.log(elemento)
 
@@ -21,6 +21,19 @@ export const Selector = ({elemento}) => {
     // console.log(resultados)
     setLista(resultados)
   } 
+
+
+  //VERIFICAR EL CHECKBOX
+  const verificarCheckbox = (evento) =>{
+    // console.log(evento.target.checked);
+    // console.log(evento.target.name) 
+
+    if (evento.target.checked) {
+      agregarEtiqueta('pais', evento.target.name)
+    } else{
+      quitarEtiqueta(evento.target.name)
+    }
+  }
 
   /////////////////////////////////////////////////
   return (
@@ -50,7 +63,7 @@ export const Selector = ({elemento}) => {
               lista.map((x, index) =>(
                 x && (
                   <label key={index}>
-                    <input type="checkbox" value="opcion1"/>{x}
+                    <input type="checkbox" value="opcion1" onChange={verificarCheckbox} name={x}/>{x}
                   </label>
                 )
               ))

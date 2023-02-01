@@ -6,6 +6,7 @@
   padding: 2rem;
   padding-top: 4.5rem;
   width: 320px;
+  min-width: 300px;
   min-height: 100vh;
   // background: hotpink;
 
@@ -97,6 +98,9 @@
   .aside{
 
     padding-top: 2rem;
+    width: 440px;
+    min-width: 440px;
+    max-width: 440px;
 
     /* BOTON CERRAR */
     .boton-cerrar{

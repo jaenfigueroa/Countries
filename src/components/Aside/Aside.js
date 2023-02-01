@@ -46,9 +46,9 @@ export const Aside = ({mostrarAside}) => {
   
 
   //AGREGAR UNA ETIQUETA NUEVA
-  // const agragarEtiqueta = (tipo, valor)=>{
-  //   setEtiquetas([...etiquetas, {tipo, valor}])
-  // }
+  const agregarEtiqueta = (tipo, valor)=>{
+    setEtiquetas([...etiquetas, {tipo, valor}])
+  }
 
   //QUITAR UAN ETIQUETA DE LA LISTA
   const quitarEtiqueta = (valor) =>{
@@ -89,9 +89,9 @@ export const Aside = ({mostrarAside}) => {
           <div className='caja-de-filtros-aplicados'>
             <ul>
               {
-                etiquetas.map(x => {
+                etiquetas.map((x, index) => {
                   return (
-                    <li>{x.valor} <button onClick={()=>quitarEtiqueta(x.valor)}><i className="fa-solid fa-x"></i></button></li>
+                    <li key={index}>{x.valor} <button onClick={()=>quitarEtiqueta(x.valor)}><i className="fa-solid fa-x" ></i></button></li>
                   )
                 })
               }
@@ -107,7 +107,7 @@ export const Aside = ({mostrarAside}) => {
 
       {/* CAJA 3 - CONTENEDOR DE TODOS LOS SELECTORES */}
       { 
-        selectores && selectores.map(x => <Selector elemento={x} key={x.titulo}/>)
+        selectores && selectores.map(x => <Selector elemento={x} key={x.titulo} agregarEtiqueta={agregarEtiqueta} quitarEtiqueta={quitarEtiqueta}/>)
       }
 
     </aside>
