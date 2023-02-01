@@ -1,17 +1,11 @@
 .aside{
-  background: #f8e8b5;
-  background: #e7d493;
   background: linear-gradient(-45deg, #c1b48d, #e7d493 );
   display: flex;
   flex-direction: column;
   gap: .5rem;
-  // gap: .6rem;
   padding: 2rem;
   padding-top: 4.5rem;
-
-  max-width: 300px;
-  max-width: 320px;
-
+  width: 320px;
   min-height: 100vh;
   // background: hotpink;
 
@@ -40,7 +34,6 @@
     margin:  1rem 0 1.8rem;
     border: none;
     border-top: 1px solid #fff0bd;
-    // border-top: 1px solid #fff6d8;
   }
 
   /* TITULO */

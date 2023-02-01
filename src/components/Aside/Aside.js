@@ -58,6 +58,10 @@ export const Aside = ({mostrarAside}) => {
     setEtiquetas(resultado)
   }
 
+  //QUITAR TODAS LAS ETIQUETAS DE UN SOLO CLICK
+  const eliminarEtiquetas = () =>{
+    setEtiquetas([])
+  }
   
   ///////////////////////////////////
   return (
@@ -74,22 +78,30 @@ export const Aside = ({mostrarAside}) => {
         <p>Categorias</p>
       </div>
       
-      <hr/>
       
       {/* CAJA 2 - CONTENEDOR DE FILTROS APLICADOS */}
-      <div className='caja-de-filtros-aplicados'>
-        <ul>
-          {
-            etiquetas.map(x => {
-              return (
-                <li>{x.valor} <button onClick={()=>quitarEtiqueta(x.valor)}><i className="fa-solid fa-x"></i></button></li>
-              )
-            })
-          }
-        </ul>
-        
-        <button className='boton-clean'>Borrar filtros</button>
-      </div>
+
+      {
+        etiquetas.length > 0 && (
+          <>
+          <hr/>
+
+          <div className='caja-de-filtros-aplicados'>
+            <ul>
+              {
+                etiquetas.map(x => {
+                  return (
+                    <li>{x.valor} <button onClick={()=>quitarEtiqueta(x.valor)}><i className="fa-solid fa-x"></i></button></li>
+                  )
+                })
+              }
+            </ul>
+            
+            <button className='boton-clean' onClick={eliminarEtiquetas}>Borrar filtros</button>
+          </div>
+          </>
+        )
+      }
 
       <hr/>
 
