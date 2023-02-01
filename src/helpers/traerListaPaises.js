@@ -32,10 +32,10 @@ export const traerListaPaises = async () => {
     //   titulo: 'codigo de pais',
     //   opciones: obtenerCodigos(data).sort()
     // },
-    {
-      titulo: 'codigo Telefonico',
-      opciones: obtenerCodigosTelefono(data).sort()
-    },
+    // {
+    //   titulo: 'codigo Telefonico',
+    //   opciones: obtenerCodigosTelefono(data).sort()
+    // },
   ]
 
   // console.log(resultadoFinal)
@@ -118,40 +118,40 @@ const obtenerMonedas = (array) => {
 
 
 //OBTENER LISTA DE CODIGOS DE TELFONO
-const obtenerCodigosTelefono = (array)=>{
+// const obtenerCodigosTelefono = (array)=>{
 
-  let resultado = array.map(x => {
+//   let resultado = array.map(x => {
 
-    let informacion = x.idd
+//     let informacion = x.idd
 
-    let prefijo = ''
-    let sufijo = ''
+//     let prefijo = ''
+//     let sufijo = ''
 
-    if (informacion.suffixes !== undefined && informacion.root !== undefined) {
+//     if (informacion.suffixes !== undefined && informacion.root !== undefined) {
 
-      /* prefijo */
-      prefijo = informacion.root
+//       /* prefijo */
+//       prefijo = informacion.root
 
-      /* sufijo */
+//       /* sufijo */
 
-      let listaSufijos = informacion.suffixes
-      // console.log(listaSufijos)
+//       let listaSufijos = informacion.suffixes
+//       // console.log(listaSufijos)
 
-      sufijo = listaSufijos[0]
-    }
+//       sufijo = listaSufijos[0]
+//     }
 
-    if (prefijo && sufijo) {
-      return prefijo + sufijo 
-    } else {
-      return ''
-    }
+//     if (prefijo && sufijo) {
+//       return prefijo + sufijo 
+//     } else {
+//       return ''
+//     }
 
-  })
+//   })
 
-  let resultadoFinal = resultado.filter(x => x !== undefined)
+//   let resultadoFinal = resultado.filter(x => x !== undefined)
 
-  return [...new Set(resultadoFinal)]
-}
+//   return [...new Set(resultadoFinal)]
+// }
 
 //OBTENER LISTA DE NOMBRES DE LOS PAISES
 const obtenerNombres = (array) => {

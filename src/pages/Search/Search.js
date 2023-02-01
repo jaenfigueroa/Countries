@@ -41,7 +41,7 @@ export const Search = () => {
     area: 2.78,
     idioma: 'Español',
     moneda: 'Pesos argentinos',
-    codigo: '+544',
+    // codigo: '+544',
   }
   
   //TRAER LISTA DE PAISES ////////////////////////////////////
@@ -127,12 +127,6 @@ export const Search = () => {
         <div className='cuerpo'>
           {/* CONTENEDOR DE TARJETAS */}
           <div className='main__contenedor-tarjetas'>
-            <Tarjeta pais={miPais}/>
-            <Tarjeta pais={miPais}/>
-            <Tarjeta pais={miPais}/>
-            <Tarjeta pais={miPais}/>
-            <Tarjeta pais={miPais}/>
-            <Tarjeta pais={miPais}/>
             <Tarjeta pais={miPais}/>
             <Tarjeta pais={miPais}/>
             <Tarjeta pais={miPais}/>
