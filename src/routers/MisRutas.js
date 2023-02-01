@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter, Routes, Route, Navigate} from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import { Header } from '../components/Header/Header'
 import { Footer } from '../components/Footer/Footer'
 import { Search } from '../pages/Search/Search'
@@ -11,7 +11,7 @@ export const MisRutas = () => {
 
   ///////////////////////////////////////////
   return (
-    <HashRouter>
+    <BrowserRouter>
 
       {/* HEADER Y NAVEGACION */}
       <Header/>
@@ -33,6 +33,6 @@ export const MisRutas = () => {
       <Footer/>
 
 
-    </HashRouter>
+    </BrowserRouter>
   )
 }
