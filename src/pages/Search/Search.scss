@@ -183,6 +183,8 @@
       border-radius: .5rem;
       overflow: hidden;
       height: 100%;
+      height: max-content;
+      // min-height: max-content; /* PROV */
     }
     
     .main{

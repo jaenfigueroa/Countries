@@ -21,18 +21,25 @@ export const Selector = ({elemento}) => {
         <article className='caja'>
 
           {/* INPUT PARA FILTRAR */}
-          <input
-            className='input'
-            type="text"
-            placeholder='Buscar' />
+
+          {/* {
+            elemento.opciones.length > 6 && ( */}
+              <input
+                className='input'
+                type="text"
+                placeholder='Buscar' />
+            {/* )
+          } */}
 
           {/* CONTENEDOR DE OPCIONES */}
           <div className='contenedor-opciones'>
             {
               elemento.opciones.map(x =>(
-                <label>
-                  <input type="checkbox" value="opcion1"/>{x}
-                </label>
+                x && (
+                  <label>
+                    <input type="checkbox" value="opcion1"/>{x}
+                  </label>
+                )
               ))
             }
           </div>

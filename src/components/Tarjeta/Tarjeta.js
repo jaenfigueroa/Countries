@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Tarjeta = ({pais}) => {
 
-  const {img, nombre, continente, capital, area, idioma, moneda} = pais
+  const {img, nombre, continente, capital, idioma, moneda, area} = pais
 
   return (
     <article className='search__tarjeta'>
@@ -14,9 +14,9 @@ export const Tarjeta = ({pais}) => {
         <h3 className='tarjeta__nombre'>{nombre}</h3>
         <p><strong>Continente</strong>: {continente}</p> 
         <p><strong>Capital</strong>: {capital}</p> 
-        <p><strong>Area</strong>: {area}M km<sup>2</sup></p>
         <p><strong>Idioma</strong>: {idioma}</p>
         <p><strong>Moneda</strong>: {moneda}</p>
+        <p><strong>Area</strong>: {area}M km<sup>2</sup></p>
       </div>
 
       {/* ADORNOS */}

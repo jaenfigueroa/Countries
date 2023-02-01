@@ -1,55 +1,21 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Selector } from '../Selector/Selector'
+import {traerListaPaises} from '../../helpers/traerListaPaises'
 
 export const Aside = ({mostrarAside}) => {
 
+  const [selectores, setSelectores] = useState([])
 
-  const selectores = [
-    /* SELECTORES POR SELECCION */
-    {
-      titulo: 'Nombre',
-      opciones: ['Peru', 'Chile', 'Argentina','Peru', 'Chile', 'Argentina','Peru', 'Chile', 'Argentina'],
-    },
-    {
-      titulo: 'Nombre Completo',
-      opciones: ['Republica del peru', 'Republica de argetina', 'Republica de Chile'],
-    },
-    {
-      titulo: 'Codigo de pais',
-      opciones: ['PE - peru', 'CH - Chile', 'AR - Argentina'],
-    },
-    {
-      titulo: 'Ciudad Capital',
-      opciones: ['Lima - Peru', 'Santiago - Chile', 'Buenos Aires - Argetina'],
-    },
-    {
-      titulo: 'Codigo de telefono',
-      opciones: ['51 - Peru', '56 - Chile', '565 - Argentina'],
-    },
+  useEffect(() => {
+    
+    const traer = async()=>{
+      let data = await traerListaPaises()
+      setSelectores(data)
+    }
+    traer()
 
-    /* SELECTORES CON CHECKBOX Y BUSCADOR */
-    {
-      titulo: 'Region',
-      opciones: ['America', 'africa', 'europa', 'oceania']
-    },
-    {
-      titulo: 'Subregion',
-      opciones: ['America del norte', 'america del sur', 'america del centro']
-    },
-    {
-      titulo: 'idioma',
-      opciones: ['Español', 'Ingles', 'Portugues']
-    },
-    {
-      titulo: 'Moneda',
-      opciones: ['Nuevo sol', 'Dolar', 'Euro', 'Pesos chilenos']
-    },
-    {
-      titulo: 'Bloque regional',
-      opciones: ['union europea', 'union africana', 'union oceanica']
-    },
-  ]
-
+  }, [])
+  
   ///////////////////////////////////
   return (
     <aside className='aside'>
@@ -83,7 +49,11 @@ export const Aside = ({mostrarAside}) => {
       <hr/>
 
       {/* CAJA 3 - CONTENEDOR DE TODOS LOS SELECTORES */}
-      { selectores.map(x => <Selector elemento={x} key={x.titulo}/>) }
+      { 
+
+        selectores && selectores.map(x => <Selector elemento={x} key={x.titulo}/>)
+      
+      }
 
     </aside>
   )

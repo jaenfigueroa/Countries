@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Aside } from '../../components/Aside/Aside'
 import { Paginacion } from '../../components/Paginacion/Paginacion'
 import { Tarjeta } from '../../components/Tarjeta/Tarjeta'
-// import { traerListaPaises } from '../../helpers/traerListaPaises'
+import { traerListaPaises } from '../../helpers/traerListaPaises'
 // import { traerPaisbasico } from '../../helpers/traerPaisBasico'
 import { useAnchoPantalla } from '../../hooks/useAnchoPantalla'
 
@@ -45,7 +45,8 @@ export const Search = () => {
   
   //TRAER LISTA DE PAISES ////////////////////////////////////
 
-  // const [listaPaises, setListaPaises] = useState(traerListaPaises)
+  const [listaPaises, setListaPaises] = useState(traerListaPaises)
+
 
   //ALTEERNAR OPCIONES EN MOBILE
   const [opcionesVisibles, setOpcionesVisibles] = useState(false)
@@ -83,7 +84,7 @@ export const Search = () => {
                 </button>
 
                 <button className='boton' onClick={mostrarOpcionesMobile}>
-                  <i class="fa-solid fa-arrow-right-arrow-left flechas"></i>
+                  <i className="fa-solid fa-arrow-right-arrow-left flechas"></i>
                   Ordenar por
                 </button>
 
@@ -125,6 +126,15 @@ export const Search = () => {
         <div className='cuerpo'>
           {/* CONTENEDOR DE TARJETAS */}
           <div className='main__contenedor-tarjetas'>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
+            <Tarjeta pais={miPais}/>
             <Tarjeta pais={miPais}/>
             <Tarjeta pais={miPais}/>
             <Tarjeta pais={miPais}/>

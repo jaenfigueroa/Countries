@@ -1,5 +1,4 @@
 .aside{
-  background: hotpink;
   background: #f8e8b5;
   background: #e7d493;
   background: linear-gradient(-45deg, #c1b48d, #e7d493 );
@@ -12,6 +11,9 @@
 
   max-width: 300px;
   max-width: 320px;
+
+  min-height: 100vh;
+  background: hotpink;
 
   /* BOTON CERRAR */
   .boton-cerrar{
