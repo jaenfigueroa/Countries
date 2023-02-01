@@ -46,9 +46,9 @@ export const Aside = ({mostrarAside}) => {
   
 
   //AGREGAR UNA ETIQUETA NUEVA
-  const agragarEtiqueta = (tipo, valor)=>{
-    setEtiquetas([...etiquetas, {tipo, valor}])
-  }
+  // const agragarEtiqueta = (tipo, valor)=>{
+  //   setEtiquetas([...etiquetas, {tipo, valor}])
+  // }
 
   //QUITAR UAN ETIQUETA DE LA LISTA
   const quitarEtiqueta = (valor) =>{
@@ -95,9 +95,7 @@ export const Aside = ({mostrarAside}) => {
 
       {/* CAJA 3 - CONTENEDOR DE TODOS LOS SELECTORES */}
       { 
-
         selectores && selectores.map(x => <Selector elemento={x} key={x.titulo}/>)
-      
       }
 
     </aside>
