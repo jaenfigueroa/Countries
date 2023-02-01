@@ -74,8 +74,7 @@ export const Selector = ({elemento, agregarEtiqueta, quitarEtiqueta}) => {
       </button>
 
       {/* CONTENIDO */}
-      {botonActivo && (
-        <article className='caja'>
+      <article className='caja' style={{ display: botonActivo ? "flex" : "none" }}>
 
           {/* INPUT PARA FILTRAR */}
           <input
@@ -99,7 +98,6 @@ export const Selector = ({elemento, agregarEtiqueta, quitarEtiqueta}) => {
             }
           </div>
         </article>
-      )}
 
     </div>
   )
