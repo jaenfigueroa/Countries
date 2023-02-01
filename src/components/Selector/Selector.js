@@ -21,15 +21,12 @@ export const Selector = ({elemento}) => {
         <article className='caja'>
 
           {/* INPUT PARA FILTRAR */}
+          <input
+            className='input'
+            type="text"
+            placeholder='Buscar'/>
 
-          {/* {
-            elemento.opciones.length > 6 && ( */}
-              <input
-                className='input'
-                type="text"
-                placeholder='Buscar' />
-            {/* )
-          } */}
+          <p className='numero'>{elemento.opciones.length}</p>
 
           {/* CONTENEDOR DE OPCIONES */}
           <div className='contenedor-opciones'>

@@ -33,7 +33,7 @@ export const traerListaPaises = async () => {
       opciones: obtenerCodigos(data).sort()
     },
     {
-      titulo: 'codigos Telefonico',
+      titulo: 'codigo Telefonico',
       opciones: obtenerCodigosTelefono(data).sort()
     },
   ]
