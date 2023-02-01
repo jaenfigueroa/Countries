@@ -54,13 +54,23 @@ export const Aside = ({mostrarAside}) => {
   const quitarEtiqueta = (valor) =>{
 
     let resultado = etiquetas.filter(x => x.valor !== valor)
-
     setEtiquetas(resultado)
+
+    //quitar el check del elemento
+    // Obtener el elemento checkbox con el nombre específico
+    const checkbox = document.querySelector(`input[type="checkbox"][name=${valor}]`);
+    checkbox.checked =  false
   }
 
   //QUITAR TODAS LAS ETIQUETAS DE UN SOLO CLICK
   const eliminarEtiquetas = () =>{
     setEtiquetas([])
+
+    const elementos = document.querySelectorAll(`input[type="checkbox"]`);
+
+    elementos.forEach(x =>{
+      x.checked = false
+    })
   }
   
   ///////////////////////////////////

@@ -9,13 +9,11 @@ export const Selector = ({elemento, agregarEtiqueta, quitarEtiqueta}) => {
   const abrirCaja = ()=> setBotonActivo(!botonActivo)
 
   //MANEJAR LOS ELEMENTOS A MOSTRAR - FILTRADO
-
   const [lista, setLista] = useState(elemento.opciones)
 
   const filtrarOpciones = (evento)=>{
 
     let busqueda = evento.target.value.toLowerCase()
-
     let resultados = elemento.opciones.filter(x => x.includes(busqueda))
 
     // console.log(resultados)
@@ -23,13 +21,13 @@ export const Selector = ({elemento, agregarEtiqueta, quitarEtiqueta}) => {
   } 
 
 
-  //VERIFICAR EL CHECKBOX
-  const verificarCheckbox = (evento) =>{
+  //VERIFICAR EL CHECKBOX - AGREGAR O QUITAR ETIQUETA AL HACE CLICK EN EL CHECKBOX
+  const verificarCheckbox = (evento, tipo) =>{
     // console.log(evento.target.checked);
     // console.log(evento.target.name) 
 
     if (evento.target.checked) {
-      agregarEtiqueta('pais', evento.target.name)
+      agregarEtiqueta(tipo, evento.target.name)
     } else{
       quitarEtiqueta(evento.target.name)
     }
@@ -63,7 +61,7 @@ export const Selector = ({elemento, agregarEtiqueta, quitarEtiqueta}) => {
               lista.map((x, index) =>(
                 x && (
                   <label key={index}>
-                    <input type="checkbox" value="opcion1" onChange={verificarCheckbox} name={x}/>{x}
+                    <input type="checkbox" value="opcion1" onChange={(e)=>verificarCheckbox(e, x.tipo)} name={x}/>{x}
                   </label>
                 )
               ))
