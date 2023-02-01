@@ -7,23 +7,23 @@ export const traerListaPaises = async () => {
 
   let resultadoFinal = [
     {
-      titulo: 'nombre',
+      titulo: 'paises',
       opciones: obtenerNombres(data).sort()
     },
     {
-      titulo: 'continente',
+      titulo: 'continentes',
       opciones: obtenerContinentes(data).sort()
     },
     {
-      titulo: 'capital',
+      titulo: 'capitales',
       opciones: obtenerCapitales(data).sort()
     },
     {
-      titulo: 'idioma',
+      titulo: 'idiomas',
       opciones: obtenerIdiomas(data).sort()
     },
     {
-      titulo: 'moneda',
+      titulo: 'monedas',
       opciones: obtenerMonedas(data).sort()
     },
 
@@ -38,7 +38,7 @@ export const traerListaPaises = async () => {
     },
   ]
 
-  console.log(resultadoFinal)
+  // console.log(resultadoFinal)
 
   return resultadoFinal
 }
@@ -53,7 +53,7 @@ export const traerListaPaises = async () => {
 const obtenerCapitales= (array) => {
   return array.map(x => {
     if (x.capital) {
-      return x.capital[0] 
+      return x.capital[0].toLowerCase() 
     } else{
       return ''
     }
@@ -63,7 +63,7 @@ const obtenerCapitales= (array) => {
 
 //OBTENER LA LISTA DE CONTINENTES /////////////////////
 const obtenerContinentes = (array) => {
-  let resultados = array.map(x => x = x.region)
+  let resultados = array.map(x => x = x.region.toLowerCase())
 
   return [...new Set(resultados)]
 }
@@ -90,7 +90,7 @@ const obtenerIdiomas = (array) => {
   
   for (const key in resultadoFinal) {
     
-    let primerValor = Object.values(resultadoFinal[key])[0]
+    let primerValor = Object.values(resultadoFinal[key])[0].toLowerCase()
 
     x = [...x, primerValor]
   }
@@ -109,7 +109,8 @@ const obtenerMonedas = (array) => {
   for (const key in resultadoFinal) {
     
     let primerValor = Object.values(resultadoFinal[key])[0]
-    x = [...x, primerValor.name]
+
+    x = [...x, primerValor.name.toLowerCase()]
   }
 
   return [...new Set(x)]
@@ -155,6 +156,6 @@ const obtenerCodigosTelefono = (array)=>{
 //OBTENER LISTA DE NOMBRES DE LOS PAISES
 const obtenerNombres = (array) => {
 
-  return array.map(x => x.name.common)
+  return array.map(x => x.name.common.toLowerCase())
   // return array.map(x => x.name.common + ' - ' + x.altSpellings[0])
 }

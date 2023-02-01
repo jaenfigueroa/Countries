@@ -15,6 +15,49 @@ export const Aside = ({mostrarAside}) => {
     traer()
 
   }, [])
+
+  //MANEJAR LAS ETIQUETAS AGREGADAS PARA HACER EL FITRADO
+  const [etiquetas, setEtiquetas] = useState([
+    {
+      tipo: 'continente',
+      valor: 'America'
+    },
+    {
+      tipo: 'continente',
+      valor: 'Oceania'
+    },
+    {
+      tipo: 'idioma',
+      valor: 'Español'
+    },
+    {
+      tipo: 'idioma',
+      valor: 'Ingles'
+    },
+    {
+      tipo: 'moneda',
+      valor: 'sol peruano'
+    },
+    {
+      tipo: 'moneda',
+      valor: 'euro'
+    }
+  ])
+  
+
+  //AGREGAR UNA ETIQUETA NUEVA
+  const agragarEtiqueta = (tipo, valor)=>{
+    setEtiquetas([...etiquetas, {tipo, valor}])
+  }
+
+  //QUITAR UAN ETIQUETA DE LA LISTA
+  const quitarEtiqueta = (valor) =>{
+
+    let resultado = etiquetas.filter(x => x.valor !== valor)
+
+    setEtiquetas(resultado)
+  }
+
   
   ///////////////////////////////////
   return (
@@ -36,11 +79,13 @@ export const Aside = ({mostrarAside}) => {
       {/* CAJA 2 - CONTENEDOR DE FILTROS APLICADOS */}
       <div className='caja-de-filtros-aplicados'>
         <ul>
-          <li>Luna <button><i className="fa-solid fa-x"></i></button></li>
-          <li>Sol <button><i className="fa-solid fa-x"></i></button></li>
-          <li>estrellas <button><i className="fa-solid fa-x"></i></button></li>
-          <li>Galaxia <button><i className="fa-solid fa-x"></i></button></li>
-          <li>Meteoritos <button><i className="fa-solid fa-x"></i></button></li>
+          {
+            etiquetas.map(x => {
+              return (
+                <li>{x.valor} <button onClick={()=>quitarEtiqueta(x.valor)}><i className="fa-solid fa-x"></i></button></li>
+              )
+            })
+          }
         </ul>
         
         <button className='boton-clean'>Borrar filtros</button>
