@@ -13,7 +13,7 @@ export const Selector = ({elemento}) => {
       
       {/* BOTON PARA ABRIR */}
       <button className='boton' onClick={abrirCaja}>
-        {elemento.titulo} <i className={`fa-solid fa-chevron-down ${botonActivo&&'boton--abierto'}`}/>
+        {elemento.titulo + ` (${elemento.opciones.length})`} <i className={`fa-solid fa-chevron-down ${botonActivo&&'boton--abierto'}`}/>
       </button>
 
       {/* CONTENIDO */}
