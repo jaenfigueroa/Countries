@@ -33,7 +33,7 @@ export const Selector = ({elemento, agregarEtiqueta, quitarEtiqueta}) => {
     //TRAER UN ARRAY DE LOS INPUT CHECKBOX
     // console.log(elemento.titulo)
     
-    const resultados = document.querySelectorAll(`label`)
+    const resultados = document.querySelectorAll(`.contenedor-opciones[name=${elemento.titulo}] label`)
     
     // console.log(resultados);
     
