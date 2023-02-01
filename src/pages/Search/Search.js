@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Aside } from '../../components/Aside/Aside'
 import { Paginacion } from '../../components/Paginacion/Paginacion'
 import { Tarjeta } from '../../components/Tarjeta/Tarjeta'
-import { traerListaPaises } from '../../helpers/traerListaPaises'
+// import { traerListaPaises } from '../../helpers/traerListaPaises'
 // import { traerPaisbasico } from '../../helpers/traerPaisBasico'
 import { useAnchoPantalla } from '../../hooks/useAnchoPantalla'
 
@@ -40,12 +40,13 @@ export const Search = () => {
     capital: 'Buenos Aires',
     area: 2.78,
     idioma: 'Español',
-    moneda: 'Pesos argentinos'
+    moneda: 'Pesos argentinos',
+    codigo: '+544',
   }
   
   //TRAER LISTA DE PAISES ////////////////////////////////////
 
-  const [listaPaises, setListaPaises] = useState(traerListaPaises)
+  // const [listaPaises, setListaPaises] = useState(traerListaPaises)
 
 
   //ALTEERNAR OPCIONES EN MOBILE

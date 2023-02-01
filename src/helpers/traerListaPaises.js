@@ -28,10 +28,10 @@ export const traerListaPaises = async () => {
     },
 
     /* EN DUDA SI DEJAR O NO */
-    {
-      titulo: 'codigo de pais',
-      opciones: obtenerCodigos(data).sort()
-    },
+    // {
+    //   titulo: 'codigo de pais',
+    //   opciones: obtenerCodigos(data).sort()
+    // },
     {
       titulo: 'codigo Telefonico',
       opciones: obtenerCodigosTelefono(data).sort()
@@ -45,10 +45,9 @@ export const traerListaPaises = async () => {
 
 
 //OBTENER LA LISTA DE FLAGS (PE, AR, CO, BO) /////////////////////
-const obtenerCodigos = (array) => {
-  // return array.map(x => x = x.flag)
-  return array.map(x => x = x.altSpellings[0])
-}
+// const obtenerCodigos = (array) => {
+//   return array.map(x => x = x.altSpellings[0])
+// }
 
 //OBTENER DE LAS CIUDADES CAPITALES //////////////////////////////
 const obtenerCapitales= (array) => {
@@ -157,4 +156,5 @@ const obtenerCodigosTelefono = (array)=>{
 const obtenerNombres = (array) => {
 
   return array.map(x => x.name.common)
+  // return array.map(x => x.name.common + ' - ' + x.altSpellings[0])
 }
