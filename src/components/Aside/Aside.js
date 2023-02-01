@@ -18,30 +18,14 @@ export const Aside = ({mostrarAside}) => {
 
   //MANEJAR LAS ETIQUETAS AGREGADAS PARA HACER EL FITRADO
   const [etiquetas, setEtiquetas] = useState([
-    {
-      tipo: 'continente',
-      valor: 'America'
-    },
-    {
-      tipo: 'continente',
-      valor: 'Oceania'
-    },
-    {
-      tipo: 'idioma',
-      valor: 'Español'
-    },
-    {
-      tipo: 'idioma',
-      valor: 'Ingles'
-    },
-    {
-      tipo: 'moneda',
-      valor: 'sol peruano'
-    },
-    {
-      tipo: 'moneda',
-      valor: 'euro'
-    }
+    // {
+    //   tipo: 'continente',
+    //   valor: 'America'
+    // },
+    // {
+    //   tipo: 'continente',
+    //   valor: 'Oceania'
+    // },
   ])
   
 

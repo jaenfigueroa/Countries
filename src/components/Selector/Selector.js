@@ -8,11 +8,11 @@ export const Selector = ({elemento, agregarEtiqueta, quitarEtiqueta}) => {
 
   const abrirCaja = ()=> setBotonActivo(!botonActivo)
 
-  //MANEJAR LOS ELEMENTOS A MOSTRAR - FILTRADO
+  //MANEJAR LOS ELEMENTOS A MOSTRAR - FILTRADO ////////////////
   const [lista, setLista] = useState(elemento.opciones)
+  
 
   const filtrarOpciones = (evento)=>{
-
     let busqueda = evento.target.value.toLowerCase()
     let resultados = elemento.opciones.filter(x => x.includes(busqueda))
 
