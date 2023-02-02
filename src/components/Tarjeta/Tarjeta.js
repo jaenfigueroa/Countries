@@ -18,9 +18,14 @@ export const Tarjeta = ({pais}) => {
         <p><strong>Capital</strong>: {capital}</p> 
         <p><strong>Idiomas</strong>: {idioma}</p>
         <p><strong>Moneda</strong>: {moneda}</p>
-        <p><strong>Area</strong>: {area} km<sup>2</sup></p>
+        <p><strong>Area</strong>: {formatearNumero(area)} km<sup>2</sup></p>
       </div>
 
     </article>
   )
+}
+
+//FORMATAER UMEROS GRANDE POR ESPACIOSN CADA 3 CIFRAS
+const formatearNumero = (numero)=>{
+  return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }

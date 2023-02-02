@@ -79,31 +79,34 @@ const ordenarZA = (lista)=>{
 //ORDENAR POR AREA ASCENDENTE//////////////
 const ordenarAreaAscendente = (lista)=>{
 
-  return lista.sort((a, b) => {
-    if (a.area < b.area) {
-      return -1
-    }
-    if (a.area > b.area) {
-      return 1
-    }
-    return 0
-  })
+  // return lista.sort((a, b) => {
+  //   if (a.area < b.area) {
+  //     return -1
+  //   }
+  //   if (a.area > b.area) {
+  //     return 1
+  //   }
+  //   return 0
+  // })
+
+  return lista.sort((a, b) => a.area - b.area)
 
 }
 
 //ORDERNAR POR AREA DESENDENTE//////////////
 const ordenarAreaDecendente = (lista)=>{
 
-  return lista.sort((a, b) => {
-    if (a.area > b.area) {
-      return -1
-    }
-    if (a.area < b.area) {
-      return 1
-    }
-    return 0
-  })
+  // return lista.sort((a, b) => {
+  //   if (a.area > b.area) {
+  //     return -1
+  //   }
+  //   if (a.area < b.area) {
+  //     return 1
+  //   }
+  //   return 0
+  // })
 
+  return lista.sort((a, b) => b.area - a.area)
 }
 
 //ORDENAR POR CONTINENTE A-Z//////////////////////////////////////////

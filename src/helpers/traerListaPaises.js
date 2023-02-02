@@ -14,7 +14,8 @@ export const traerListaPaises = async () => {
       capital: traerCapital(pais),
       idioma: traerIdiomas(pais.languages),
       moneda: traerMoneda(pais.currencies),
-      area: pais.area.toLocaleString(),
+      // area: pais.area.toLocaleString(),
+      area: pais.area,
     }
   })
 
