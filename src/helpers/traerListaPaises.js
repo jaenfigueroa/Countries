@@ -12,7 +12,8 @@ export const traerListaPaises = async () => {
       nombre: pais.name.common,
       continente: pais.region,
       capital: traerCapital(pais),
-      idioma: 'Español',
+      // idioma: 'Español',
+      idioma: traerIdiomas(pais.languages),
       moneda: traerMoneda(pais.currencies),
       area: pais.area.toLocaleString(),
     }
@@ -48,4 +49,16 @@ const traerMoneda = (objeto) => {
   }
 
   return resultado[0]
+}
+
+
+///////////////////////////////////////
+const traerIdiomas = (objeto)=>{
+  const resultado = []
+
+  for (const key in objeto) {
+    resultado.push(objeto[key])
+  }
+
+  return resultado
 }
