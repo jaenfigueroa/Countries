@@ -11,8 +11,7 @@ export const traerListaPaises = async () => {
       nombre: pais.name.common,
       img: pais.flags.svg,
       continente: pais.region,
-      // capital: pais.capital[0],
-      capital: 'Lima',
+      capital: traerCapital(pais),
       area: 2.78,
       idioma: 'Español',
       moneda: 'Pesos argentinos',
@@ -23,3 +22,15 @@ export const traerListaPaises = async () => {
 
   return resultado
 }
+
+
+//TRAER LA CAPITAL DEL PAIS///////////////////////
+const traerCapital = (pais)=>{
+
+  if (pais.capital) {
+    return pais.capital[0].toLowerCase() 
+  } else{
+    return ''
+  }
+}
+
