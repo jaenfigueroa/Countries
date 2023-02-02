@@ -53,8 +53,22 @@ export const Search = () => {
 
       let resultado = await traerListaPaises()
 
-      setListaPaises(resultado)
+
+      //ANTES DE SETEAR EL OBJETO COMO EL ESTADO, ORDENAR EL ARRAY DE OBJETOS
+      let ordenado = resultado.sort(function(a, b) {
+        if (a.nombre < b.nombre) {
+          return -1;
+        }
+        if (a.nombre > b.nombre) {
+          return 1;
+        }
+        return 0;
+      });
+
+      //SETEAR EL ARAY DE OBJETOS
+      setListaPaises(ordenado)
     }
+
 
     traerDatos()
     

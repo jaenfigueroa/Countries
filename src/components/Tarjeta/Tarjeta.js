@@ -21,7 +21,7 @@ export const Tarjeta = ({pais}) => {
       </div>
 
       {/* ADORNOS */}
-      <div className='contenedor-clavos'>
+      {/* <div className='contenedor-clavos'>
         <div>
           <div></div>
           <div></div>
@@ -30,7 +30,7 @@ export const Tarjeta = ({pais}) => {
           <div></div>
           <div></div>
         </div>
-      </div>
+      </div> */}
 
     </article>
   )
