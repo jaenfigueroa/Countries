@@ -12,16 +12,26 @@ export const traerListaPaises = async () => {
       nombre: pais.name.common,
       continente: pais.region,
       capital: traerCapital(pais),
-      // idioma: 'Español',
       idioma: traerIdiomas(pais.languages),
       moneda: traerMoneda(pais.currencies),
       area: pais.area.toLocaleString(),
     }
   })
 
-  // console.log(resultado)
+  //ORDENAR LA LISTA ANTES DE ENTREAGAR
+  let ordenado = resultado.sort(function(a, b) {
+    if (a.nombre < b.nombre) {
+      return -1
+    }
+    if (a.nombre > b.nombre) {
+      return 1
+    }
+    return 0
+  })
 
-  return resultado
+  // console.log(ordenado)
+
+  return ordenado
 }
 
 

@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Aside } from '../../components/Aside/Aside'
 import { Paginacion } from '../../components/Paginacion/Paginacion'
 import { Tarjeta } from '../../components/Tarjeta/Tarjeta'
 import { traerListaPaises } from '../../helpers/traerListaPaises'
 import { useAnchoPantalla } from '../../hooks/useAnchoPantalla'
+import { ordenarListaReducer } from '../../reducers/ordenarLista.reducer'
 
+
+//////////////////////////////////////////////
 export const Search = () => {
 
   //OBTNER LA VARIABLE PAGIAN DE LA URL
@@ -43,42 +46,34 @@ export const Search = () => {
   }
 
 
-  //TRAER LISTA DE PAISES ////////////////////////////////////
-  const [listaPaises, setListaPaises] = useState([])
 
+  //USAR USE-REDUCER PARA ORDENAR LAS LISTA/////////////////
+  const [estado, dispatch] = useReducer(ordenarListaReducer, {listaOrdenada: []})
 
+  const ordenarLista = (evento) => {
+
+    let tipoOrden = (evento.target.value)
+    console.log(tipoOrden)
+
+    dispatch({tipo: tipoOrden})
+  } 
+
+  //LLENAR EL ESTADO POR PRIMERA VEZ
   useEffect(()=>{
 
-    const traerDatos = async() => {
-
-      let resultado = await traerListaPaises()
-
-
-      //ANTES DE SETEAR EL OBJETO COMO EL ESTADO, ORDENAR EL ARRAY DE OBJETOS
-      let ordenado = resultado.sort(function(a, b) {
-        if (a.nombre < b.nombre) {
-          return -1;
-        }
-        if (a.nombre > b.nombre) {
-          return 1;
-        }
-        return 0;
-      });
-
-      //SETEAR EL ARAY DE OBJETOS
-      setListaPaises(ordenado)
+    const traerDatos = async()=>{
+      const data = await traerListaPaises()
+      console.log(data)
+    
+      dispatch({
+        tipo: "MODIFICAR_LISTA",
+        payload: data
+      })
     }
 
-
     traerDatos()
-    
-  },[listaPaises])
-
-
-
-
-
-
+  },[])
+  
   ///////////////////////////////////////////////
   return (
     <section className='search-layout'>
@@ -136,11 +131,11 @@ export const Search = () => {
               {/* selector de como ordenar las tarjetas A-Z o Z-A */}
               <div className='selector-orden'>
                 Ordenar por:
-                <select>
-                  <option>Nombre A-Z</option>
-                  <option>Nombre Z-A</option>
-                  <option>Area Ascendente</option>
-                  <option>Area Decendente</option>
+                <select onChange={ordenarLista}>
+                  <option value='A-Z'>Nombre A-Z</option>
+                  <option value='Z-A'>Nombre Z-A</option>
+                  <option value='Area-ascendente'>Area Ascendente</option>
+                  <option value='Area-decendente'>Area Decendente</option>
                 </select>
               </div>
             </header>
@@ -152,7 +147,7 @@ export const Search = () => {
           {/* CONTENEDOR DE TARJETAS */}
           <div className='main__contenedor-tarjetas'>
             {
-              listaPaises !== null && listaPaises.map((x, index) =>(
+              estado.listaOrdenada.length >= 1 && estado.listaOrdenada.map((x, index) =>(
                 <Tarjeta pais={x} key={index}/>
               ))
             }

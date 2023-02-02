@@ -53,31 +53,3 @@
   word-wrap: break-word;
   hyphens: auto;
 }
-
-
-/* ADORNOS - CONTENEDOR DE CLAVOS EN LOS BORDES */
-// .contenedor-clavos{
-//   width: 100%;
-//   height: 100%;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   display: flex;
-//   justify-content: space-between;
-//   flex-direction: column;
-//   padding: .7rem;
-//   z-index: -1;
-// }
-// .contenedor-clavos div{
-//   display: flex;
-//   justify-content: space-between;
-// }
-// .contenedor-clavos div div{
-//   width: 12px;
-//   height: 12px;
-//   left: -260px;
-//   top: 5px;
-//   border-radius: 50%;
-//   background: var(--black);
-//   background: transparent;
-// }

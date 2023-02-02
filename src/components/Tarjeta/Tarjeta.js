@@ -4,6 +4,8 @@ export const Tarjeta = ({pais}) => {
 
   const {img, nombre, continente, capital, idioma, moneda, area} = pais
 
+
+  ////////////////////////////////////////////
   return (
     <article className='search__tarjeta'>
 
@@ -17,20 +19,7 @@ export const Tarjeta = ({pais}) => {
         <p><strong>Idiomas</strong>: {idioma}</p>
         <p><strong>Moneda</strong>: {moneda}</p>
         <p><strong>Area</strong>: {area} km<sup>2</sup></p>
-        {/* <p><strong>Codigo Telefono</strong>: {codigo}</p> */}
       </div>
-
-      {/* ADORNOS */}
-      {/* <div className='contenedor-clavos'>
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-      </div> */}
 
     </article>
   )
