@@ -60,5 +60,5 @@ const traerIdiomas = (objeto)=>{
     resultado.push(objeto[key])
   }
 
-  return resultado
+  return resultado.reverse().join(' - ')
 }

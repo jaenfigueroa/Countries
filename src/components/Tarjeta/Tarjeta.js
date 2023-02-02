@@ -14,7 +14,7 @@ export const Tarjeta = ({pais}) => {
         <h3 className='tarjeta__nombre'>{nombre}</h3>
         <p><strong>Continente</strong>: {continente}</p> 
         <p><strong>Capital</strong>: {capital}</p> 
-        <p><strong>Idioma</strong>: {idioma}</p>
+        <p><strong>Idiomas</strong>: {idioma}</p>
         <p><strong>Moneda</strong>: {moneda}</p>
         <p><strong>Area</strong>: {area} km<sup>2</sup></p>
         {/* <p><strong>Codigo Telefono</strong>: {codigo}</p> */}
