@@ -16,7 +16,7 @@ export const Tarjeta = ({pais}) => {
         <p><strong>Capital</strong>: {capital}</p> 
         <p><strong>Idioma</strong>: {idioma}</p>
         <p><strong>Moneda</strong>: {moneda}</p>
-        <p><strong>Area</strong>: {area}M km<sup>2</sup></p>
+        <p><strong>Area</strong>: {area} km<sup>2</sup></p>
         {/* <p><strong>Codigo Telefono</strong>: {codigo}</p> */}
       </div>
 

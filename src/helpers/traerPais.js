@@ -7,7 +7,7 @@ export const traerPais = async (nombre) => {
     const data = await peticion.json()
 
 
-    console.log(data[0]);
+    // console.log(data[0]);
 
     return armarPais(data[0])
     

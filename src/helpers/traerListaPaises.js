@@ -2,23 +2,23 @@ export const traerListaPaises = async () => {
   const peticion = await fetch('https://restcountries.com/v3.1/all')
   const data = await peticion.json()
 
-  console.log(data);
+  // console.log(data);
 
 
   let resultado = data.map(pais =>{
 
     return {
-      nombre: pais.name.common,
       img: pais.flags.svg,
+      nombre: pais.name.common,
       continente: pais.region,
       capital: traerCapital(pais),
-      area: 2.78,
       idioma: 'Español',
-      moneda: 'Pesos argentinos',
+      moneda: traerMoneda(pais.currencies),
+      area: pais.area.toLocaleString(),
     }
   })
 
-  console.log(resultado)
+  // console.log(resultado)
 
   return resultado
 }
@@ -34,3 +34,18 @@ const traerCapital = (pais)=>{
   }
 }
 
+//TRAER LA MONEDA DEL PAIS///////////////////////
+const traerMoneda = (objeto) => {
+
+  const resultado = []
+
+  for (const key in objeto) {
+
+    let objeto2 = objeto[key]
+    for (const key in objeto2) {
+      resultado.push(objeto2[key])
+    }
+  }
+
+  return resultado[0]
+}
