@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useAnchoPantalla } from '../../hooks/useAnchoPantalla'
 import { Boton } from './components/Boton'
 
-export const Paginacion = ({numero=20, ultimo=42}) => {
+export const Paginacion = ({numero, ultimo=50}) => {
 
   /* Mi Hook: devuelve el ancho el ancho de pantalla */
   const {ancho} = useAnchoPantalla()
@@ -24,7 +25,7 @@ export const Paginacion = ({numero=20, ultimo=42}) => {
     //controlar los botones del principio
     if (numero <= 3) setPrimerNumero(1)
     //controlar los botones del final
-    else if (numero >= ultimo - 5) setPrimerNumero(ultimo - 5)
+    else if (numero > ultimo - 5) setPrimerNumero(ultimo - 5)
     //defecto
     else setPrimerNumero(numero - 2)
 
@@ -37,15 +38,15 @@ export const Paginacion = ({numero=20, ultimo=42}) => {
     <nav className='nav-paginas'>
 
       {
-        numero > 4 && (
-          <p className='boton-mover'><i className="fa-solid fa-chevron-left"></i>&nbsp;&nbsp;{palabras&&'Anterior'}</p>
+        Number(numero) !== 1 && (
+          <Link to={`/search/${Number(numero) - 1}`} className='boton-mover'><i className="fa-solid fa-chevron-left"></i>&nbsp;&nbsp;{palabras&&'Anterior'}</Link>
         )
       }
 
       {
         numero >= 4 && (
           <>
-            <Boton numero={1} numeroActual={numero}/>
+            <Boton numero={1} numeroActual={numero} />
             {
               numero !== 4 && <i className="fa-solid fa-ellipsis icono-3puntos"></i> /* icono de 3 puntos */
             }
@@ -68,8 +69,8 @@ export const Paginacion = ({numero=20, ultimo=42}) => {
       <Boton numero={ultimo} numeroActual={numero}/>
 
       {
-        numero <= ultimo - 6 && (
-          <p className='boton-mover'>{palabras&&'Siguiente'}&nbsp;&nbsp;<i className="fa-solid fa-chevron-right"></i></p>
+        Number(numero) !== ultimo && (
+          <Link to={`/search/${Number(numero) + 1}`} className='boton-mover'>{palabras&&'Siguiente'}&nbsp;&nbsp;<i className="fa-solid fa-chevron-right"></i></Link>
         )
       }
       
