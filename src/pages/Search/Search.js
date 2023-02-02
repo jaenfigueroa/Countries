@@ -50,11 +50,15 @@ export const Search = () => {
   //USAR USE-REDUCER PARA ORDENAR LAS LISTA/////////////////
   const [estado, dispatch] = useReducer(ordenarListaReducer, {listaOrdenada: []})
 
-  const ordenarLista = (evento) => {
+  // const ordenarLista = (evento) => {
 
-    let tipoOrden = (evento.target.value)
-    console.log(tipoOrden)
+  //   let tipoOrden = (evento.target.value)
+  //   console.log(tipoOrden)
 
+  //   dispatch({tipo: tipoOrden})
+  // } 
+
+  const ordenarLista = (tipoOrden) => {
     dispatch({tipo: tipoOrden})
   } 
 
@@ -91,7 +95,7 @@ export const Search = () => {
 
               {/* NUMERO DE RESUTADOS */}
               <p className='contador-resultados'>
-                457 Resultados
+                {estado.listaOrdenada.length} Resultados
               </p>
 
               {/* CONTENEDOR DE BOTONES */}
@@ -112,10 +116,16 @@ export const Search = () => {
                 {
                   opcionesVisibles && (
                   <div className='contenedor-opciones'>
-                    <li>Nombre A-Z</li>
-                    <li>Nombre Z-A</li>
-                    <li>Area Ascendente</li>
-                    <li>Area Decendente</li>
+                    <li onClick={()=>ordenarLista('NOMBRE_AZ')}>Nombre A-Z</li>
+                    <li onClick={()=>ordenarLista('NOMBRE_ZA')}>Nombre Z-A</li>
+                    <li onClick={()=>ordenarLista('CONTINENTE_AZ')}>Continente A-Z</li>
+                    <li onClick={()=>ordenarLista('CONTINENTE_ZA')}>Continente Z-A</li>
+                    <li onClick={()=>ordenarLista('CAPITAL_AZ')}>Capital A-Z</li>
+                    <li onClick={()=>ordenarLista('CAPITAL_ZA')}>Capital Z-A</li>
+                    <li onClick={()=>ordenarLista('MONEDA_AZ')}>Moneda A-Z</li>
+                    <li onClick={()=>ordenarLista('MONEDA_ZA')}>Moneda Z-A</li>
+                    <li onClick={()=>ordenarLista('AREA_ASCENDENTE')}>Area Ascendente</li>
+                    <li onClick={()=>ordenarLista('AREA_DECENDENTE')}>Area Decendente</li>
                   </div>
                   )
                 }
@@ -125,17 +135,24 @@ export const Search = () => {
           (
             <header className='main__header-desktop'>
               {/* numero de resultados */}
-              <p className='contador-resultados'>585 Resultados</p>
+              <p className='contador-resultados'>{estado.listaOrdenada.length} Resultados</p>
               
 
               {/* selector de como ordenar las tarjetas A-Z o Z-A */}
               <div className='selector-orden'>
                 Ordenar por:
-                <select onChange={ordenarLista}>
-                  <option value='A-Z'>Nombre A-Z</option>
-                  <option value='Z-A'>Nombre Z-A</option>
-                  <option value='Area-ascendente'>Area Ascendente</option>
-                  <option value='Area-decendente'>Area Decendente</option>
+                {/* <select onChange={ordenarLista}> */}
+                <select onChange={(e)=>ordenarLista(e.target.value)}>
+                  <option value='NOMBRE_AZ'>Nombre A-Z</option>
+                  <option value='NOMBRE_ZA'>Nombre Z-A</option>
+                  <option value='CONTINENTE_AZ'>Continente A-Z</option>
+                  <option value='CONTINENTE_ZA'>Continente Z-A</option>
+                  <option value='CAPITAL_AZ'>Capital A-Z</option>
+                  <option value='CAPITAL_ZA'>Capital Z-A</option>
+                  <option value='MONEDA_AZ'>Moneda A-Z</option>
+                  <option value='MONEDA_ZA'>Moneda Z-A</option>
+                  <option value='AREA_ASCENDENTE'>Area Ascendente</option>
+                  <option value='AREA_DECENDENTE'>Area Decendente</option>
                 </select>
               </div>
             </header>

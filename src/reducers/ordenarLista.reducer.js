@@ -9,16 +9,38 @@ export const ordenarListaReducer = (estado, accion) => {
 
   //////////////////////////////////
   switch (tipo) {
+
+    /* LA PRIMERA ASIGANCION PARA EL ESTADO */
     case "MODIFICAR_LISTA":
       return { ...estado, listaOrdenada: [...payload] }
-    case 'A-Z':
+
+    /* LOS FILTROS POR DEFCTO */
+    case 'NOMBRE_AZ':
       return {...estado, listaOrdenada: ordenarAZ(listaOrdenada)}
-    case 'Z-A':
+    case 'NOMBRE_ZA':
       return {...estado, listaOrdenada: ordenarZA(listaOrdenada)}
-    case 'Area-ascendente':
+    case 'AREA_ASCENDENTE':
       return {...estado, listaOrdenada: ordenarAreaAscendente(listaOrdenada)}
-    case 'Area-decendente':
+    case 'AREA_DECENDENTE':
       return {...estado, listaOrdenada: ordenarAreaDecendente(listaOrdenada)}
+
+    /* LOS FILTROS AVANZADOS */
+    case 'CONTINENTE_AZ':
+      return {...estado, listaOrdenada: ordenarContinenteAZ(listaOrdenada)}
+    case 'CONTINENTE_ZA':
+      return {...estado, listaOrdenada: ordenarContinenteZA(listaOrdenada)}
+    
+
+    case 'CAPITAL_AZ':
+      return {...estado, listaOrdenada: ordenarCapitalAZ(listaOrdenada)}
+    case 'CAPITAL_ZA':
+      return {...estado, listaOrdenada: ordenarCapitalZA(listaOrdenada)}
+
+    case 'MONEDA_AZ':
+      return {...estado, listaOrdenada: ordenarMonedaAZ(listaOrdenada)}
+    case 'MONEDA_ZA':
+      return {...estado, listaOrdenada: ordenarMonedaZA(listaOrdenada)}
+        
     default:
       return estado
   }
@@ -84,7 +106,92 @@ const ordenarAreaDecendente = (lista)=>{
 
 }
 
+//ORDENAR POR CONTINENTE A-Z//////////////////////////////////////////
+
+const ordenarContinenteAZ = (lista)=>{
+
+  return lista.sort((a, b) => {
+    if (a.continente < b.continente) {
+      return -1
+    }
+    if (a.continente > b.continente) {
+      return 1
+    }
+    return 0
+  })
+}
+//ORDENAR POR CONTINENTE Z-A//////////////////////////////////////////
+const ordenarContinenteZA = (lista)=>{
+
+  return lista.sort((a, b) => {
+    if (a.continente > b.continente) {
+      return -1
+    }
+    if (a.continente < b.continente) {
+      return 1
+    }
+    return 0
+  })
+}
+
+
+
+//ORDENAR POR CAPITAL A-Z//////////////////////////////////////////
+const ordenarCapitalAZ = (lista)=>{
+
+  return lista.sort((a, b) => {
+    if (a.capital < b.capital) {
+      return -1
+    }
+    if (a.capital > b.capital) {
+      return 1
+    }
+    return 0
+  })
+}
+//ORDENAR POR CAPITAL Z-A//////////////////////////////////////////
+const ordenarCapitalZA = (lista)=>{
+
+  return lista.sort((a, b) => {
+    if (a.capital > b.capital) {
+      return -1
+    }
+    if (a.capital < b.capital) {
+      return 1
+    }
+    return 0
+  })
+}
+
+//ORDENAR POR MONEDA A-Z//////////////////////////////////////////
+const ordenarMonedaAZ = (lista)=>{
+
+  return lista.sort((a, b) => {
+    if (a.moneda < b.moneda) {
+      return -1
+    }
+    if (a.moneda > b.moneda) {
+      return 1
+    }
+    return 0
+  })
+}
+//ORDENAR POR MONEDA Z-A//////////////////////////////////////////
+const ordenarMonedaZA = (lista)=>{
+
+  return lista.sort((a, b) => {
+    if (a.moneda > b.moneda) {
+      return -1
+    }
+    if (a.moneda < b.moneda) {
+      return 1
+    }
+    return 0
+  })
+}
+
 ////////////////////////////////////////////
+
 
 
 // listaOrdenada: [
@@ -95,18 +202,4 @@ const ordenarAreaDecendente = (lista)=>{
 //     continente: 'america',
 //     area: 2545,
 //   },
-//   {
-//     nombre: 'argentina',
-//     capital: 'buenos aires',
-//     banderaImg: '#',
-//     continente: 'america',
-//     area: 1254,
-//   },
-//   {
-//     nombre: 'bolivia',
-//     capital: 'webar',
-//     banderaImg: '#',
-//     continente: 'america',
-//     area: 4855,
-//   }
 // ]

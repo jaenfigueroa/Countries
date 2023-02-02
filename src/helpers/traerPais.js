@@ -35,7 +35,6 @@ const armarPais = (data)=>{
     banderaImg: data.flags.svg,
     escudoImg: data.coatOfArms.svg,
     area: data.area,
-    independencia: data.independent,
     mapa: data.maps.googleMaps,
     poblacion: data.population,
     continente: data.region,
