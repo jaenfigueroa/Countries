@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Selector } from '../Selector/Selector'
-import {traerListaPaises} from '../../helpers/traerListaPaises'
+import {traerCategorias} from '../../helpers/traerCategorias'
 
 export const Aside = ({mostrarAside}) => {
 
@@ -9,7 +9,7 @@ export const Aside = ({mostrarAside}) => {
   useEffect(() => {
     
     const traer = async()=>{
-      let data = await traerListaPaises()
+      let data = await traerCategorias()
       setSelectores(data)
     }
     traer()

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useAnchoPantalla } from '../../hooks/useAnchoPantalla'
 import { Boton } from './components/Boton'
 
-export const Paginacion = ({numero, ultimo=50}) => {
+export const Paginacion = ({numero, ultimo=11}) => {
 
   /* Mi Hook: devuelve el ancho el ancho de pantalla */
   const {ancho} = useAnchoPantalla()
