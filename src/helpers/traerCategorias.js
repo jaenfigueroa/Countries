@@ -86,16 +86,29 @@ const obtenerIdiomas = (array) => {
   let resultadoFinal = resultados.filter(x => x !== undefined)
 
 
+  // console.log(resultadoFinal)
+
   let x = []
   
   for (const key in resultadoFinal) {
     
-    let primerValor = Object.values(resultadoFinal[key])[0].toLowerCase()
+    let primerValor = Object.values(resultadoFinal[key])
 
-    x = [...x, primerValor]
+    x = [...x, ...primerValor]
   }
 
-  return [...new Set(x)]
+  // console.log(x);
+
+  let sinRepetir = [...new Set(x)] /* ELIMINAR REPETIDOS */
+
+  // console.log(siRepetir).toLowerCase()
+
+  // return x
+  const minusculas  = sinRepetir.map (x => x = x.toLowerCase())
+
+  // console.log(minusculas);
+
+  return minusculas
 }
 
 //OBTENER LISTA DE MONEDAS//////////////

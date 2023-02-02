@@ -1,11 +1,11 @@
 export const ordenarListaReducer = (estado, accion) => {
 
-  console.log(estado, accion)
+  // console.log(estado, accion)
 
   let {listaOrdenada} = estado
   let {tipo, payload} = accion
   
-  console.log(tipo, payload)
+  // console.log(tipo, payload)
 
   //////////////////////////////////
   switch (tipo) {

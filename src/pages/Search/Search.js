@@ -67,7 +67,7 @@ export const Search = () => {
 
     const traerDatos = async()=>{
       const data = await traerListaPaises()
-      console.log(data)
+      // console.log(data)
     
       dispatch({
         tipo: "MODIFICAR_LISTA",
