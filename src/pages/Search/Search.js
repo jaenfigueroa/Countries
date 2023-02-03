@@ -208,9 +208,15 @@ export const Search = () => {
           {/* CONTENEDOR DE TARJETAS */}
           <div className='main__contenedor-tarjetas'>
             {
-              listaRestantes.length >= 1 && listaRestantes.map((x, index) =>(
+              listaRestantes.length >= 1 ? listaRestantes.map((x, index) =>(
                 <Tarjeta pais={x} key={index}/>
-              ))
+              )) 
+              //SI LA LISTA DE CUANDO SE FILRA ESTA VACIA SE MUESTRA LA LISTA ORIGINAL
+              :(
+                estado.listaOrdenada.map((x, index) =>(
+                  <Tarjeta pais={x} key={index}/>
+                ))
+              )
             }
           </div>
 
