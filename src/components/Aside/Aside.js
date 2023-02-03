@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { Selector } from '../Selector/Selector'
 import {traerCategorias} from '../../helpers/traerCategorias'
 
-export const Aside = ({mostrarAside, etiquetas, setEtiquetas}) => {
+export const Aside = ({mostrarAside, etiquetas, setEtiquetas,filtrarRestantes}) => {
 
   const [selectores, setSelectores] = useState([])
 

@@ -2,7 +2,9 @@ import { useState } from "react"
 
 export const useFiltrar = (lista, etiquetas) => {
 
-  console.log(lista, etiquetas)
+  // console.log(lista, etiquetas)
+
+  console.log('vaca')
 
   const [restantes, setRestantes] = useState([])
 
@@ -33,12 +35,8 @@ export const useFiltrar = (lista, etiquetas) => {
     } else{
       setRestantes(lista)
     }
+    
   }
-
-  // useEffect(() => {
-  //   filtrarRestantes()
-  // }, [lista])
-  
 
   return {
     listaRestantes: restantes,

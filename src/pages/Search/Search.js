@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Aside } from '../../components/Aside/Aside'
 import { Paginacion } from '../../components/Paginacion/Paginacion'
 import { Tarjeta } from '../../components/Tarjeta/Tarjeta'
+// import { Tarjeta } from '../../components/Tarjeta/Tarjeta'
 import { traerListaPaises } from '../../helpers/traerListaPaises'
 import { useAnchoPantalla } from '../../hooks/useAnchoPantalla'
 import { useFiltrar } from '../../hooks/useFiltrar'
@@ -112,11 +113,10 @@ export const Search = () => {
   //FILTRAR CADA VEZ QUE SE ODIFICA LA LISTA DE ETIQUETAS
   useEffect(()=>{
 
-    // dispatch({tipo: 'FILTRADO_POR_ETIQUETAS', payload: etiquetas})
-
     filtrarRestantes()
 
-  }, [etiquetas, listaRestantes, filtrarRestantes]) 
+  // }, [etiquetas, listaRestantes, filtrarRestantes]) 
+  }, [etiquetas, estado]) 
   ///////////////////////////////////////////////
   return (
     <section className='search-layout'>
@@ -125,7 +125,8 @@ export const Search = () => {
         <Aside
           mostrarAside={mostrarAside}
           etiquetas={etiquetas}
-          setEtiquetas={setEtiquetas} />
+          setEtiquetas={setEtiquetas}
+          filtrarRestantes={filtrarRestantes} />
       ) }
       
       {/* MAIN */}
