@@ -5,6 +5,7 @@ import { Paginacion } from '../../components/Paginacion/Paginacion'
 import { Tarjeta } from '../../components/Tarjeta/Tarjeta'
 import { traerListaPaises } from '../../helpers/traerListaPaises'
 import { useAnchoPantalla } from '../../hooks/useAnchoPantalla'
+import { useFiltrar } from '../../hooks/useFiltrar'
 import { ordenarListaReducer } from '../../reducers/ordenarLista.reducer'
 
 
@@ -23,12 +24,16 @@ export const Search = () => {
     // },
   ])
 
+  // const [selectores, setSelectores] = useState([])
+
+
   //FILTRAR CADA VEZ QUE SE ODIFICA LA LISTA DE ETIQUETAS
-  useEffect(()=>{
+  // useEffect(()=>{
 
-    dispatch({tipo: 'FILTRADO_POR_ETIQUETAS', payload: etiquetas})
+  //   dispatch({tipo: 'FILTRADO_POR_ETIQUETAS', payload: etiquetas})
 
-  }, [etiquetas]) 
+  // }, [etiquetas]) 
+
 
 
   /////////////////////////////////////////////////////////
@@ -94,11 +99,34 @@ export const Search = () => {
     traerDatos()
   },[])
   
+
+  /////////////////////////////7
+  /////////////////////////////7
+  /////////////////////////////7
+
+  //NUEVA FROMA. USANDO HOOK PERSONALIZADO FILTRAR
+  // let lista = []
+
+  const {listaRestantes, filtrarRestantes} = useFiltrar(estado.listaOrdenada , etiquetas)
+
+  //FILTRAR CADA VEZ QUE SE ODIFICA LA LISTA DE ETIQUETAS
+  useEffect(()=>{
+
+    // dispatch({tipo: 'FILTRADO_POR_ETIQUETAS', payload: etiquetas})
+
+    filtrarRestantes()
+
+  }, [etiquetas, listaRestantes]) 
   ///////////////////////////////////////////////
   return (
     <section className='search-layout'>
       {/* ASIDE */}
-      { asideActivo && <Aside mostrarAside={mostrarAside} etiquetas={etiquetas} setEtiquetas={setEtiquetas} /> }
+      { asideActivo && (
+        <Aside
+          mostrarAside={mostrarAside}
+          etiquetas={etiquetas}
+          setEtiquetas={setEtiquetas} />
+      ) }
       
       {/* MAIN */}
       <main className='main'>
@@ -151,7 +179,7 @@ export const Search = () => {
           (
             <header className='main__header-desktop'>
               {/* numero de resultados */}
-              <p className='contador-resultados'>{estado.listaOrdenada.length} Resultados</p>
+              <p className='contador-resultados'>{listaRestantes.length} Resultados</p>
               
 
               {/* selector de como ordenar las tarjetas A-Z o Z-A */}
@@ -180,7 +208,7 @@ export const Search = () => {
           {/* CONTENEDOR DE TARJETAS */}
           <div className='main__contenedor-tarjetas'>
             {
-              estado.listaOrdenada.length >= 1 && estado.listaOrdenada.map((x, index) =>(
+              listaRestantes.length >= 1 && listaRestantes.map((x, index) =>(
                 <Tarjeta pais={x} key={index}/>
               ))
             }

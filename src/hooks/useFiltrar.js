@@ -1,12 +1,13 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-export const useFiltrar = (estadoOriginal, etiquetasActualizada) => {
+export const useFiltrar = (lista, etiquetas) => {
 
-  const [lista] = useState(estadoOriginal)
-  const [etiquetas] = useState(etiquetasActualizada)
+  console.log(lista, etiquetas)
+
+  const [restantes, setRestantes] = useState([])
 
   ////////////////////////////////////////////////
-  const filtrar = () =>{
+  const filtrarRestantes = () =>{
 
     let granString = generarUnSoloString(etiquetas)
     let restantes = []
@@ -21,11 +22,19 @@ export const useFiltrar = (estadoOriginal, etiquetasActualizada) => {
 
     })
     // console.log(restantes);
-    return restantes
+    // return restantes
+
+    setRestantes(restantes)
   }
 
+  // useEffect(() => {
+  //   filtrarRestantes()
+  // }, [lista])
+  
+
   return {
-    filtrar
+    listaRestantes: restantes,
+    filtrarRestantes
   }
 }
 

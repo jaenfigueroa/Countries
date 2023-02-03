@@ -9,8 +9,8 @@ export const traerListaPaises = async () => {
 
     return {
       img: pais.flags.svg,
-      nombre: pais.name.common,
-      continente: pais.region,
+      nombre: pais.name.common.toLowerCase(),
+      continente: pais.region.toLowerCase(),
       capital: traerCapital(pais),
       idioma: traerIdiomas(pais.languages),
       moneda: traerMoneda(pais.currencies),
@@ -55,7 +55,7 @@ const traerMoneda = (objeto) => {
 
     let objeto2 = objeto[key]
     for (const key in objeto2) {
-      resultado.push(objeto2[key])
+      resultado.push(objeto2[key].toLowerCase())
     }
   }
 
