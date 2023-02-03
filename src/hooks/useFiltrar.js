@@ -24,7 +24,15 @@ export const useFiltrar = (lista, etiquetas) => {
     // console.log(restantes);
     // return restantes
 
-    setRestantes(restantes)
+    // setRestantes(restantes)
+
+    //SI HAY RESULTADOS DE COINCIDENCIAS CON LAS ETIQUETAS, MOSTRAR ESA LISTA
+    if (restantes.length >= 1) {
+      setRestantes(restantes)
+    //PERO SI NO HAY COINCIDENCIAS, ENTONCES MOSTRAR LA LISTA ORIGINAL
+    } else{
+      setRestantes(lista)
+    }
   }
 
   // useEffect(() => {

@@ -139,9 +139,7 @@ export const Search = () => {
 
               {/* NUMERO DE RESUTADOS */}
               <p className='contador-resultados'>
-                {
-                  listaRestantes.length >= 1 ? listaRestantes.length : estado.listaOrdenada.length
-                }
+                {listaRestantes.length}
               </p>
 
               {/* CONTENEDOR DE BOTONES */}
@@ -182,9 +180,7 @@ export const Search = () => {
             <header className='main__header-desktop'>
               {/* numero de resultados */}
               <p className='contador-resultados'>
-                {
-                  listaRestantes.length >= 1 ? listaRestantes.length : estado.listaOrdenada.length
-                } Resultados</p>
+                {listaRestantes.length} Resultados</p>
 
               {/* selector de como ordenar las tarjetas A-Z o Z-A */}
               <div className='selector-orden'>
@@ -212,15 +208,9 @@ export const Search = () => {
           {/* CONTENEDOR DE TARJETAS */}
           <div className='main__contenedor-tarjetas'>
             {
-              listaRestantes.length >= 1 ? listaRestantes.map((x, index) =>(
+              listaRestantes.length >= 1 && listaRestantes.map((x, index) =>(
                 <Tarjeta pais={x} key={index}/>
               )) 
-              //SI LA LISTA DE CUANDO SE FILRA ESTA VACIA SE MUESTRA LA LISTA ORIGINAL
-              :(
-                estado.listaOrdenada.map((x, index) =>(
-                  <Tarjeta pais={x} key={index}/>
-                ))
-              )
             }
           </div>
 
