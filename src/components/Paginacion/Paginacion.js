@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAnchoPantalla } from '../../hooks/useAnchoPantalla'
 import { Boton } from './components/Boton'
 
@@ -72,6 +72,32 @@ export const Paginacion = ({numero, lista, setListaSeparada, etiquetas, estado})
     else setPrimerNumero(numero - 2)
 
   }, [numero, numeroPaginas])
+
+
+
+  //////////////////////
+  //////////////////////
+  //////////////////////
+
+  const navegar = useNavigate()
+
+  useEffect(()=>{
+    navegar('/search/1')
+    
+  },[lista, etiquetas, estado, navegar])
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   ////////////////////////////////////////////
