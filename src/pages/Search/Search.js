@@ -139,7 +139,9 @@ export const Search = () => {
 
               {/* NUMERO DE RESUTADOS */}
               <p className='contador-resultados'>
-                {estado.listaOrdenada.length} Resultados
+                {
+                  listaRestantes.length >= 1 ? listaRestantes.length : estado.listaOrdenada.length
+                }
               </p>
 
               {/* CONTENEDOR DE BOTONES */}
@@ -179,8 +181,10 @@ export const Search = () => {
           (
             <header className='main__header-desktop'>
               {/* numero de resultados */}
-              <p className='contador-resultados'>{listaRestantes.length} Resultados</p>
-              
+              <p className='contador-resultados'>
+                {
+                  listaRestantes.length >= 1 ? listaRestantes.length : estado.listaOrdenada.length
+                } Resultados</p>
 
               {/* selector de como ordenar las tarjetas A-Z o Z-A */}
               <div className='selector-orden'>
