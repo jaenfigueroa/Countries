@@ -101,6 +101,16 @@ export const Search = () => {
 
   }, [etiquetas, estado,filtrarMemorizado]) 
 
+
+  ////////////////////////////////////
+  ////////////////////////////////////
+  ////////////////////////////////////
+
+  const [listaSeparada, setListaSeparada] = useState([])
+
+
+
+
   ///////////////////////////////////////////////
   return (
     <section className='search-layout'>
@@ -191,15 +201,21 @@ export const Search = () => {
         <div className='cuerpo'>
           {/* CONTENEDOR DE TARJETAS */}
           <div className='main__contenedor-tarjetas'>
+            {/* listaRestantes - se renderizaba antes */}
             {
-              listaRestantes.length >= 1 && listaRestantes.map((x, index) =>(
+              listaSeparada.length >= 1 && listaSeparada.map((x, index) =>(
                 <Tarjeta pais={x} key={index}/>
               )) 
             }
           </div>
 
-          {/* NAVEGACION DE PAGINAS */}
-          <Paginacion numero={pagina}/>
+          {/* NAVEGACION DE PAGINAS */} 
+          <Paginacion
+            numero={pagina}
+            lista={listaRestantes}
+            setListaSeparada={setListaSeparada}
+            etiquetas={etiquetas}
+            estado={estado} />
 
         </div>
 
