@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import { Aside } from '../../components/Aside/Aside'
 import { Paginacion } from '../../components/Paginacion/Paginacion'
 import { Tarjeta } from '../../components/Tarjeta/Tarjeta'
-// import { Tarjeta } from '../../components/Tarjeta/Tarjeta'
 import { traerListaPaises } from '../../helpers/traerListaPaises'
 import { useAnchoPantalla } from '../../hooks/useAnchoPantalla'
 import { useFiltrar } from '../../hooks/useFiltrar'
@@ -24,18 +23,6 @@ export const Search = () => {
     //   valor: 'Oceania'
     // },
   ])
-
-  // const [selectores, setSelectores] = useState([])
-
-
-  //FILTRAR CADA VEZ QUE SE ODIFICA LA LISTA DE ETIQUETAS
-  // useEffect(()=>{
-
-  //   dispatch({tipo: 'FILTRADO_POR_ETIQUETAS', payload: etiquetas})
-
-  // }, [etiquetas]) 
-
-
 
   /////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////////
@@ -76,7 +63,6 @@ export const Search = () => {
   }
 
 
-
   //USAR USE-REDUCER PARA ORDENAR LAS LISTA/////////////////
   const [estado, dispatch] = useReducer(ordenarListaReducer, {listaOrdenada: []})
 
@@ -105,9 +91,7 @@ export const Search = () => {
   /////////////////////////////7
   /////////////////////////////7
 
-  //NUEVA FROMA. USANDO HOOK PERSONALIZADO FILTRAR
-  // let lista = []
-
+  //NUEVA FORMA. USANDO HOOK PERSONALIZADO FILTRAR
   const {listaRestantes, filtrarMemorizado} = useFiltrar(estado.listaOrdenada , etiquetas)
 
   //FILTRAR CADA VEZ QUE SE ODIFICA LA LISTA DE ETIQUETAS
@@ -215,13 +199,11 @@ export const Search = () => {
           </div>
 
           {/* NAVEGACION DE PAGINAS */}
-
           <Paginacion numero={pagina}/>
 
         </div>
 
       </main>
-
 
     </section>
   )
