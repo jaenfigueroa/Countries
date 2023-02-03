@@ -2,12 +2,11 @@ import React, {useState, useEffect} from 'react'
 import { Selector } from '../Selector/Selector'
 import {traerCategorias} from '../../helpers/traerCategorias'
 
-export const Aside = ({mostrarAside}) => {
+export const Aside = ({mostrarAside, etiquetas, setEtiquetas}) => {
 
   const [selectores, setSelectores] = useState([])
 
   useEffect(() => {
-    
     const traer = async()=>{
       let data = await traerCategorias()
       setSelectores(data)
@@ -17,16 +16,16 @@ export const Aside = ({mostrarAside}) => {
   }, [])
 
   //MANEJAR LAS ETIQUETAS AGREGADAS PARA HACER EL FITRADO
-  const [etiquetas, setEtiquetas] = useState([
-    // {
-    //   tipo: 'continente',
-    //   valor: 'America'
-    // },
-    // {
-    //   tipo: 'continente',
-    //   valor: 'Oceania'
-    // },
-  ])
+  // const [etiquetas, setEtiquetas] = useState([
+  //   // {
+  //   //   tipo: 'continente',
+  //   //   valor: 'America'
+  //   // },
+  //   // {
+  //   //   tipo: 'continente',
+  //   //   valor: 'Oceania'
+  //   // },
+  // ])
   
 
   //AGREGAR UNA ETIQUETA NUEVA
@@ -56,7 +55,7 @@ export const Aside = ({mostrarAside}) => {
       x.checked = false
     })
   }
-  
+
   ///////////////////////////////////
   return (
     <aside className='aside'>

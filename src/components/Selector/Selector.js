@@ -63,6 +63,8 @@ export const Selector = ({elemento, agregarEtiqueta, quitarEtiqueta}) => {
     // console.log(evento.target.checked);
     // console.log(evento.target.name) 
 
+    // console.log(tipo)
+
     if (evento.target.checked) {
 
       agregarEtiqueta(tipo, evento.target.name)
@@ -116,7 +118,7 @@ export const Selector = ({elemento, agregarEtiqueta, quitarEtiqueta}) => {
               lista.map((x, index) =>(
                 x && (
                   <label key={index}  data-example={x}> {/* name:x PROV */}
-                    <input type="checkbox" value="opcion1" onChange={(e)=>verificarCheckbox(e, x.tipo)} name={x}/>{x}
+                    <input type="checkbox" value="opcion1" onChange={(e)=>verificarCheckbox(e, elemento.tipo)} name={x}/>{x}
                   </label>
                 )
               ))

@@ -37,12 +37,16 @@ export const ordenarListaReducer = (estado, accion) => {
       return {...estado, listaOrdenada: ordenarMonedaZA(listaOrdenada)}
         
     /* LOS FILTROS POR ETIQUETAS */
-
+    case 'FILTRADO_POR_ETIQUETAS':
+      return {...estado, listaOrdenada: filtrarUsandoEtiquetas(listaOrdenada, payload)}
+        
     default:
       return estado
   }
 }
 
+//ORDENAMIENTO///////////////////////////////
+////////////////////////////////////////////
 //ORDENAR DE A-Z///////////////////////////
 const ordenarAZ = (lista)=>{
   return lista.sort((a, b) => {
@@ -122,7 +126,83 @@ const ordenarMonedaZA = (lista)=>{
   })
 }
 
+//FILTRADO//////////////////////////////////////////
 ////////////////////////////////////////////
+////////////////////////////////////////////
+const filtrarUsandoEtiquetas = (lista, etiquetas) =>{
+
+  // console.log('se filtro por etiquetas')
+  // console.log(lista)
+  // console.log(etiquetas);
+
+  let granString = generarUnSoloString(etiquetas)
+  // console.log(granString);
+
+  let restantes = []
+
+  lista.forEach(pais => {
+    let resultado = comprobarCoincidencias(pais, granString)
+
+    console.log(resultado)
+
+    if (resultado) {
+      // console.log('vaca')
+
+      restantes = [...restantes, pais]
+    }
+
+  })
+
+  console.log(restantes);
+
+  // return lista
+  return restantes
+}
+
+//GENERAR UN GRAN STRING QUE CONTENGA TODAS LAS ETIQUETAS
+function generarUnSoloString(etiquetas){
+  let string = ''
+  
+  etiquetas.forEach(x =>{
+      string += '-'+x.valor
+  })
+
+  let resultado = string.toLowerCase()
+
+  console.log(resultado)
+
+  return resultado
+}
+
+//COMPROBAR LAS COINCIDENCIAS
+function comprobarCoincidencias(pais, granString){
+  for (const key in pais) {
+
+    console.log(pais[key])
+    
+    if(isNaN(pais[key]) && pais[key] && granString.includes(pais[key].toLowerCase()) ){
+
+      // console.log(pais[key])
+      // console.log(pais[key].toLowerCase())
+      return true
+      // console.log('si');
+    }
+  }
+  return false
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

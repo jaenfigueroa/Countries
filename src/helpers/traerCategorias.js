@@ -7,23 +7,28 @@ export const traerCategorias = async () => {
 
   let resultadoFinal = [
     {
-      titulo: 'paises',
+      titulo: 'paises', /* titulo para la lista del selector */
+      tipo: 'pais', /* tipo de etiqueta, usado para el filtrado */
       opciones: obtenerNombres(data).sort()
     },
     {
       titulo: 'continentes',
+      tipo: 'continente',
       opciones: obtenerContinentes(data).sort()
     },
     {
       titulo: 'capitales',
+      tipo: 'capital',
       opciones: obtenerCapitales(data).sort()
     },
     {
       titulo: 'idiomas',
+      tipo: 'idioma',
       opciones: obtenerIdiomas(data).sort()
     },
     {
       titulo: 'monedas',
+      tipo: 'moneda',
       opciones: obtenerMonedas(data).sort()
     },
 

@@ -11,6 +11,30 @@ import { ordenarListaReducer } from '../../reducers/ordenarLista.reducer'
 //////////////////////////////////////////////
 export const Search = () => {
 
+  //CREAR EL ESTADO DE LA LISTA DE ETIQUETAS
+  const [etiquetas, setEtiquetas] = useState([
+    // {
+    //   tipo: 'continente',
+    //   valor: 'America'
+    // },
+    // {
+    //   tipo: 'continente',
+    //   valor: 'Oceania'
+    // },
+  ])
+
+  //FILTRAR CADA VEZ QUE SE ODIFICA LA LISTA DE ETIQUETAS
+  useEffect(()=>{
+
+    dispatch({tipo: 'FILTRADO_POR_ETIQUETAS', payload: etiquetas})
+
+  }, [etiquetas]) 
+
+
+  /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////
+
   //OBTNER LA VARIABLE PAGIAN DE LA URL
   const {pagina} = useParams()
 
@@ -50,19 +74,11 @@ export const Search = () => {
   //USAR USE-REDUCER PARA ORDENAR LAS LISTA/////////////////
   const [estado, dispatch] = useReducer(ordenarListaReducer, {listaOrdenada: []})
 
-  // const ordenarLista = (evento) => {
-
-  //   let tipoOrden = (evento.target.value)
-  //   console.log(tipoOrden)
-
-  //   dispatch({tipo: tipoOrden})
-  // } 
-
   const ordenarLista = (tipoOrden) => {
     dispatch({tipo: tipoOrden})
   } 
 
-  //LLENAR EL ESTADO POR PRIMERA VEZ
+  //LLENAR EL ESTADO DE LISTA DE BANDERAS POR PRIMERA VEZ
   useEffect(()=>{
 
     const traerDatos = async()=>{
@@ -82,7 +98,7 @@ export const Search = () => {
   return (
     <section className='search-layout'>
       {/* ASIDE */}
-      { asideActivo && <Aside mostrarAside={mostrarAside}/> }
+      { asideActivo && <Aside mostrarAside={mostrarAside} etiquetas={etiquetas} setEtiquetas={setEtiquetas} /> }
       
       {/* MAIN */}
       <main className='main'>
