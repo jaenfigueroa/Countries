@@ -68,8 +68,12 @@ const traerIdiomas = (objeto)=>{
   const resultado = []
 
   for (const key in objeto) {
-    resultado.push(objeto[key])
+    resultado.push(objeto[key].toLowerCase())
   }
 
-  return resultado.reverse().join(' - ')
+  let resultadoFinal = resultado.reverse().join(' - ') /* ESTE ESTA OCACIONADO ESE ERROR */
+  
+  // console.log(resultado.reverse())
+
+  return resultadoFinal
 }

@@ -169,7 +169,7 @@ function generarUnSoloString(etiquetas){
 
   let resultado = string.toLowerCase()
 
-  console.log(resultado)
+  // console.log(resultado)
 
   return resultado
 }
@@ -178,15 +178,37 @@ function generarUnSoloString(etiquetas){
 function comprobarCoincidencias(pais, granString){
   for (const key in pais) {
 
-    console.log(pais[key])
-    
-    if(isNaN(pais[key]) && pais[key] && granString.includes(pais[key].toLowerCase()) ){
+    // console.log(pais[key])
+    /* 
+    1. VERIFICAR QUE NO SEA NUMERO
+    2. VERIFICAR QUE EXISTA, NO SEA '' O UNDEFINNED
+    3. VERFIICAR QUE EL GRAN STRING INCLUYA LA PALABRA EN MINUSCULAS
+    */
+    // if(isNaN(pais[key]) && pais[key] && granString.includes(pais[key].toLowerCase()) ){
+    //   return true
+    // }
+    ///////////////////////////////////////////////////
+    if(isNaN(pais[key]) && pais[key]){
 
       // console.log(pais[key])
-      // console.log(pais[key].toLowerCase())
-      return true
-      // console.log('si');
+
+      let palabras = pais[key].split(' - ')
+
+      // console.log(palabras);
+
+      // const text = "Este es un ejemplo de un texto largo";
+      // const words = ["ejemplo", "texto", "largo"];
+
+      const resultado = palabras.some(word => granString.includes(word));
+      // console.log(resultado)
+
+      // return resultado
+
+      if (resultado) {
+        return true
+      }
     }
+
   }
   return false
 }
