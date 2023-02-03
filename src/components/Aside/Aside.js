@@ -28,7 +28,6 @@ export const Aside = ({mostrarAside, etiquetas, setEtiquetas}) => {
   // ])
   
   
-
   //AGREGAR UNA ETIQUETA NUEVA
   const agregarEtiqueta = (tipo, valor)=>{
     setEtiquetas([...etiquetas, {tipo, valor}])

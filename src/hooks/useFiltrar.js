@@ -5,42 +5,31 @@ export const useFiltrar = (lista, etiquetas) => {
   const [restantes, setRestantes] = useState([])
 
   //USAR USE CALL BACK PARA MEMORIZAR EL VALOR QUE DEVULVE UNA FUNCION
-  // const filtrarMemorizado = useCallback(() => filtrarRestantes, [lista, etiquetas])
   const filtrarMemorizado = useCallback(() => {
   
-    ////////////////////////////////////////////////
+    let granString = generarUnSoloString(etiquetas)
+    let restantes = []
 
-      let granString = generarUnSoloString(etiquetas)
-      let restantes = []
-  
-      lista.forEach(pais => {
-        let resultado = comprobarCoincidencias(pais, granString)
-        // console.log(resultado)
-  
-        if (resultado) {
-          restantes = [...restantes, pais]
-        }
-  
-      })
-      // console.log(restantes);
-      // return restantes
-  
-      // setRestantes(restantes)
-  
-      //SI HAY RESULTADOS DE COINCIDENCIAS CON LAS ETIQUETAS, MOSTRAR ESA LISTA
-      if (restantes.length >= 1) {
-        setRestantes(restantes)
-      //PERO SI NO HAY COINCIDENCIAS, ENTONCES MOSTRAR LA LISTA ORIGINAL
-      } else{
-        setRestantes(lista)
+    lista.forEach(pais => {
+      let resultado = comprobarCoincidencias(pais, granString)
+      // console.log(resultado)
+
+      if (resultado) {
+        restantes = [...restantes, pais]
       }
-      
-  
-  
-    }
-  
-  , [etiquetas, lista])
+    })
 
+    // console.log(restantes);
+
+    //SI HAY RESULTADOS DE COINCIDENCIAS CON LAS ETIQUETAS, MOSTRAR ESA LISTA
+    if (restantes.length >= 1) {
+      setRestantes(restantes)
+    //PERO SI NO HAY COINCIDENCIAS, ENTONCES MOSTRAR LA LISTA ORIGINAL
+    } else{
+      setRestantes(lista)
+    }
+    
+  } , [etiquetas, lista])
 
   
   return {

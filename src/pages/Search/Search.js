@@ -110,21 +110,12 @@ export const Search = () => {
 
   const {listaRestantes, filtrarMemorizado} = useFiltrar(estado.listaOrdenada , etiquetas)
 
-
-  /* USAR USE CALL BACK PARA MEMORIZAR EL VALOR QUE DEVULVE UNA FUNCION */
-  // const listaMemorizada = useCallback(() => filtrarRestantes(), [etiquetas, estado])
-
   //FILTRAR CADA VEZ QUE SE ODIFICA LA LISTA DE ETIQUETAS
   useEffect(()=>{
 
     filtrarMemorizado()
 
-    // listaMemorizada()
-
-  // }, [etiquetas, listaRestantes, filtrarRestantes]) 
   }, [etiquetas, estado,filtrarMemorizado]) 
-
-
 
   ///////////////////////////////////////////////
   return (
