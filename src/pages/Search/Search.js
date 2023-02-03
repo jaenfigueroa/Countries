@@ -116,7 +116,7 @@ export const Search = () => {
 
     filtrarRestantes()
 
-  }, [etiquetas, listaRestantes]) 
+  }, [etiquetas, listaRestantes, filtrarRestantes]) 
   ///////////////////////////////////////////////
   return (
     <section className='search-layout'>
