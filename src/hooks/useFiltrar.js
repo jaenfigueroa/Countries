@@ -1,46 +1,52 @@
-import { useState } from "react"
+import { useCallback, useState } from "react"
 
 export const useFiltrar = (lista, etiquetas) => {
 
-  // console.log(lista, etiquetas)
-
-  console.log('vaca')
-
   const [restantes, setRestantes] = useState([])
 
-  ////////////////////////////////////////////////
-  const filtrarRestantes = () =>{
+  //USAR USE CALL BACK PARA MEMORIZAR EL VALOR QUE DEVULVE UNA FUNCION
+  // const filtrarMemorizado = useCallback(() => filtrarRestantes, [lista, etiquetas])
+  const filtrarMemorizado = useCallback(() => {
+  
+    ////////////////////////////////////////////////
 
-    let granString = generarUnSoloString(etiquetas)
-    let restantes = []
-
-    lista.forEach(pais => {
-      let resultado = comprobarCoincidencias(pais, granString)
-      // console.log(resultado)
-
-      if (resultado) {
-        restantes = [...restantes, pais]
+      let granString = generarUnSoloString(etiquetas)
+      let restantes = []
+  
+      lista.forEach(pais => {
+        let resultado = comprobarCoincidencias(pais, granString)
+        // console.log(resultado)
+  
+        if (resultado) {
+          restantes = [...restantes, pais]
+        }
+  
+      })
+      // console.log(restantes);
+      // return restantes
+  
+      // setRestantes(restantes)
+  
+      //SI HAY RESULTADOS DE COINCIDENCIAS CON LAS ETIQUETAS, MOSTRAR ESA LISTA
+      if (restantes.length >= 1) {
+        setRestantes(restantes)
+      //PERO SI NO HAY COINCIDENCIAS, ENTONCES MOSTRAR LA LISTA ORIGINAL
+      } else{
+        setRestantes(lista)
       }
-
-    })
-    // console.log(restantes);
-    // return restantes
-
-    // setRestantes(restantes)
-
-    //SI HAY RESULTADOS DE COINCIDENCIAS CON LAS ETIQUETAS, MOSTRAR ESA LISTA
-    if (restantes.length >= 1) {
-      setRestantes(restantes)
-    //PERO SI NO HAY COINCIDENCIAS, ENTONCES MOSTRAR LA LISTA ORIGINAL
-    } else{
-      setRestantes(lista)
+      
+  
+  
     }
-    
-  }
+  
+  , [etiquetas, lista])
 
+
+  
   return {
     listaRestantes: restantes,
-    filtrarRestantes
+    // filtrarRestantes
+    filtrarMemorizado
   }
 }
 

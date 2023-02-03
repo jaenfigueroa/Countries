@@ -108,15 +108,24 @@ export const Search = () => {
   //NUEVA FROMA. USANDO HOOK PERSONALIZADO FILTRAR
   // let lista = []
 
-  const {listaRestantes, filtrarRestantes} = useFiltrar(estado.listaOrdenada , etiquetas)
+  const {listaRestantes, filtrarMemorizado} = useFiltrar(estado.listaOrdenada , etiquetas)
+
+
+  /* USAR USE CALL BACK PARA MEMORIZAR EL VALOR QUE DEVULVE UNA FUNCION */
+  // const listaMemorizada = useCallback(() => filtrarRestantes(), [etiquetas, estado])
 
   //FILTRAR CADA VEZ QUE SE ODIFICA LA LISTA DE ETIQUETAS
   useEffect(()=>{
 
-    filtrarRestantes()
+    filtrarMemorizado()
+
+    // listaMemorizada()
 
   // }, [etiquetas, listaRestantes, filtrarRestantes]) 
-  }, [etiquetas, estado]) 
+  }, [etiquetas, estado,filtrarMemorizado]) 
+
+
+
   ///////////////////////////////////////////////
   return (
     <section className='search-layout'>
@@ -125,8 +134,7 @@ export const Search = () => {
         <Aside
           mostrarAside={mostrarAside}
           etiquetas={etiquetas}
-          setEtiquetas={setEtiquetas}
-          filtrarRestantes={filtrarRestantes} />
+          setEtiquetas={setEtiquetas} />
       ) }
       
       {/* MAIN */}
