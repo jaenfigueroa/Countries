@@ -84,7 +84,8 @@ export const Paginacion = ({numero, lista, setListaSeparada, etiquetas, estado})
   useEffect(()=>{
     navegar('/search/1')
     
-  },[lista, etiquetas, estado, navegar])
+  // },[lista, etiquetas, estado, navegar])
+  },[lista, etiquetas, estado])
 
 
 
@@ -102,47 +103,84 @@ export const Paginacion = ({numero, lista, setListaSeparada, etiquetas, estado})
 
   ////////////////////////////////////////////
   return (
-    numeroPaginas > 1 && (
       <nav className='nav-paginas'>
 
-      {
-        Number(numero) !== 1 && (
-          <Link to={`/search/${Number(numero) - 1}`} className='boton-mover'><i className="fa-solid fa-chevron-left"></i>&nbsp;&nbsp;{palabras&&'Anterior'}</Link>
-        )
-      }
 
-      {
-        numero >= 4 && (
-          <>
-            <Boton numero={1} numeroActual={numero} />
-            {
-              numero !== 4 && <i className="fa-solid fa-ellipsis icono-3puntos"></i> /* icono de 3 puntos */
-            }
-          </>
-        )
-      }
+      {/* /////////////7 */}
+      {/* /////////////7 */}
+      {/* /////////////7 */}
+      {/* /////////////7 */}
 
-      <div className='contenedor-botones-juntos'>
-        <Boton numero={primerNumero + 0} numeroActual={numero}/>
-        <Boton numero={primerNumero + 1} numeroActual={numero}/>
-        <Boton numero={primerNumero + 2} numeroActual={numero}/>
-        <Boton numero={primerNumero + 3} numeroActual={numero}/>
-        <Boton numero={primerNumero + 4} numeroActual={numero}/>
-      </div>
-
-      {
-        primerNumero <= numeroPaginas - 6 && <i className="fa-solid fa-ellipsis icono-3puntos"></i> /* icono de 3 puntos */
-      }
-
-      <Boton numero={numeroPaginas} numeroActual={numero}/>
-
-      {
-        Number(numero) !== numeroPaginas && (
-          <Link to={`/search/${Number(numero) + 1}`} className='boton-mover'>{palabras&&'Siguiente'}&nbsp;&nbsp;<i className="fa-solid fa-chevron-right"></i></Link>
-        )
-      }
       
+
+              {/* BLOQUE BOTON ATRAS*/}
+              {
+                Number(numero) !== 1 && (
+                  <Link to={`/search/${Number(numero) - 1}`} className='boton-mover'><i className="fa-solid fa-chevron-left"></i>&nbsp;&nbsp;{palabras&&'Anterior'}</Link>
+                )
+              }
+          
+              {/* /////////////7 */}
+              {/* /////////////7 */}
+              {/* /////////////7 */}
+              
+              {
+                numero >= 4 && (
+                  <>
+                    {/* PRIMER BOTON */}
+                    <Boton numero={1} numeroActual={numero} />
+                    {/* BLOQUE DE 3 PUNTOS */}
+                    {
+                      numero !== 4 && <i className="fa-solid fa-ellipsis icono-3puntos"></i> /* icono de 3 puntos */
+                    }
+                  </>
+                )
+              }
+
+              {/* BLOQUE DOS: BOTONES CENTRALES */}
+              <div className='contenedor-botones-juntos'>
+                <Boton numero={primerNumero + 0} numeroActual={numero}/>
+                <Boton numero={primerNumero + 1} numeroActual={numero}/>
+                <Boton numero={primerNumero + 2} numeroActual={numero}/>
+                <Boton numero={primerNumero + 3} numeroActual={numero}/>
+                <Boton numero={primerNumero + 4} numeroActual={numero}/>
+              </div>
+
+
+              {/* BLOQUE  3 PUNTOS*/}
+              {
+                primerNumero <= numeroPaginas - 6 && <i className="fa-solid fa-ellipsis icono-3puntos"></i> /* icono de 3 puntos */
+              }
+
+
+              {/* BOTON ULTIMO BOTON */}
+
+              <Boton numero={numeroPaginas} numeroActual={numero}/>
+
+
+
+              {/* /////////////7 */}
+              {/* /////////////7 */}
+              {/* /////////////7 */}
+              {/* /////////////7 */}
+          
+          
+              {/* BLOQUE BOTON SIGUIENTE  */}
+              {
+                Number(numero) !== numeroPaginas && (
+                  <Link to={`/search/${Number(numero) + 1}`} className='boton-mover'>{palabras&&'Siguiente'}&nbsp;&nbsp;<i className="fa-solid fa-chevron-right"></i></Link>
+                )
+              }
+          
+
+          
+          {/* <Boton numero={1} numeroActual={numero}/>
+          <Boton numero={2} numeroActual={numero}/>
+          <Boton numero={3} numeroActual={numero}/>
+          <Boton numero={4} numeroActual={numero}/>
+          <Boton numero={5} numeroActual={numero}/>
+          <Boton numero={6} numeroActual={numero}/> */}
+          
     </nav>
     )
-  )
 }

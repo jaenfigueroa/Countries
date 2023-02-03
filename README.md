@@ -1,5 +1,17 @@
+<div align=center>
 
-## seccion de busqueda
+# Crountries
+
+</div>
+
+## 📷 Screenshots
+
+<img src="./assets/countries1.png" style="width: 100%"  />
+<img src="./assets/countries2.png" style="width: 100%"  />
+
+
+
+<!-- ## seccion de busqueda
 
 POR CHECKBOX
 - lenguage -- https://restcountries.com/v3.1/lang/german
@@ -7,4 +19,5 @@ POR CHECKBOX
 
 POR BUSQUEDA (buscador):
 - nombre -- https://restcountries.com/v3.1/name/peru
-- capital -- https://restcountries.com/v3.1/capital/lima
+- capital -- https://restcountries.com/v3.1/capital/lima -->
+
