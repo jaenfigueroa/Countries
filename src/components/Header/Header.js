@@ -8,6 +8,7 @@ export const Header = () => {
       <nav className='header__nav'>
         <NavLink to='/inicio' className={({isActive})=> isActive? 'header__opcion--activo': 'header__opcion' }>Inicio</NavLink>
         <NavLink to='/search' className={({isActive})=> isActive? 'header__opcion--activo': 'header__opcion' }>Search</NavLink>
+        <NavLink to='/Individual' className={({isActive})=> isActive? 'header__opcion--activo': 'header__opcion' }>Individual</NavLink>
       </nav>
     </header>
   )

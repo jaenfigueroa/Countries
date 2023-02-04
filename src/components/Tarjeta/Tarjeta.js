@@ -1,13 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export const Tarjeta = ({pais}) => {
 
   const {img, nombre, continente, capital, idioma, moneda, area} = pais
 
-
+  const navigate = useNavigate()
   ////////////////////////////////////////////
   return (
-    <article className='search__tarjeta'>
+    <article className='search__tarjeta' onClick={()=>navigate(`/individual/${nombre}`)}>
 
       {/* CONTENIDO */}
       <img className='tarjeta__bandera' src={img} alt={`bandera de ${nombre}`} />

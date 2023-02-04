@@ -15,7 +15,7 @@ export const Inicio = () => {
       {/* CONTENEDOR DE BOTONES */}
       <div className='contenedor-botones'>
         <NavLink to='/search' className='boton'>Search</NavLink>
-        {/* <NavLink to='/compare' className='boton'>Compare</NavLink> */}
+        <NavLink to='/individual' className='boton'>Random</NavLink>
       </div>
 
     </section>

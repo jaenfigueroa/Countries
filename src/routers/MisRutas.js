@@ -4,6 +4,7 @@ import { Header } from '../components/Header/Header'
 import { Footer } from '../components/Footer/Footer'
 import { Search } from '../pages/Search/Search'
 import { Inicio } from '../pages/Inicio/Inicio'
+import { Individual } from '../pages/Individual/Individual'
 
 ////////////////////////////////////////////
 export const MisRutas = () => {
@@ -25,6 +26,10 @@ export const MisRutas = () => {
           
           <Route path='/search/' element={<Navigate to='/search/1'/>}/>
           <Route path='/search/:pagina' element={<Search/>}/>
+
+          {/* <Route path='/individual' element={<Navigate to='/individual/aleatorio'/>}/> */}
+          <Route path='/individual' element={<Navigate to='/individual/brasil'/>}/>
+          <Route path='/individual/:nombre' element={<Individual/>}/>
 
           <Route path='*' element={<p>No existe la pagina</p>}/>
 
