@@ -27,7 +27,7 @@ export const Individual = () => {
   return (
     <section className='pais'>
       {
-        pais && (
+        pais ? (
           <>
             {/* NOMBRE DE PAIS */}
             <div>
@@ -53,6 +53,12 @@ export const Individual = () => {
               </div>
             </article>
           </>
+        ) : (
+
+          /* AVISO EN CASO NO EXISTA INFORMACION DE ESE PAIS */
+          <div className='pais__aviso'>
+            <h3 >No existe informacion sobre este pais</h3>
+          </div>
         )
       }
     </section>

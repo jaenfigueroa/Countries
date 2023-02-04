@@ -1,9 +1,10 @@
 .pais{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: column; 
+  justify-content: center; /* PROV */
   align-items: center;
   width: 100%;
+  // min-height: 100vh; /* PROV */
 
   &__nombre{
     font-size: 3rem;
@@ -75,6 +76,24 @@
     margin: 1rem;
   }
 
+
+  /* AVISO EN CASO NO EXISTA INFORMACION DE ESE PAIS */
+  &__aviso{
+    // background-color: blue;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    text-align: center;
+    color: white;
+
+    h3{
+      font-weight: 500;
+      font-size: 2rem;
+    }
+  }
+
 }
 
 
@@ -115,6 +134,14 @@
       // padding: .5rem 1.5rem;
       // padding: .5rem 3rem;
     }
+
+    /* AVISO EN CASO NO EXISTA INFORMACION DE ESE PAIS */
+    &__aviso{
+      width: 400px;
+      h3{
+        font-size: 3rem;
+      }
+    }
   }
 
 }
@@ -144,8 +171,6 @@
       
       .pais__caja-imagen{
         // background: blue;
-        width: 300px;
-        width: 400px;
         width: 450px;
         height: 300px;
 
@@ -159,6 +184,20 @@
     .subtitulo{
       // padding: .5rem 1.5rem;
       font-size: 3rem;
+    }
+
+    /* AVISO EN CASO NO EXISTA INFORMACION DE ESE PAIS */
+    &__aviso{
+      width: 400px;
+      width: 500px;
+
+      min-height: 60vh;
+
+      h3{
+        font-size: 4rem;
+        margin-top: 5rem;
+        margin-top: 10rem;
+      }
     }
   }
 }
