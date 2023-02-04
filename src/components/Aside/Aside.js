@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Selector } from '../Selector/Selector'
 import {traerCategorias} from '../../helpers/traerCategorias'
+import { useNavigate } from 'react-router-dom'
 
 export const Aside = ({mostrarAside, etiquetas, setEtiquetas}) => {
 
@@ -27,14 +28,25 @@ export const Aside = ({mostrarAside, etiquetas, setEtiquetas}) => {
   //   // },
   // ])
   
+  const navegar = useNavigate()
   
   //AGREGAR UNA ETIQUETA NUEVA
   const agregarEtiqueta = (tipo, valor)=>{
+
+
+    //VOLVER A LA PAGINA1, DESPUES DE AGREGAR UNA ETIQUETA
+    navegar('/search/1')
+
+
     setEtiquetas([...etiquetas, {tipo, valor}])
   }
 
   //QUITAR UAN ETIQUETA DE LA LISTA
   const quitarEtiqueta = (valor) =>{
+
+    //VOLVER A LA PAGINA 1, DESPUES DE QUITAR UNA ETIQUETA
+    navegar('/search/1')
+
 
     let resultado = etiquetas.filter(x => x.valor !== valor)
     setEtiquetas(resultado)
@@ -47,6 +59,12 @@ export const Aside = ({mostrarAside, etiquetas, setEtiquetas}) => {
 
   //QUITAR TODAS LAS ETIQUETAS DE UN SOLO CLICK
   const eliminarEtiquetas = () =>{
+
+
+    //VOLVER A LA PAGINA 1 DESPUES DE ELIMINAR TODAS LAS ETIQUETAS
+    navegar('/search/1')
+
+
     setEtiquetas([])
 
     const elementos = document.querySelectorAll(`input[type="checkbox"]`);

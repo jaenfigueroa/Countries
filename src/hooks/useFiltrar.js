@@ -1,8 +1,13 @@
 import { useCallback, useState } from "react"
+// import { useNavigate } from "react-router-dom"
 
 export const useFiltrar = (lista, etiquetas) => {
 
   const [restantes, setRestantes] = useState([])
+
+  ////////////////////
+  ////////////////////
+  // const navigate = useNavigate()
 
   //USAR USE CALL BACK PARA MEMORIZAR EL VALOR QUE DEVULVE UNA FUNCION
   const filtrarMemorizado = useCallback(() => {
@@ -37,8 +42,11 @@ export const useFiltrar = (lista, etiquetas) => {
     // filtrarRestantes
     filtrarMemorizado
   }
-}
 
+
+
+
+}
 
 
 //FILTRADO//////////////////////////////////////////

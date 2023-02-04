@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Aside } from '../../components/Aside/Aside'
 import { Paginacion } from '../../components/Paginacion/Paginacion'
 import { Tarjeta } from '../../components/Tarjeta/Tarjeta'
@@ -7,7 +7,6 @@ import { traerListaPaises } from '../../helpers/traerListaPaises'
 import { useAnchoPantalla } from '../../hooks/useAnchoPantalla'
 import { useFiltrar } from '../../hooks/useFiltrar'
 import { ordenarListaReducer } from '../../reducers/ordenarLista.reducer'
-
 
 //////////////////////////////////////////////
 export const Search = () => {
@@ -24,12 +23,17 @@ export const Search = () => {
     // },
   ])
 
+    // const [numPagina, setNumPagina] = useState(pagina)
+
+    const navegar = useNavigate()
+
   /////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////////
 
   //OBTNER LA VARIABLE PAGIAN DE LA URL
   const {pagina} = useParams()
+
 
   //CONTROLAR LA VISIBILIDAD DEL ASIDE /////////////////////////
   const [versionDesktop, setVersionDesktop] = useState(false)
@@ -67,15 +71,23 @@ export const Search = () => {
   const [estado, dispatch] = useReducer(ordenarListaReducer, {listaOrdenada: []})
 
   const ordenarLista = (tipoOrden) => {
+
+    //VOLVER A LA PAGINA 1, EN CASO QUE SE USE EL SELECCTOR PARA CAMBIAR EL ORDEN
+    navegar('/search/1')
+
     dispatch({tipo: tipoOrden})
   } 
 
   //LLENAR EL ESTADO DE LISTA DE BANDERAS POR PRIMERA VEZ
   useEffect(()=>{
 
+
+
     const traerDatos = async()=>{
       const data = await traerListaPaises()
       // console.log(data)
+    
+
     
       dispatch({
         tipo: "MODIFICAR_LISTA",
@@ -83,10 +95,23 @@ export const Search = () => {
       })
     }
 
+
     traerDatos()
+
   },[])
   
 
+  /////////////////////////////7
+  /////////////////////////////7
+  /////////////////////////////7
+  /////////////////////////////7
+
+
+
+  // const navegarPagina = useCallback(()=>navegar('/search/1'), [navegar])
+
+
+    
   /////////////////////////////7
   /////////////////////////////7
   /////////////////////////////7
@@ -109,8 +134,19 @@ export const Search = () => {
   const [listaSeparada, setListaSeparada] = useState([])
 
 
+  ////////////////////////////////////
+  ////////////////////////////////////
+  // // const [numPagina, setNumPagina] = useState(pagina)
 
+  // const navegar = useNavigate()
 
+  // // const navegarPagina = useCallback(()=>navegar('/search/1'), [navegar])
+
+  // useEffect(()=>{
+
+  //   navegar('/search/1')
+    
+  // },[listaRestantes, navegar])
   ///////////////////////////////////////////////
   return (
     <section className='search-layout'>
@@ -215,7 +251,12 @@ export const Search = () => {
             lista={listaRestantes}
             setListaSeparada={setListaSeparada}
             etiquetas={etiquetas}
-            estado={estado} />
+            estado={estado}
+            
+            // numPagina= {numPagina}
+            // setNumPagina={setNumPagina}
+
+            />
 
         </div>
 
