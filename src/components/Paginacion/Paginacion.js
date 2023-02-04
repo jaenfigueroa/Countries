@@ -6,7 +6,8 @@ export const Paginacion = ({numero, lista, setListaSeparada, etiquetas, estado }
   //TOTAL DE ELEMENTOS DE LA LISTA ORIGINAL
   let totalElementos = lista.length
   //CANTIDAD DE ELEMENTOS POR CADA PAGINA
-  const cantidad = 24
+  // const cantidad = 24
+  const cantidad = 27
 
 
   useEffect(()=>{
