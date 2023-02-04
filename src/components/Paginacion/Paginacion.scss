@@ -1,77 +1,45 @@
 .nav-paginas{
   // background-color: red;
-  width: 100%;
-
-  /* mobile */
   padding: 2rem 2rem 4rem 2rem;
-
-  /* desktop */
-
   display: flex;
   justify-content: center;
   align-items: center;
   gap: .5rem;
-  color: gray;
 
-  .boton-mover{
-    color: currentColor;
-
-    &:hover{
-      color: rgb(160, 160, 160);
-    }
-  }
-  .contenedor-botones-juntos{
-    display: flex;
-    gap: .3rem;
-  }
-  
   .boton{
     border-radius: .5rem;
     padding: .5rem .5rem;
     background: white;
     color: black;
+
+    &--activo{
+      background:#f8e8b5;
+    }
   }
+}
 
-  .boton--activo{
-    background:#f8e8b5;
+@media (min-width: 500px) {
+  .nav-paginas{
+    padding: 4rem 1rem 4rem 1rem;
+
+    .boton{
+      padding: 1rem 1.5rem;
+    }
   }
-
-
 }
 
 @media (min-width: 700px) {
   .nav-paginas{
-    // background-color: green;
-    gap: 2rem;
-    padding: 4rem 1rem 4rem 1rem;
-
-    .contenedor-botones-juntos{
-      gap: 1rem;
-    }
-
-    .boton{
-      padding: 1rem 1rem;
-    }
+    gap: 1rem;
+  }
+  .boton{
+    padding: 1rem 2rem;
   }
 }
 
 @media (min-width: 1132px) {
   .nav-paginas{
-    gap: 1rem;
+    gap: 1.2rem;
     padding: 8rem 1rem 4rem 1rem;
-
-    .contenedor-botones-juntos{
-      gap: 1rem;
-    }
-
-    .boton{
-      padding: 1rem 2rem;
-    }
-
-    .icono-3puntos{
-      // background-color: green;
-      padding: 0 1rem;
-
-    }
   }
 }
