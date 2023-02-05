@@ -76,7 +76,7 @@ export const Individual = () => {
     /* AVISO EN CASO NO EXISTA INFORMACION DE ESE PAIS */
     return (
       <div className='pais__aviso'>
-        <h3 >No existe informacion sobre este pais</h3>
+        {/* <h3 >No existe informacion sobre este pais</h3> */}
       </div>
     )
   }
