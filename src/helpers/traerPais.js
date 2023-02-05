@@ -28,6 +28,8 @@ const armarPais = (data)=>{
   // console.log('inicio:',data)
 
   const paisFormado = {
+
+    /* BLOQUE 1 */
     nombres: {
       codigo: data.altSpellings[0],
       comun: data.name.common, /* USADO */
@@ -38,6 +40,7 @@ const armarPais = (data)=>{
     coordenadasCapital: data.capitalInfo.latlng, /* USADO */
     coordenadasPais: data.latlng, /* USADO */
 
+    /* BLOQUE 2 */
     capital: data.capital.join(''),
     area: data.area,
     poblacion: data.population,
@@ -50,11 +53,14 @@ const armarPais = (data)=>{
     dominio: data.tld.join(''),
     codigoTel: data.idd.root + data.idd.suffixes.join(''),
     
-    paisesVecinos: data.borders,
+    /* BLOQUE 3 */
+    paisesVecinos: data.borders, /* USADO */
     
+    /* BLOQUE 4 */
     inicioSemana: data.startOfWeek,
     zonaHoraria: data.timezones,
     
+    /* NO SE PARA QUE USARLO */
     mapa: data.maps.googleMaps, 
   }
 

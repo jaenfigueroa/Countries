@@ -68,8 +68,20 @@ export const Individual = () => {
             }
           </article>
         </section>
-      
+
+
+
         {/* BLOQUE 2 */}
+        <section className='informacion'>
+          <h4 className='subtitulo'>Informacion</h4>
+          
+
+        </section>
+
+
+
+      
+        {/* BLOQUE 3 */}
         <section className='capital'>
           <h4 className='subtitulo'>Mapa</h4>
           <Mapa
@@ -79,7 +91,10 @@ export const Individual = () => {
             longitud_pais={pais.coordenadasPais[1]} />
         </section>
 
-        {/* BLOQUE 3 */}
+
+
+
+        {/* BLOQUE 4 */}
         {
           pais.paisesVecinos && (
             <section className='paises-vecinos'>
@@ -99,18 +114,15 @@ export const Individual = () => {
           )
         }
 
-        {/* BLOQUE 4 */}
-        {/* <section className='informacion'>
-          <h4 className='subtitulo'>Informacion general</h4>
 
 
-        </section> */}
 
         {/* BLOQUE 5 */}
-        {/* <section className='informacion'>
-          <h4 className='subtitulo'>Temperatura - hora</h4>
+        {/* <section className='cliam y hora'>
+          <h4 className='subtitulo'>Clima - hora</h4>
 
         </section> */}
+
 
 
       </>

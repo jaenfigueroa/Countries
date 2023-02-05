@@ -35,6 +35,7 @@ export const Search = () => {
   const {pagina} = useParams()
 
 
+
   //CONTROLAR LA VISIBILIDAD DEL ASIDE /////////////////////////
   const [versionDesktop, setVersionDesktop] = useState(false)
   const [asideActivo, setAsideActivo] = useState(false)
