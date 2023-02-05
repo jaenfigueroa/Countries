@@ -58,7 +58,7 @@ const armarPais = (data)=>{
     mapa: data.maps.googleMaps, 
   }
 
-  // console.log('resultado:', paisFormado);
+  console.log('resultado:', paisFormado);
 
   return paisFormado
 }
