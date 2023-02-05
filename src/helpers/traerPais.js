@@ -41,15 +41,16 @@ const armarPais = (data)=>{
     coordenadasPais: data.latlng, /* USADO */
 
     /* BLOQUE 2 */
-    capital: data.capital.join(''),
+    continente: data.region,
+    subcontinente: data.subregion,
     area: data.area,
+    capital: data.capital.join(''),
     poblacion: data.population,
     moneda: traerMoneda(data.currencies),
     indiceGiniDesigualdad: data.gini,
-    paisIndependiente: data.independent,
     idiomas: traerIdiomas(data.languages),
-    continente: data.region,
-    subcontinente: data.subregion,
+    
+    paisIndependiente: data.independent,
     dominio: data.tld.join(''),
     codigoTel: data.idd.root + data.idd.suffixes.join(''),
     
