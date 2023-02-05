@@ -13,7 +13,7 @@ export const Mapa = ({latitud, longitud}) => {
       mapTypeId: 'terrain', /* TIPO DE MAPA */
       // mapTypeId: 'satellite',
       // mapTypeId: 'hybrid',
-      scrollwheel: false /* SI EL UUSARIO DEBE PODER USAR EL SCROLL PARA HCER ZOOM */
+      // scrollwheel: false /* SI EL UUSARIO DEBE PODER USAR EL SCROLL PARA HCER ZOOM */
     })
 
     new window.google.maps.Marker({
