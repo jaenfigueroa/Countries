@@ -60,20 +60,12 @@
       width: 100%;
       height: 100%;
     }
-  }
 
-  /* OTROS */
+    
+  }
+  
   .subtitulo{
-    background-color: red;
-    width: max-content;
-    padding: .5rem 2rem;
-    border-radius: .5rem;
-    background: white;
-    background: rgb(87, 87, 87);
-    background: rgb(66, 66, 66);
-    color: white;
-    font-weight: 500;
-    margin: 1rem;
+    margin-top: 1rem;
   }
 
 
@@ -93,7 +85,16 @@
       font-size: 2rem;
     }
   }
+}
 
+/* BLOQUE 2 - CAPITAL */
+.capital{
+  // background-color: red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -131,8 +132,7 @@
     }
 
     .subtitulo{
-      // padding: .5rem 1.5rem;
-      // padding: .5rem 3rem;
+      margin-bottom: 3rem;
     }
 
     /* AVISO EN CASO NO EXISTA INFORMACION DE ESE PAIS */
@@ -143,6 +143,8 @@
       }
     }
   }
+
+
 
 }
 
@@ -178,12 +180,6 @@
           // background-color: yellow;
         }
       }
-    }
-
-    /* OTROS */
-    .subtitulo{
-      // padding: .5rem 1.5rem;
-      font-size: 3rem;
     }
 
     /* AVISO EN CASO NO EXISTA INFORMACION DE ESE PAIS */

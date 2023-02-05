@@ -14,6 +14,7 @@
 @import './pages/Inicio/Inicio.scss';
 @import './pages/Search/Search.scss';
 @import './pages/Individual/Individual.scss';
+@import './pages/Individual/Mapa.scss';
 
 
 /* PERSONALIZAR SCROLL ///////////////////////*/
@@ -45,5 +46,29 @@ strong{
     flex-direction: column;
     align-items: center;
     // background: blue;
+  }
+}
+
+
+/* OTROS: COMPONENTES - SUBTITULO*/
+.subtitulo{
+  background-color: red;
+  width: max-content;
+  padding: .5rem 2rem;
+  border-radius: .5rem;
+  background: white;
+  background: rgb(87, 87, 87);
+  background: rgb(66, 66, 66);
+  color: white;
+  font-weight: 500;
+  margin: 1rem;
+}
+
+@media (min-width: 900px) {
+  /* OTROS */
+  .subtitulo{
+    // padding: .5rem 1.5rem;
+    font-size: 3rem;
+    margin: 8rem 0 5rem;
   }
 }

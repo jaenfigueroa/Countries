@@ -7,7 +7,7 @@ export const traerPais = async (nombre) => {
     const peticion = await fetch(`https://restcountries.com/v3.1/name/${nombre}`)
     const data = await peticion.json()
 
-    // console.log(data[0]);
+    console.log(data);
 
     return armarPais(data[0])
     
@@ -46,10 +46,13 @@ const armarPais = (data)=>{
     codigoTel: data.idd.root + data.idd.suffixes.join(''),
     paisIndependiente: data.independent,
     idiomas: traerIdiomas(data.languages),
-    inicioSemana: data.startOfWeek
+    inicioSemana: data.startOfWeek,
+
+    //COODENADAS DE LA CAPITAL
+    coordenadasCapital: data.capitalInfo.latlng
   }
 
-  // console.log('resultado:', paisFormado);
+  console.log('resultado:', paisFormado);
 
   return paisFormado
 }

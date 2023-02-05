@@ -1,0 +1,12 @@
+#map{
+  height: 500px;
+  width: 100%;
+}
+
+@media (min-width: 980px) {
+  #map{
+    height: 600px;
+    width: 90%;
+    border-radius: .5rem;
+  }
+}
