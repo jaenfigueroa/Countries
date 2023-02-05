@@ -68,8 +68,6 @@ export const Individual = () => {
 
         </section>
 
-
-
       </>
     )
   } else{
