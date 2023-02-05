@@ -28,7 +28,7 @@ export const MisRutas = () => {
           <Route path='/search/:pagina' element={<Search/>}/>
 
           {/* <Route path='/individual' element={<Navigate to='/individual/aleatorio'/>}/> */}
-          <Route path='/individual' element={<Navigate to='/individual/brasil'/>}/>
+          <Route path='/individual' element={<Navigate to='/individual/united%20states'/>}/>
           <Route path='/individual/:nombre' element={<Individual/>}/>
 
           <Route path='*' element={<p>No existe la pagina</p>}/>
