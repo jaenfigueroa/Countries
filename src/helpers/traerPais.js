@@ -2,9 +2,12 @@ export const traerPais = async (nombre) => {
   
   console.log('nombre de pais que se solicita:', nombre)
 
+  // let url = `https://restcountries.com/v3.1/name/${nombre}`
+  let url = `https://restcountries.com/v3.1/name/${nombre}?fullText=true`
+
   try {
 
-    const peticion = await fetch(`https://restcountries.com/v3.1/name/${nombre}`)
+    const peticion = await fetch(url)
     const data = await peticion.json()
 
     console.log(data);
