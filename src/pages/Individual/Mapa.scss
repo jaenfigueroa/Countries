@@ -3,6 +3,8 @@
   width: 95%;
   border-radius: .5rem;
   margin-top: 2rem;
+  // overflow: scroll;
+  overflow: hidden;
 }
 
 @media (min-width: 980px) {
@@ -10,7 +12,5 @@
     height: 600px;
     width: 90%;
     margin-top: 1rem;
-    // border: 2px solid #d1c398;
-    // border: 1px solid #d1c398;
   }
 }

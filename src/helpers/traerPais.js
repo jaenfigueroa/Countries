@@ -1,6 +1,6 @@
 export const traerPais = async (nombre) => {
   
-  console.log('nombre de pais que se solicita:', nombre)
+  // console.log('nombre de pais que se solicita:', nombre)
 
   // let url = `https://restcountries.com/v3.1/name/${nombre}`
   let url = `https://restcountries.com/v3.1/name/${nombre}?fullText=true`
@@ -10,7 +10,7 @@ export const traerPais = async (nombre) => {
     const peticion = await fetch(url)
     const data = await peticion.json()
 
-    console.log(data);
+    // console.log(data);
 
     return armarPais(data[0])
     
@@ -30,35 +30,35 @@ const armarPais = (data)=>{
   const paisFormado = {
     nombres: {
       codigo: data.altSpellings[0],
-      comun: data.name.common,
-      oficial: data.name.official,
+      comun: data.name.common, /* USADO */
+      oficial: data.name.official, /* USADO */
     },
+    banderaImg: data.flags.svg, /* USADO */
+    escudoImg: data.coatOfArms.svg, /* USADO */
+    coordenadasCapital: data.capitalInfo.latlng, /* USADO */
+    coordenadasPais: data.latlng, /* USADO */
+
     capital: data.capital.join(''),
-    paisesVecinos: data.borders,
-    banderaImg: data.flags.svg,
-    escudoImg: data.coatOfArms.svg,
     area: data.area,
-    mapa: data.maps.googleMaps,
     poblacion: data.population,
-    continente: data.region,
-    subcontinente: data.subregion,
-    zonaHoraria: data.timezones,
-    dominio: data.tld.join(''),
     moneda: traerMoneda(data.currencies),
     indiceGiniDesigualdad: data.gini,
-    codigoTel: data.idd.root + data.idd.suffixes.join(''),
     paisIndependiente: data.independent,
     idiomas: traerIdiomas(data.languages),
+    continente: data.region,
+    subcontinente: data.subregion,
+    dominio: data.tld.join(''),
+    codigoTel: data.idd.root + data.idd.suffixes.join(''),
+    
+    paisesVecinos: data.borders,
+    
     inicioSemana: data.startOfWeek,
-
-    //COODENADAS DE LA CAPITAL
-    coordenadasCapital: data.capitalInfo.latlng,
-
-    //COORDENADAS DEL PAIS
-    coordenadasPais: data.latlng
+    zonaHoraria: data.timezones,
+    
+    mapa: data.maps.googleMaps, 
   }
 
-  console.log('resultado:', paisFormado);
+  // console.log('resultado:', paisFormado);
 
   return paisFormado
 }

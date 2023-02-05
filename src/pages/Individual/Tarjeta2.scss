@@ -1,0 +1,56 @@
+/* TARJETA */
+.tarjeta2{
+  grid-auto-rows: minmax(150px, auto);
+  border-radius: .5rem;
+  background: linear-gradient(-45deg, #d1be84, #ffefbd, #978c6d);
+  color: var(--black);
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 3rem 2rem;
+
+  flex-wrap: wrap;
+  gap: 2rem;
+  z-index: 1;
+
+  // min-width: 250px;
+  min-width: 300px;
+  max-width: 300px;
+
+  cursor: pointer;
+}
+
+
+/* RELLENADO DE DATOS */
+.tarjeta__nombre{
+  font-size: 3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--black);
+  text-shadow: 0px 0px 10px #e4d3a4;
+  width: 100%;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+.tarjeta__bandera{
+  border: 2px solid #b3a377;
+  max-height: 115px;
+  max-height: 100px;
+}
+.tarjeta__capital{
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.contenedor-informacion{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 250px;
+
+  word-wrap: break-word;
+  hyphens: auto;
+}

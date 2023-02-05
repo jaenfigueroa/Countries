@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { traerPais } from '../../helpers/traerPais'
 import { Mapa } from './Mapa'
+import { Tarjeta2 } from './Tarjeta2'
 
 /////////////////////////////////////////////
 export const Individual = () => {
@@ -24,13 +25,16 @@ export const Individual = () => {
   },[nombre])
 
 
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  }, [nombre])
+
   /////////////////////////////////////////////
 
   if(pais){
     return (
       <>
         {/* BLOQUE 1 */}
-
         <section className='pais'>
           {/* NOMBRE DE PAIS */}
           <div>
@@ -41,19 +45,27 @@ export const Individual = () => {
           {/* CONTENEDOR DE LAS IMAGENES DE BANDERA Y ESCUDO */}
           <article className='pais__contenedor-bandera-escudo'>
             {/* BANDERA */}
-            <div>
-              <h4 className='subtitulo'>Bandera</h4>
-              <div className='pais__caja-imagen'>
-                <img src={pais.banderaImg} alt="" />
-              </div>
-            </div>
+            {
+              pais.banderaImg && (
+                <div>
+                  <h4 className='subtitulo'>Bandera</h4>
+                  <div className='pais__caja-imagen'>
+                    <img src={pais.banderaImg} alt="" />
+                  </div>
+                </div>
+              )
+            }
             {/* ESCUDO */}
-            <div>
-              <h4 className='subtitulo'>Escudo</h4>
-              <div className='pais__caja-imagen'>
-                <img src={pais.escudoImg} alt="" />
-              </div>
-            </div>
+            {
+              pais.escudoImg && (
+                <div>
+                  <h4 className='subtitulo'>Escudo</h4>
+                  <div className='pais__caja-imagen'>
+                    <img src={pais.escudoImg} alt="" />
+                  </div>
+                </div>
+              )
+            }
           </article>
         </section>
       
@@ -61,12 +73,45 @@ export const Individual = () => {
         <section className='capital'>
           <h4 className='subtitulo'>Mapa</h4>
           <Mapa
-            // latitud={pais.coordenadasCapital[0]}
-            // longitud={pais.coordenadasCapital[1]}
-            latitud={pais.coordenadasPais[0]}
-            longitud={pais.coordenadasPais[1]} />
-
+            latitud_capital={pais.coordenadasCapital[0]}
+            longitud_capital={pais.coordenadasCapital[1]}
+            latitud_pais={pais.coordenadasPais[0]}
+            longitud_pais={pais.coordenadasPais[1]} />
         </section>
+
+        {/* BLOQUE 3 */}
+        {
+          pais.paisesVecinos && (
+            <section className='paises-vecinos'>
+              <h4 className='subtitulo'>Paises vecinos</h4>
+    
+              <div className='contenedor-paises-vecinos'>
+              {
+                pais.paisesVecinos.map((x, index) => {
+                  return(
+                    <Tarjeta2 codigo={x} key={index}/>
+                  )
+                })
+              }
+              </div>
+              
+            </section>
+          )
+        }
+
+        {/* BLOQUE 4 */}
+        {/* <section className='informacion'>
+          <h4 className='subtitulo'>Informacion general</h4>
+
+
+        </section> */}
+
+        {/* BLOQUE 5 */}
+        {/* <section className='informacion'>
+          <h4 className='subtitulo'>Temperatura - hora</h4>
+
+        </section> */}
+
 
       </>
     )

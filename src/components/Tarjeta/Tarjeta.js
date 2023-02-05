@@ -15,8 +15,8 @@ export const Tarjeta = ({pais}) => {
 
       <div className='contenedor-informacion'>
         <h3 className='tarjeta__nombre'>{nombre}</h3>
-        <p><strong>Continente</strong>: {continente}</p> 
         <p><strong>Capital</strong>: {capital}</p> 
+        <p><strong>Continente</strong>: {continente}</p> 
         <p><strong>Idiomas</strong>: {idioma}</p>
         <p><strong>Moneda</strong>: {moneda}</p>
         <p><strong>Area</strong>: {formatearNumero(area)} km<sup>2</sup></p>
