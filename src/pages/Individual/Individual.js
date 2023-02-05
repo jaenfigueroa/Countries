@@ -61,8 +61,10 @@ export const Individual = () => {
         <section className='capital'>
           <h4 className='subtitulo'>Mapa</h4>
           <Mapa
-            latitud={pais.coordenadasCapital[0]}
-            longitud={pais.coordenadasCapital[1]} />
+            // latitud={pais.coordenadasCapital[0]}
+            // longitud={pais.coordenadasCapital[1]}
+            latitud={pais.coordenadasPais[0]}
+            longitud={pais.coordenadasPais[1]} />
 
         </section>
 

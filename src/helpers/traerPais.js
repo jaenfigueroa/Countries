@@ -49,7 +49,10 @@ const armarPais = (data)=>{
     inicioSemana: data.startOfWeek,
 
     //COODENADAS DE LA CAPITAL
-    coordenadasCapital: data.capitalInfo.latlng
+    coordenadasCapital: data.capitalInfo.latlng,
+
+    //COORDENADAS DEL PAIS
+    coordenadasPais: data.latlng
   }
 
   console.log('resultado:', paisFormado);
