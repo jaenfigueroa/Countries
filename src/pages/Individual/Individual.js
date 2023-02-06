@@ -88,6 +88,11 @@ export const Individual = () => {
             </div>
 
             <div className='item'>
+              <p className='titulo'>Independiente</p>
+              <p className='dato'>SI</p>
+            </div>
+
+            <div className='item'>
               <p className='titulo'>Area</p>
               <p className='dato'>{formatearNumero(pais.area)} m<sup>2</sup></p>
             </div>
@@ -132,10 +137,7 @@ export const Individual = () => {
               <p className='dato'>{pais.idiomas}</p>
             </div>
 
-            <div className='item'>
-              <p className='titulo'>Independiente</p>
-              <p className='dato'>SI</p>
-            </div>
+
 
         </section>
 

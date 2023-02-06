@@ -297,19 +297,33 @@
     .informacion{
       width: 570px;
       padding: 2rem 3rem;
+      width: 800px;
+      width: 820px;
+      width: 950px;
+      width: 850px;
+      width: 800px;
+      width: 800px;
+      width: 850px;
+      gap: 1rem;
+
+      // text-align: center;
   
         .item{
-          padding: 1rem 2rem;
+          // padding: 1rem 2rem;
+          // padding: 2rem 1rem;
           // border: 1px solid black;
+
+          width: calc(100% / 3.3);
+          width: calc(100% / 3.1);
           
           .titulo{
             font-size: 2.8rem;
             font-size: 2.9rem;
-            text-decoration:  #c6b990 ;
-  
+            // text-decoration: #c6b990;
           }
           .dato{
             font-size: 2.3rem;
+            margin-top: -7px
           }
         }
     }
