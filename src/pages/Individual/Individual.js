@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { formatearNumero } from '../../helpers/formatearNumero'
 import { traerPais } from '../../helpers/traerPais'
 import { Mapa } from './Mapa'
 import { Tarjeta2 } from './Tarjeta2'
@@ -88,7 +89,7 @@ export const Individual = () => {
 
             <div className='item'>
               <p className='titulo'>Area</p>
-              <p className='dato'>{pais.area}</p>
+              <p className='dato'>{formatearNumero(pais.area)} m<sup>2</sup></p>
             </div>
 
             <div className='item'>
@@ -98,7 +99,7 @@ export const Individual = () => {
 
             <div className='item'>
               <p className='titulo'>Poblacion</p>
-              <p className='dato'>{pais.poblacion}</p>
+              <p className='dato'>{formatearNumero(pais.poblacion)}</p>
             </div>
 
             <div className='item'>
