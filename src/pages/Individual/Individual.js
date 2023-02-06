@@ -119,7 +119,7 @@ export const Individual = () => {
 
             <div className='item'>
               <p className='titulo'>Temperatura</p>
-              <p className='dato'>55 °C</p>
+              <p className='dato'>32 °C</p>
             </div>
 
             <div className='item'>
