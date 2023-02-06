@@ -41,18 +41,18 @@ const armarPais = (data)=>{
     coordenadasPais: data.latlng, /* USADO */
 
     /* BLOQUE 2 */
-    continente: data.region,
-    subcontinente: data.subregion,
-    area: data.area,
-    capital: data.capital.join(''),
-    poblacion: data.population,
-    moneda: traerMoneda(data.currencies),
+    continente: data.region, /* USADO */
+    subcontinente: data.subregion, /* USADO */
+    area: data.area, /* USADO */
+    capital: data.capital.join(''), /* USADO */
+    poblacion: data.population, /* USADO */
+    moneda: traerMoneda(data.currencies), /* USADO */
     indiceGiniDesigualdad: data.gini,
-    idiomas: traerIdiomas(data.languages),
+    idiomas: traerIdiomas(data.languages), /* USADO */
     
-    paisIndependiente: data.independent,
-    dominio: data.tld[0],
-    codigoTel: data.idd.root + data.idd.suffixes.join(''),
+    paisIndependiente: data.independent, /* USADO */
+    dominio: data.tld[0],  /* USADO */
+    codigoTel: data.idd.root + data.idd.suffixes.join(''), /* USADO */
     
     /* BLOQUE 3 */
     paisesVecinos: data.borders, /* USADO */
@@ -65,7 +65,7 @@ const armarPais = (data)=>{
     mapa: data.maps.googleMaps, 
   }
 
-  console.log('resultado:', paisFormado);
+  // console.log('resultado:', paisFormado);
 
   return paisFormado
 }
@@ -77,10 +77,10 @@ const traerIdiomas = (objeto)=>{
   const resultado = []
 
   for (const key in objeto) {
-    resultado.push(objeto[key])
+    resultado.unshift(objeto[key])
   }
 
-  return resultado
+  return resultado.join(' - ')
 }
 
 ///////////////////////////////////////
