@@ -51,7 +51,7 @@ const armarPais = (data)=>{
     idiomas: traerIdiomas(data.languages),
     
     paisIndependiente: data.independent,
-    dominio: data.tld.join(''),
+    dominio: data.tld[0],
     codigoTel: data.idd.root + data.idd.suffixes.join(''),
     
     /* BLOQUE 3 */

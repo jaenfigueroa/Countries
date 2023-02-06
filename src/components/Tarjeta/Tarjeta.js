@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { formatearNumero } from '../../helpers/formatearNumero'
 
 export const Tarjeta = ({pais}) => {
 
@@ -24,9 +25,4 @@ export const Tarjeta = ({pais}) => {
 
     </article>
   )
-}
-
-//FORMATAER UMEROS GRANDE POR ESPACIOSN CADA 3 CIFRAS
-const formatearNumero = (numero)=>{
-  return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }

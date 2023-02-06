@@ -107,7 +107,35 @@ export const Individual = () => {
               <p className='dato'>{pais.moneda.nombre}</p>
             </div>
 
-            {/* <p>Idiomas: </p> */}
+            <div className='item'>
+              <p className='titulo'>Hora</p>
+              <p className='dato'>12:57:25 AM</p>
+            </div>
+
+            <div className='item'>
+              <p className='titulo'>Temperatura</p>
+              <p className='dato'>55 °C</p>
+            </div>
+
+            <div className='item'>
+              <p className='titulo'>Dominio</p>
+              <p className='dato'>{pais.dominio}</p>
+            </div>
+
+            <div className='item'>
+              <p className='titulo'>Codigo Tel.</p>
+              <p className='dato'>{pais.codigoTel}</p>
+            </div>
+
+            <div className='item'>
+              <p className='titulo'>Idioma</p>
+              <p className='dato'>{pais.idiomas}</p>
+            </div>
+
+            <div className='item'>
+              <p className='titulo'>Independiente</p>
+              <p className='dato'>SI</p>
+            </div>
 
         </section>
 
