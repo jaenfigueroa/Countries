@@ -89,7 +89,7 @@ export const Individual = () => {
 
             <div className='item'>
               <p className='titulo'>Independiente</p>
-              <p className='dato'>SI</p>
+              <p className='dato'>{pais.paisIndependiente ? 'Yes' : 'No'}</p>
             </div>
 
             <div className='item'>
