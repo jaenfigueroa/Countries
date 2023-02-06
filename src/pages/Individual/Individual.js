@@ -71,10 +71,42 @@ export const Individual = () => {
 
 
 
+        <h4 className='subtitulo'>Informacion</h4>
+        
         {/* BLOQUE 2 */}
         <section className='informacion'>
-          <h4 className='subtitulo'>Informacion</h4>
           
+            <div className='item'>
+              <p className='titulo'>Continente</p>
+              <p className='dato'>{pais.continente}</p>
+            </div>
+
+            <div className='item'>
+              <p className='titulo'>Subcontinente</p>
+              <p className='dato'>{pais.subcontinente}</p>
+            </div>
+
+            <div className='item'>
+              <p className='titulo'>Area</p>
+              <p className='dato'>{pais.area}</p>
+            </div>
+
+            <div className='item'>
+              <p className='titulo'>Capital</p>
+              <p className='dato'>{pais.capital}</p>
+            </div>
+
+            <div className='item'>
+              <p className='titulo'>Poblacion</p>
+              <p className='dato'>{pais.poblacion}</p>
+            </div>
+
+            <div className='item'>
+              <p className='titulo'>Moneda</p>
+              <p className='dato'>{pais.moneda.nombre}</p>
+            </div>
+
+            {/* <p>Idiomas: </p> */}
 
         </section>
 

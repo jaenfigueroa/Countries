@@ -97,6 +97,7 @@
   justify-content: center;
 }
 
+/* BLOQUE DE LOS PAISSE VECINOS */
 .paises-vecinos{
   // background-color: rgb(0, 255, 34);
   width: 90%;
@@ -112,6 +113,33 @@
     flex-wrap: wrap;
     gap: 1rem;
   }
+}
+
+/* BLOQUE DE INFORMACION */
+.informacion{
+  background-color: white;
+  border-radius: .5rem;
+  width: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  margin: 2rem 0;
+
+    .item{
+      width: 50%;
+      padding: 1rem 1.2rem;
+      // border: 1px solid black;
+      
+      .titulo{
+        color: #baad86;
+        color: #908564;
+        font-weight: 600;
+      }
+      .dato{
+        // color: green;
+      }
+    }
 }
 
 /* ////////////////////////// */
