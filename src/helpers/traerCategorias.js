@@ -8,7 +8,7 @@ export const traerCategorias = async () => {
   let resultadoFinal = [
     {
       titulo: 'paises', /* titulo para la lista del selector */
-      tipo: 'pais', /* tipo de etiqueta, usado para el filtrado */
+      tipo: 'nombre', /* tipo de etiqueta, usado para el filtrado */
       opciones: obtenerNombres(data).sort()
     },
     {

@@ -5,19 +5,15 @@ export const useFiltrar = (lista, etiquetas) => {
 
   const [restantes, setRestantes] = useState([])
 
-  ////////////////////
-  ////////////////////
-  // const navigate = useNavigate()
-
   //USAR USE CALL BACK PARA MEMORIZAR EL VALOR QUE DEVULVE UNA FUNCION
   const filtrarMemorizado = useCallback(() => {
   
-    let granString = generarUnSoloString(etiquetas)
     let restantes = []
 
     lista.forEach(pais => {
-      let resultado = comprobarCoincidencias(pais, granString)
-      // console.log(resultado)
+
+      let resultado = comprobarCoincidencias(pais, etiquetas)
+      console.log(resultado)
 
       if (resultado) {
         restantes = [...restantes, pais]
@@ -39,42 +35,54 @@ export const useFiltrar = (lista, etiquetas) => {
   
   return {
     listaRestantes: restantes,
-    // filtrarRestantes
     filtrarMemorizado
   }
-
-
-
-
 }
 
 
-//FILTRADO//////////////////////////////////////////
-//GENERAR UN GRAN STRING QUE CONTENGA TODAS LAS ETIQUETAS
-function generarUnSoloString(etiquetas){
-  let string = ''
+//COMPROBAR LAS COINCIDENCIAS ///////////////////////////////////////////////////////
+//COMPROBAR LAS COINCIDENCIAS ///////////////////////////////////////////////////////
+const comprobarCoincidencias = (pais, etiquetas) =>{
   
-  etiquetas.forEach(x =>{
-      string += '-'+x.valor
-  })
+  // console.log(pais)
+  // console.log(etiquetas)
 
-  let resultado = string.toLowerCase()
-  return resultado
-}
-
-//COMPROBAR LAS COINCIDENCIAS
-function comprobarCoincidencias(pais, granString){
-  for (const key in pais) {
-    ///////////////////////////////////////////////////
-    if(isNaN(pais[key]) && pais[key]){
-      let palabras = pais[key].split(' - ')
-
-      const resultado = palabras.some(word => granString.includes(word));
-
-      if (resultado) {
-        return true
-      }
+  for (const key in etiquetas) {
+    // console.log(etiquetas[key].valor)
+    // console.log(pais[etiquetas[key].tipo])
+    if(etiquetas[key].valor === pais[etiquetas[key].tipo]){
+      return true
     }
   }
   return false
 }
+
+
+
+// function comprobarCoincidencias(pais, etiquetas){
+
+//   console.log('PAIS:', pais)
+//   console.log('ETIQUETAS:', etiquetas)
+
+//   for (const key in pais) {
+
+//     if(isNaN(pais[key]) && pais[key]){
+
+//       for (const key in etiquetas) {
+    
+//         // console.log(etiquetas[key].valor)
+//         // console.log(pais[etiquetas[key].tipo])
+        
+//         if(etiquetas[key].valor === pais[etiquetas[key].tipo]){
+//           return true
+//         }
+//       }
+      
+//     }
+    
+//     return false
+//   }
+// }
+
+
+

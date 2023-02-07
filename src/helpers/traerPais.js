@@ -51,9 +51,7 @@ const armarPais = (data)=>{
     dominio: data.tld[0],  /* USADO */
     // codigoTel: data.idd.root + data.idd.suffixes.join(''), /* USADO */
     codigoTel: data.idd.root + data.idd.suffixes[0], /* USADO */
-
     // codigoTel: data.idd.root, /* USADO */
-
     
     /* BLOQUE 3 */
     paisesVecinos: data.borders, /* USADO */
