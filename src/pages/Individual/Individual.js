@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { formatearNumero } from '../../helpers/formatearNumero'
 import { traerPais } from '../../helpers/traerPais'
+import { Caja } from './Caja'
 import { Mapa } from './Mapa'
 import { Tarjeta2 } from './Tarjeta2'
 
@@ -29,6 +29,7 @@ export const Individual = () => {
   useEffect(()=>{
     window.scrollTo(0, 0);
   }, [nombre])
+
 
   /////////////////////////////////////////////
 
@@ -75,71 +76,7 @@ export const Individual = () => {
         <h4 className='subtitulo'>Informacion</h4>
         
         {/* BLOQUE 2 */}
-        <section className='informacion'>
-          
-            <div className='item'>
-              <p className='titulo'>Continente</p>
-              <p className='dato'>{pais.continente}</p>
-            </div>
-
-            <div className='item'>
-              <p className='titulo'>Subcontinente</p>
-              <p className='dato'>{pais.subcontinente}</p>
-            </div>
-
-            <div className='item'>
-              <p className='titulo'>Independiente</p>
-              <p className='dato'>{pais.paisIndependiente ? 'Yes' : 'No'}</p>
-            </div>
-
-            <div className='item'>
-              <p className='titulo'>Area</p>
-              <p className='dato'>{formatearNumero(pais.area)} m<sup>2</sup></p>
-            </div>
-
-            <div className='item'>
-              <p className='titulo'>Capital</p>
-              <p className='dato'>{pais.capital}</p>
-            </div>
-
-            <div className='item'>
-              <p className='titulo'>Poblacion</p>
-              <p className='dato'>{formatearNumero(pais.poblacion)}</p>
-            </div>
-
-            <div className='item'>
-              <p className='titulo'>Moneda</p>
-              <p className='dato'>{pais.moneda.nombre}</p>
-            </div>
-
-            <div className='item'>
-              <p className='titulo'>Hora</p>
-              <p className='dato'>12:57:25 AM</p>
-            </div>
-
-            <div className='item'>
-              <p className='titulo'>Temperatura</p>
-              <p className='dato'>32 °C</p>
-            </div>
-
-            <div className='item'>
-              <p className='titulo'>Dominio</p>
-              <p className='dato'>{pais.dominio}</p>
-            </div>
-
-            <div className='item'>
-              <p className='titulo'>Codigo Tel.</p>
-              <p className='dato'>{pais.codigoTel}</p>
-            </div>
-
-            <div className='item'>
-              <p className='titulo'>Idioma</p>
-              <p className='dato'>{pais.idiomas}</p>
-            </div>
-
-
-
-        </section>
+        <Caja pais={pais}/>
 
 
 
@@ -176,18 +113,6 @@ export const Individual = () => {
             </section>
           )
         }
-
-
-
-
-        {/* BLOQUE 5 */}
-        {/* <section className='cliam y hora'>
-          <h4 className='subtitulo'>Clima - hora</h4>
-
-        </section> */}
-
-
-
       </>
     )
   } else{
