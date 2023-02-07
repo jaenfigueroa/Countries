@@ -81,40 +81,40 @@ const obtenerContinentes = (array) => {
 // }
 
 //OBTENER LA LISTA DE IDIOMAS /////////////////////
-const obtenerIdiomas = (array) => {
+// const obtenerIdiomas = (array) => {
   
-  let resultados = array.map(x => {
-    let objetoLenguages = x.languages
-    return objetoLenguages
-  })
+//   let resultados = array.map(x => {
+//     let objetoLenguages = x.languages
+//     return objetoLenguages
+//   })
 
-  let resultadoFinal = resultados.filter(x => x !== undefined)
+//   let resultadoFinal = resultados.filter(x => x !== undefined)
 
 
-  // console.log(resultadoFinal)
+//   // console.log(resultadoFinal)
 
-  let x = []
+//   let x = []
   
-  for (const key in resultadoFinal) {
+//   for (const key in resultadoFinal) {
     
-    let primerValor = Object.values(resultadoFinal[key])
+//     let primerValor = Object.values(resultadoFinal[key])
 
-    x = [...x, ...primerValor]
-  }
+//     x = [...x, ...primerValor]
+//   }
 
-  // console.log(x);
+//   // console.log(x);
 
-  let sinRepetir = [...new Set(x)] /* ELIMINAR REPETIDOS */
+//   let sinRepetir = [...new Set(x)] /* ELIMINAR REPETIDOS */
 
-  // console.log(siRepetir).toLowerCase()
+//   // console.log(siRepetir).toLowerCase()
 
-  // return x
-  const minusculas  = sinRepetir.map (x => x = x.toLowerCase())
+//   // return x
+//   const minusculas  = sinRepetir.map (x => x = x.toLowerCase())
 
-  // console.log(minusculas);
+//   // console.log(minusculas);
 
-  return minusculas
-}
+//   return minusculas
+// }
 
 //OBTENER LISTA DE MONEDAS//////////////
 const obtenerMonedas = (array) => {
@@ -175,5 +175,4 @@ const obtenerMonedas = (array) => {
 const obtenerNombres = (array) => {
 
   return array.map(x => x.name.common.toLowerCase())
-  // return array.map(x => x.name.common + ' - ' + x.altSpellings[0])
 }
