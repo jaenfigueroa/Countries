@@ -43,7 +43,7 @@ export const Caja = ({pais}) => {
       valor: pais.paisIndependiente ? 'Yes' : 'No'
     },{
       titulo: 'Area',
-      valor: formatearNumero(pais.area)
+      valor: `${formatearNumero(pais.area)} m²`
     },{
       titulo: 'Capital',
       valor: pais.capital
