@@ -61,7 +61,7 @@ export const Caja = ({pais}) => {
       valor: `${Number(clima).toFixed(2)}°C`
     },{
       titulo: 'Dominio',
-      valor: 'pais.dominio'
+      valor: pais.dominio
     },{
       titulo: 'Codigo Tel.',
       valor: pais.codigoTel
