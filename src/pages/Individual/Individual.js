@@ -121,18 +121,18 @@ export const Individual = () => {
 
         {/* BLOQUE 5 */}
 
-        <h4 className='subtitulo'>Lugares Turisticos</h4>
+        <h4 className='subtitulo'>Paisajes</h4>
 
         <section className='seccion-carrucel'>
-          <Carrucel  nombre = {pais.nombres.comun} busqueda={'places'}/>
+          <Carrucel  nombre = {pais.nombres.comun} categoria={'nature'}/>
         </section>
 
         {/* BLOQUE 6 */}
 
-        <h4 className='subtitulo'>Gastronomia</h4>
+        <h4 className='subtitulo'>Comida</h4>
 
         <section className='seccion-carrucel'>
-          <Carrucel  nombre = {pais.nombres.comun} busqueda={'food'}/>
+          <Carrucel  nombre = {pais.nombres.comun} categoria={'food'}/>
         </section>
 
         {/* BLOQUE 6 */}
@@ -140,7 +140,7 @@ export const Individual = () => {
         <h4 className='subtitulo'>Animales</h4>
 
         <section className='seccion-carrucel'>
-          <Carrucel  nombre = {pais.nombres.comun} busqueda={'animals'}/>
+          <Carrucel  nombre = {pais.nombres.comun} categoria={'animals'}/>
         </section>
 
       </>

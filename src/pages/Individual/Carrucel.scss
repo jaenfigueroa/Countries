@@ -16,4 +16,17 @@
     background-size: cover;
     border-radius: .5rem;
   }
+
+  .aviso{
+    padding: 1rem;
+    border-radius: .5rem;
+    // background: #2a2a2a;
+    color: #d1c190;
+  }
+}
+
+@media (min-width: 980px) {
+  .carrucel .aviso{
+    font-size: 2rem;
+  }
 }
