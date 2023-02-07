@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { traerPais } from '../../helpers/traerPais'
 import { Caja } from './Caja'
+import { Carrucel } from './Carrucel'
 import { Mapa } from './Mapa'
 import { Tarjeta2 } from './Tarjeta2'
 
@@ -117,6 +118,23 @@ export const Individual = () => {
             </section>
           )
         }
+
+        {/* BLOQUE 5 */}
+
+        <h4 className='subtitulo'>Lugares</h4>
+
+        <section className='seccion-carrucel'>
+          <Carrucel  nombre = {pais.nombres.comun} busqueda={'places'}/>
+        </section>
+
+        {/* BLOQUE 6 */}
+
+        <h4 className='subtitulo'>Gastronomia</h4>
+
+        <section className='seccion-carrucel'>
+          <Carrucel  nombre = {pais.nombres.comun} busqueda={'food'}/>
+        </section>
+
       </>
     )
   } else{

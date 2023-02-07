@@ -1,0 +1,19 @@
+.carrucel{
+  // background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 1rem;
+
+  &__img{
+    background: #2a2a2a;
+    width: 320px;
+    height: 220px;
+    background-position: center;
+    background-size: cover;
+    border-radius: .5rem;
+  }
+}
