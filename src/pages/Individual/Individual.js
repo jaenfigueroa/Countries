@@ -121,7 +121,7 @@ export const Individual = () => {
 
         {/* BLOQUE 5 */}
 
-        <h4 className='subtitulo'>Lugares</h4>
+        <h4 className='subtitulo'>Lugares Turisticos</h4>
 
         <section className='seccion-carrucel'>
           <Carrucel  nombre = {pais.nombres.comun} busqueda={'places'}/>
@@ -133,6 +133,14 @@ export const Individual = () => {
 
         <section className='seccion-carrucel'>
           <Carrucel  nombre = {pais.nombres.comun} busqueda={'food'}/>
+        </section>
+
+        {/* BLOQUE 6 */}
+
+        <h4 className='subtitulo'>Animales</h4>
+
+        <section className='seccion-carrucel'>
+          <Carrucel  nombre = {pais.nombres.comun} busqueda={'animals'}/>
         </section>
 
       </>
