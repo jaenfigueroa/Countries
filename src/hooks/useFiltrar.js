@@ -47,14 +47,19 @@ const comprobarCoincidencias = (pais, etiquetas) =>{
   // console.log(pais)
   // console.log(etiquetas)
 
-  for (const key in etiquetas) {
-    // console.log(etiquetas[key].valor)
-    // console.log(pais[etiquetas[key].tipo])
-    if(etiquetas[key].valor === pais[etiquetas[key].tipo]){
-      return true
+  if(isNaN(pais) && pais){
+
+    for (const key in etiquetas) {
+      // console.log(etiquetas[key].valor)
+      // console.log(pais[etiquetas[key].tipo])
+      if(etiquetas[key].valor === pais[etiquetas[key].tipo]){
+        return true
+      }
     }
+    return false
+    
   }
-  return false
+
 }
 
 
