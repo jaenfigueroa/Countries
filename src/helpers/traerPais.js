@@ -7,7 +7,7 @@ export const traerPais = async (nombre) => {
     const peticion = await fetch(url)
     const data = await peticion.json()
 
-    // console.log(data);
+    console.log(data);
 
     return armarPais(data[0])
     
@@ -49,7 +49,11 @@ const armarPais = (data)=>{
     
     paisIndependiente: data.independent, /* USADO */
     dominio: data.tld[0],  /* USADO */
-    codigoTel: data.idd.root + data.idd.suffixes.join(''), /* USADO */
+    // codigoTel: data.idd.root + data.idd.suffixes.join(''), /* USADO */
+    codigoTel: data.idd.root + data.idd.suffixes[0], /* USADO */
+
+    // codigoTel: data.idd.root, /* USADO */
+
     
     /* BLOQUE 3 */
     paisesVecinos: data.borders, /* USADO */
