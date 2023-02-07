@@ -80,7 +80,7 @@ const traerIdiomas = (objeto)=>{
     resultado.unshift(objeto[key])
   }
 
-  return resultado.join(' - ')
+  return resultado.join(', ')
 }
 
 ///////////////////////////////////////

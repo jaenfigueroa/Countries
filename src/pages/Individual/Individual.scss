@@ -192,12 +192,12 @@
   /* BLOQUE DE INFORMACION */
   .informacion{
     background-color: white;
-    width: 400px;
     padding: 2rem;
     // margin: 2rem 0;
 
       .item{
-        width: 50%;
+        // width: 50%;
+        // flex-grow: 1;
         padding: 1rem 1.2rem;
         // border: 1px solid black;
         
@@ -306,6 +306,9 @@
       width: 850px;
       gap: 1rem;
 
+      // background: yellow;
+      width: 900px;
+
       // text-align: center;
   
         .item{
@@ -315,6 +318,8 @@
 
           width: calc(100% / 3.3);
           width: calc(100% / 3.1);
+
+          flex-grow: 1;
           
           .titulo{
             font-size: 2.8rem;
