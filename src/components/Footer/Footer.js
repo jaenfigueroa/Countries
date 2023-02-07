@@ -4,7 +4,7 @@ export const Footer = () => {
 
   return (
     <footer className='footer'>
-      <p><a href='https://github.com/jaenfigueroa/PokeZone' target='_blank' rel="noreferrer">Jaen Figueroa</a> &copy; 2023</p>
+      <p><a href='https://github.com/jaenfigueroa/Countries' target='_blank' rel="noreferrer">Jaen Figueroa</a> &copy; 2023</p>
 
       <div className='footer__redes-contenedor'>
         <a href='https://github.com/jaenfigueroa' target='_blank' rel="noreferrer"><i className="fa-brands fa-github"></i></a>
