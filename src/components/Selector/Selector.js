@@ -33,7 +33,7 @@ export const Selector = ({elemento, agregarEtiqueta, quitarEtiqueta}) => {
     //TRAER UN ARRAY DE LOS INPUT CHECKBOX
     // console.log(elemento.titulo)
     
-    const resultados = document.querySelectorAll(`.contenedor-opciones[name=${elemento.titulo}] label`)
+    const resultados = document.querySelectorAll(`.contenedor-opciones[name="${elemento.titulo}"] label`)
     
     // console.log(resultados);
     
@@ -118,7 +118,7 @@ export const Selector = ({elemento, agregarEtiqueta, quitarEtiqueta}) => {
               lista.map((x, index) =>(
                 x && (
                   <label key={index}  data-example={x}> {/* name:x PROV */}
-                    <input type="checkbox" value="opcion1" onChange={(e)=>verificarCheckbox(e, elemento.tipo)} name={x}/>{x}
+                    <input type="checkbox" value="opcion1" onChange={(e)=>verificarCheckbox(e, elemento.tipo)} name={`${x}`}/>{x}
                   </label>
                 )
               ))

@@ -53,7 +53,7 @@ export const Aside = ({mostrarAside, etiquetas, setEtiquetas}) => {
 
     //quitar el check del elemento
     // Obtener el elemento checkbox con el nombre específico
-    const checkbox = document.querySelector(`input[type="checkbox"][name=${valor}]`);
+    const checkbox = document.querySelector(`input[type="checkbox"][name="${valor}"]`);
     checkbox.checked =  false
   }
 

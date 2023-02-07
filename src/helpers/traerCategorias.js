@@ -21,11 +21,11 @@ export const traerCategorias = async () => {
       tipo: 'capital',
       opciones: obtenerCapitales(data).sort()
     },
-    {
-      titulo: 'idiomas',
-      tipo: 'idioma',
-      opciones: obtenerIdiomas(data).sort()
-    },
+    // {
+    //   titulo: 'idiomas',
+    //   tipo: 'idioma',
+    //   opciones: obtenerIdiomas(data).sort()
+    // },
     {
       titulo: 'monedas',
       tipo: 'moneda',

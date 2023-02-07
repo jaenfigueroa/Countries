@@ -13,7 +13,7 @@ export const useFiltrar = (lista, etiquetas) => {
     lista.forEach(pais => {
 
       let resultado = comprobarCoincidencias(pais, etiquetas)
-      console.log(resultado)
+      // console.log(resultado)
 
       if (resultado) {
         restantes = [...restantes, pais]
